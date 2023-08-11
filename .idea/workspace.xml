@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Sbq1pfvTdeucqXe3AjkSjcNvGb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HueMatrix/IdeaProjects/VarilxBot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="de.subscripted.lavaplayer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HueMatrix\IdeaProjects\VarilxBot\src\main\java\de\subscripted\leveling\commands" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HueMatrix\IdeaProjects\VarilxBot\src\main\java\de\subscripted\coins" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn instal" />
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="de.subscripted.Main" />
+      <module name="VarilxBot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="" />
+      <created>1689425417702</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689425417702</updated>
+      <workItem from="1689425418821" duration="9082000" />
+      <workItem from="1689441633443" duration="7872000" />
+      <workItem from="1689450038963" duration="5108000" />
+      <workItem from="1689458381335" duration="2276000" />
+      <workItem from="1689504939461" duration="3832000" />
+      <workItem from="1689510597458" duration="16056000" />
+      <workItem from="1689532018252" duration="10111000" />
+      <workItem from="1689546440698" duration="942000" />
+      <workItem from="1689547625941" duration="1834000" />
+      <workItem from="1689579220384" duration="606000" />
+      <workItem from="1689609772779" duration="2874000" />
+      <workItem from="1689612845362" duration="13256000" />
+      <workItem from="1689666915713" duration="3220000" />
+      <workItem from="1689676883992" duration="3214000" />
+      <workItem from="1689696497770" duration="11213000" />
+      <workItem from="1689717695844" duration="96000" />
+      <workItem from="1689718014251" duration="1474000" />
+      <workItem from="1689755062373" duration="5183000" />
+      <workItem from="1689773372626" duration="15810000" />
+      <workItem from="1689814655434" duration="595000" />
+      <workItem from="1689844516601" duration="6158000" />
+      <workItem from="1689854023623" duration="3029000" />
+      <workItem from="1689872543442" duration="14563000" />
+      <workItem from="1689931010581" duration="2451000" />
+      <workItem from="1689959424346" duration="822000" />
+      <workItem from="1689989311309" duration="24000" />
+      <workItem from="1689990155190" duration="1783000" />
+      <workItem from="1690020352506" duration="1492000" />
+      <workItem from="1690025868254" duration="6349000" />
+      <workItem from="1690049665122" duration="4440000" />
+      <workItem from="1690103437898" duration="2799000" />
+      <workItem from="1690111304075" duration="6487000" />
+      <workItem from="1690127560785" duration="1546000" />
+      <workItem from="1690134361056" duration="2149000" />
+      <workItem from="1690138344230" duration="14299000" />
+      <workItem from="1690210438395" duration="475000" />
+      <workItem from="1690234356986" duration="529000" />
+      <workItem from="1690235056594" duration="2676000" />
+      <workItem from="1690239105132" duration="1587000" />
+      <workItem from="1690280305258" duration="7580000" />
+      <workItem from="1690298029659" duration="8084000" />
+      <workItem from="1690315057025" duration="1458000" />
+      <workItem from="1690316739824" duration="62000" />
+      <workItem from="1690323452820" duration="8297000" />
+      <workItem from="1690385556434" duration="2404000" />
+      <workItem from="1690393299077" duration="7648000" />
+      <workItem from="1690409423724" duration="4000" />
+      <workItem from="1690416994571" duration="2480000" />
+      <workItem from="1690453984277" duration="530000" />
+      <workItem from="1690457288655" duration="1445000" />
+      <workItem from="1690464929117" duration="7000" />
+      <workItem from="1690473148295" duration="4950000" />
+      <workItem from="1690485709102" duration="697000" />
+      <workItem from="1690494864336" duration="2946000" />
+      <workItem from="1690499849095" duration="2679000" />
+      <workItem from="1690507039370" duration="692000" />
+      <workItem from="1690543871872" duration="4066000" />
+      <workItem from="1690554504100" duration="473000" />
+      <workItem from="1690586697196" duration="36000" />
+      <workItem from="1690586749376" duration="4215000" />
+      <workItem from="1690633892960" duration="3202000" />
+      <workItem from="1690651747010" duration="1376000" />
+      <workItem from="1690662657836" duration="8082000" />
+      <workItem from="1690720076425" duration="2151000" />
+      <workItem from="1690723747183" duration="1069000" />
+      <workItem from="1690742605660" duration="1897000" />
+      <workItem from="1690748272273" duration="13135000" />
+      <workItem from="1690804381793" duration="662000" />
+      <workItem from="1690811649594" duration="5930000" />
+      <workItem from="1690834440071" duration="14014000" />
+      <workItem from="1690853768589" duration="1018000" />
+      <workItem from="1690892095082" duration="2848000" />
+      <workItem from="1690895257485" duration="4000" />
+      <workItem from="1690906709505" duration="13661000" />
+      <workItem from="1690978674858" duration="6150000" />
+      <workItem from="1691105490216" duration="2574000" />
+      <workItem from="1691151792579" duration="7711000" />
+      <workItem from="1691173438983" duration="8419000" />
+      <workItem from="1691193229030" duration="10835000" />
+      <workItem from="1691236050954" duration="12044000" />
+      <workItem from="1691268306248" duration="7351000" />
+      <workItem from="1691288183294" duration="313000" />
+      <workItem from="1691320638171" duration="1904000" />
+      <workItem from="1691337232787" duration="4460000" />
+      <workItem from="1691360893430" duration="10348000" />
+      <workItem from="1691412858916" duration="6335000" />
+      <workItem from="1691488645122" duration="5229000" />
+      <workItem from="1691521023375" duration="8478000" />
+      <workItem from="1691579691874" duration="46000" />
+      <workItem from="1691579929721" duration="128000" />
+      <workItem from="1691580068287" duration="16960000" />
+      <workItem from="1691650219442" duration="5217000" />
+      <workItem from="1691668925741" duration="8544000" />
+      <workItem from="1691712233954" duration="1934000" />
+      <workItem from="1691751147746" duration="7525000" />
+      <workItem from="1691797130286" duration="324000" />
+      <workItem from="1691797464860" duration="380000" />
+      <workItem from="1691797853483" duration="162000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added VarilxBotSource">
+      <option name="closed" value="true" />
+      <created>1691796546582</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691796546582</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added VarilxBotSource" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added VarilxBotSource" />
+  </component>
+</project>
