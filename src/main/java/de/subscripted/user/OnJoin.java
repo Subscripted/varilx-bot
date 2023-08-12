@@ -43,10 +43,8 @@ public class OnJoin extends ListenerAdapter {
 
         VoiceChannel voiceChannel = event.getGuild().getVoiceChannelById("1139724927155576954");
         if (voiceChannel != null) {
-            voiceChannel.getManager().setName("Mitglieder: " + event.getGuild().getMemberCount()).queue();
+            voiceChannel.getManager().setName("\uD83D\uDCCC・ | User: " + event.getGuild().getMemberCount()).queue();
         }
     }
 }
 
-    }
-}
