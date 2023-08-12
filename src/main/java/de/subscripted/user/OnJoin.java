@@ -5,6 +5,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -39,5 +40,13 @@ public class OnJoin extends ListenerAdapter {
 
         textChannel.sendMessageEmbeds(embedBuilder.build()).queue();
         event.getGuild().addRoleToMember(member, role).queue();
+
+        VoiceChannel voiceChannel = event.getGuild().getVoiceChannelById("1139724927155576954");
+        if (voiceChannel != null) {
+            voiceChannel.getManager().setName("Mitglieder: " + event.getGuild().getMemberCount()).queue();
+        }
+    }
+}
+
     }
 }
