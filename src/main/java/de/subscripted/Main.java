@@ -122,7 +122,8 @@ public class Main {
                         new SetTop10Money(),
                         new BewerbungsBuilder(),
                         new NudeCMD(),
-                        new RulesBuilder()
+                        new RulesBuilder(),
+                        new onLeave()
                 ).build().awaitReady();
 
 
@@ -156,7 +157,7 @@ public class Main {
                 jda.getPresence().setActivity(newActivity);
                 System.out.println("Status changed to: " + newStatusMessage);
             }
-        }, 0, 5000);
+        }, 0, 10000);
 
 
         Guild guild = jda.getGuildById("886262410489520168");

@@ -1,3 +1,4 @@
 de\subscripted\admin\SetCoins.class
 de\subscripted\user\CoinsCommand.class
+de\subscripted\user\onLeave.class
 de\subscripted\user\WorkCommand.class
