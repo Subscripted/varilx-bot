@@ -3,7 +3,7 @@ package de.subscripted.support;
 // Import statements...
 
 import de.subscripted.Main;
-import de.subscripted.Unused.TicketSQLManager;
+import de.subscripted.user.TicketSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
@@ -11,7 +11,6 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.utils.FileUpload;
 
 import java.awt.*;
 import java.io.BufferedWriter;

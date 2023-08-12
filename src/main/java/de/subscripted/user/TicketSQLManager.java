@@ -1,4 +1,4 @@
-package de.subscripted.Unused;
+package de.subscripted.user;
 
 import java.sql.*;
 
