@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="" />
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/varilxcoins.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilxcoins.db" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,6 +186,7 @@
       <workItem from="1691797130286" duration="324000" />
       <workItem from="1691797464860" duration="380000" />
       <workItem from="1691797853483" duration="162000" />
+      <workItem from="1691798030448" duration="311000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -193,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691796546582</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added VarilxBotSource">
+      <option name="closed" value="true" />
+      <created>1691798151927</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691798151927</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
