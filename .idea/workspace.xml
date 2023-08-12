@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Chatfilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Chatfilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/PayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/PayCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/XPCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/XPCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varilx_level.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilx_level.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varilxcoins.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilxcoins.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +204,9 @@
       <workItem from="1691797464860" duration="380000" />
       <workItem from="1691797853483" duration="162000" />
       <workItem from="1691798030448" duration="2540000" />
-      <workItem from="1691841782177" duration="377000" />
+      <workItem from="1691841782177" duration="2772000" />
+      <workItem from="1691848347681" duration="7000" />
+      <workItem from="1691854707114" duration="3733000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -267,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691802550109</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="- Changed the Speed of Changing Bot status from 5 sec to 10 sec, cause Performance issues!">
+      <option name="closed" value="true" />
+      <created>1691842204039</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1691842204039</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +301,7 @@
     <MESSAGE value="Added VarilxBotSource" />
     <MESSAGE value="- Added onJoinMemberCount- Channel" />
     <MESSAGE value="- Changed onJoinUserCount- Channel" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Changed onJoinUserCount- Channel" />
+    <MESSAGE value="- Changed the Speed of Changing Bot status from 5 sec to 10 sec, cause Performance issues!" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Changed the Speed of Changing Bot status from 5 sec to 10 sec, cause Performance issues!" />
   </component>
 </project>

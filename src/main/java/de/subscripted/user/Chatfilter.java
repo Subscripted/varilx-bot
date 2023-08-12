@@ -3,6 +3,7 @@ package de.subscripted.user;
 import de.subscripted.Main;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -90,15 +91,23 @@ public class Chatfilter extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-
-        if (event.getMember().hasPermission(Permission.ADMINISTRATOR))
+        if (event.getAuthor() == null) {
             return;
+        }
 
+        Member member = event.getMember();
+        if (member == null) {
+            return;
+        }
+
+        if (member.hasPermission(Permission.ADMINISTRATOR)) {
+            return;
+        }
 
         for (String badWord : BAD_WORDS) {
             if (event.getMessage().getContentRaw().contains(badWord)) {
-
                 String messageContent = event.getMessage().getContentRaw();
+
                 EmbedBuilder dmembed = new EmbedBuilder()
                         .setTitle("Varilx Warnung!")
                         .setColor(Color.RED)
@@ -107,7 +116,7 @@ public class Chatfilter extends ListenerAdapter {
                         .setThumbnail("https://cdn.discordapp.com/attachments/1055223755909111808/1133836888449503262/Unbdassddasadsadssaasadedsddsdsadsanannt-1.png")
                         .addField("Weiteres: ", "Diese Message wird geloggt, und kann später gegen dich verwendet werden!", false)
                         .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
-                ;
+
                 EmbedBuilder channelem = new EmbedBuilder()
                         .setTitle("Varilx Warnung!")
                         .setColor(Color.RED)
@@ -116,14 +125,14 @@ public class Chatfilter extends ListenerAdapter {
                         .setThumbnail("https://cdn.discordapp.com/attachments/1055223755909111808/1133836888449503262/Unbdassddasadsadssaasadedsddsdsadsanannt-1.png")
                         .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
 
-                {
-                    event.getMessage().delete().queue();
-                }
+                event.getMessage().delete().queue();
 
                 event.getAuthor().openPrivateChannel().queue(privateChannel -> {
                     privateChannel.sendMessageEmbeds(dmembed.build()).queue();
                     TextChannel channel = event.getGuild().getTextChannelById("1134461790818947122");
-                    channel.sendMessageEmbeds(channelem.build()).queue();
+                    if (channel != null) {
+                        channel.sendMessageEmbeds(channelem.build()).queue();
+                    }
                 });
             }
         }

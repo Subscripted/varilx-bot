@@ -48,6 +48,7 @@ public class XPCommand extends ListenerAdapter {
                             + "- Dein Fortschritt: " + printUserXPState(xp, XPSystem.getRequiredXP(level + 1)) + " / " + Math.round(((double) xp / XPSystem.getRequiredXP(level + 1)) * 100) * 1 + "%")
                     .setFooter("Varilx XP Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                     .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png");
+            event.replyEmbeds(embedBuilder.build()).queue();
         } else {
             embedBuilder = new EmbedBuilder()
                     .setTitle("Varilx XP")
@@ -58,8 +59,8 @@ public class XPCommand extends ListenerAdapter {
                     .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
                     .setFooter("Varilx XP Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                     .setAuthor(target.getEffectiveName());
+            event.replyEmbeds(embedBuilder.build()).queue();
         }
-        event.replyEmbeds(embedBuilder.build()).queue();
     }
 
     private int calculateRequiredXPForLevel(int level) {

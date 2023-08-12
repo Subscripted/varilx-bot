@@ -123,7 +123,8 @@ public class Main {
                         new BewerbungsBuilder(),
                         new NudeCMD(),
                         new RulesBuilder(),
-                        new onLeave()
+                        new onLeave(),
+                        new Serverinfo()
                 ).build().awaitReady();
 
 
@@ -184,6 +185,7 @@ public class Main {
                 Commands.slash("queue", "Was ist in der queue"),
                 Commands.slash("work", "work"),
                 Commands.slash("corn", "uwu"),
+                Commands.slash("serverinfo", "serverinfo"),
                 Commands.slash("varonx", "Varonx").addOption(OptionType.USER, "nutzer", "nutzer", true),
                 Commands.slash("repeat", "Repeat"),
                 Commands.slash("promote", "Promote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du promoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
