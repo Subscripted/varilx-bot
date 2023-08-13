@@ -63,7 +63,7 @@ public class Bugreport extends ListenerAdapter {
                     .setColor(Color.CYAN)
                     .setTitle("Bugreport")
                     .setDescription("- <:varilx_discord:1139957449516924959> Discord / IGN Name : **" + nameig + "**\n" +
-                            "- <:varilx_forum:1139957497336172584> Beschreibung des Bugs : **" + bug + "**\n" +
+                            "- <:varilx_forum:1139957497336172584> Beschreibung des Bugs : **" + bug + "**\n\n" +
                             "- <:varilx_id:1139957240963539054> AntiSpam : **" + username + "**")
                     .setFooter("Varilx Support Feature | Update 2023 © ", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                     .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png");
