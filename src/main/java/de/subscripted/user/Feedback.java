@@ -41,15 +41,13 @@ public class Feedback extends ListenerAdapter {
                 .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
                 .setFooter("Varilx Feedback Feature | Update 2023 © ", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
 
-        Button button = Button.secondary("feedback", "Feedback").withEmoji(Emoji.fromFormatted("<:varilxChatbox:1136013753301868555>"));
+        Button button = Button.secondary("feedbackbutton", "Feedback").withEmoji(Emoji.fromFormatted("<:varilxChatbox:1136013753301868555>"));
 
         event.getChannel().sendMessageEmbeds(embedBuilder.build()).setActionRow(button).queue();
     }
 
-
-
     public void onButtonInteraction(ButtonInteractionEvent event) {
-        if (!event.getButton().getId().equalsIgnoreCase("feedback"))
+        if (!event.getButton().getId().equalsIgnoreCase("feedbackbutton"))
             return;
 
         String userId = event.getUser().getId();
@@ -73,13 +71,12 @@ public class Feedback extends ListenerAdapter {
                     .setRequired(true)
                     .build();
 
-            Modal modall = Modal.create("vaxfeedback", "Varilx Feedback")
+            Modal modal = Modal.create("vaxfeedback", "Varilx Feedback")
                     .addActionRow(message)
                     .build();
 
 
-            event.replyModal(modall).queue();
-            System.out.println("geht");
+            event.replyModal(modal).complete();
         } else {
             event.reply("Du kannst nur alle 30 Minuten einen Vorschlag machen.").setEphemeral(true).queue();
         }

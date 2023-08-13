@@ -2,17 +2,14 @@ package de.subscripted;
 
 import de.subscripted.admin.*;
 import de.subscripted.backend.XPSystem;
-import de.subscripted.user.TicketSQLManager;
-import de.subscripted.user.CoinsCommand;
-import de.subscripted.user.WorkCommand;
 import de.subscripted.lavaplayer.*;
 import de.subscripted.serversafety.*;
 import de.subscripted.sql.MoneySQLManager;
+import de.subscripted.sql.TicketSQLManager;
 import de.subscripted.sql.XpSQLManager;
 import de.subscripted.support.*;
 import de.subscripted.updated.OnReadyUpdate;
 import de.subscripted.user.*;
-import de.subscripted.user.PayCommand;
 import lombok.Getter;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
@@ -46,8 +43,6 @@ public class Main {
     public static TicketSQLManager ticketSQLManager;
 
 
-
-
     public static String redfooter = "https://cdn.discordapp.com/attachments/1055223755909111808/1133836888449503262/Unbdassddasadsadssaasadedsddsdsadsanannt-1.png";
     private static final List<String> statusMessages = new ArrayList<>();
     private static final List<Activity.ActivityType> activityTypes = new ArrayList<>();
@@ -64,7 +59,6 @@ public class Main {
         moneysqlManager = new MoneySQLManager();
         ticketSQLManager = new TicketSQLManager();
         TicketSQLManager.initializeDatabase();
-
 
 
         jda = JDABuilder.createDefault("OTUxMTI2NDAxNzA3Mjc4MzU2.GuBAYH.KVdQEUWB1JzxkR_XGV91ebKus24zFqoQt4DkVc")
@@ -124,7 +118,8 @@ public class Main {
                         new NudeCMD(),
                         new RulesBuilder(),
                         new onLeave(),
-                        new Serverinfo()
+                        new Serverinfo(),
+                        new Bugreport()
                 ).build().awaitReady();
 
 
@@ -185,6 +180,7 @@ public class Main {
                 Commands.slash("queue", "Was ist in der queue"),
                 Commands.slash("work", "work"),
                 Commands.slash("corn", "uwu"),
+                Commands.slash("bugreport", "bugreport"),
                 Commands.slash("serverinfo", "serverinfo"),
                 Commands.slash("varonx", "Varonx").addOption(OptionType.USER, "nutzer", "nutzer", true),
                 Commands.slash("repeat", "Repeat"),

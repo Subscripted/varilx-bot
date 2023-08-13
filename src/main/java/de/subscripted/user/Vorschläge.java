@@ -17,6 +17,7 @@ import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.text.TextInput;
 import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;
 import net.dv8tion.jda.api.interactions.modals.Modal;
+import org.w3c.dom.Text;
 
 import java.awt.*;
 import java.time.Instant;
@@ -57,7 +58,7 @@ public class Vorschläge extends ListenerAdapter {
             EmbedBuilder embedBuilder = new EmbedBuilder()
                     .setColor(Color.RED)
                     .setTitle("Varilx Support")
-                    .setDescription("Du bist gemutet. Um dich entmuten zu lassen erstell ein neues Thema auf unserem Forum!")
+                    .setDescription("Du bist gemutet. Um dich entmuten zu lassen, erstelle ein neues Thema auf unserem Forum!")
                     .setFooter("Varilx Support Feature | Update 2023 ©", Main.redfooter);
             event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
         }
@@ -70,8 +71,13 @@ public class Vorschläge extends ListenerAdapter {
                     .setRequired(true)
                     .build();
 
+            TextInput url = TextInput.create("url", "Bild URL (Optional)", TextInputStyle.SHORT)
+                    .setMinLength(5)
+                    .setRequired(false)  // Set to optional
+                    .build();
+
             Modal modal = Modal.create("vorschläge", "Vorschläge / Ideen")
-                    .addActionRows(ActionRow.of(message))
+                    .addActionRows(ActionRow.of(message), ActionRow.of(url))
                     .build();
 
             event.replyModal(modal).queue();
@@ -81,10 +87,11 @@ public class Vorschläge extends ListenerAdapter {
     }
 
 
-    public void onModalInteraction(ModalInteractionEvent event) {
-        String vorschlag = event.getValue("vorschlag").getAsString();
+        public void onModalInteraction(ModalInteractionEvent event) {
+            String vorschlag = event.getValue("vorschlag").getAsString();
+            String image = event.getValue("url").getAsString();
 
-        if (event.getModalId().equals("vorschläge")) {
+            if (event.getModalId().equals("vorschläge")) {
             Member member = event.getMember();
             String dcusername = member.getAsMention();
 
@@ -92,8 +99,11 @@ public class Vorschläge extends ListenerAdapter {
             Button button2 = Button.danger("denied_vorschlag", "Abgelehnt");
             Button button3 = Button.secondary("delete_vorschlag", "Löschen");
 
-            // Erstelle die ActionRow mit den Buttons
             ActionRow actionRow = ActionRow.of(button, button2, button3);
+
+
+            if (image == null)
+                return;
 
             EmbedBuilder embedBuilder = new EmbedBuilder()
                     .setColor(Color.GREEN)
@@ -103,6 +113,7 @@ public class Vorschläge extends ListenerAdapter {
                     .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
                     .setFooter("Varilx Vorschlag Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
 
+
             EmbedBuilder DM = new EmbedBuilder()
                     .setColor(Color.GREEN)
                     .setTitle("Varilx Vorschläge")
@@ -110,16 +121,19 @@ public class Vorschläge extends ListenerAdapter {
                     .setDescription("Danke für deinen Vorschlag / deine Idee, " + dcusername)
                     .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
                     .setFooter("Varilx Vorschlag Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+                EmbedBuilder umfragemessage = new EmbedBuilder();
+                umfragemessage.setColor(Color.GREEN);
+                umfragemessage.setTitle("Varilx Vorschläge");
+                umfragemessage.addField("```Vorschlag / Idee: ```", " " + vorschlag, false);
+                umfragemessage.addField("Idee kommt von:", " " + dcusername, false);
+                umfragemessage.setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.pngg");
 
-            EmbedBuilder umfragemessage = new EmbedBuilder()
-                    .setColor(Color.GREEN)
-                    .setTitle("Varilx Vorschläge")
-                    .addField("```Vorschlag / Idee: ```", " " + vorschlag, false)
-                    .addField("Idee kommt von:", " " + dcusername, false)
-                    .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.pngg")
-                    .setFooter("Varilx Vorschlag Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+                if (image != null && !image.isEmpty()) {
+                    umfragemessage.setImage(image);
+                }
 
-            // Get the channel to send the embed to
+                umfragemessage.setFooter("Varilx Vorschlag Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+
             MessageChannel channel = event.getGuild().getTextChannelById("1133344570135019570");
             TextChannel umfrage = event.getGuild().getTextChannelById("1062410932267003954");
 

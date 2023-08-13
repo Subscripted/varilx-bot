@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class VorschlägeListener extends ListenerAdapter {
-    public void inButtonInteracti(ButtonInteractionEvent event) {
+    public void onButtonInteraction(ButtonInteractionEvent event) {
         if (event.getButton().getId().equalsIgnoreCase("accepted_vorschlag")) {
             event.deferEdit().queue();
             event.getHook().editOriginal(event.getMember().getAsMention() + " hat den Vorschlag angenommen!").queue();

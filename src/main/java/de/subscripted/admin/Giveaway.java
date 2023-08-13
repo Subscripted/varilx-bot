@@ -1,7 +1,6 @@
 package de.subscripted.admin;
 
 import de.subscripted.Main;
-import de.subscripted.admin.GiveawayThread;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
@@ -18,45 +17,43 @@ import net.dv8tion.jda.api.interactions.modals.Modal;
 import java.awt.*;
 
 public class Giveaway extends ListenerAdapter {
+
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
-
         if (!event.getName().equals("giveaway"))
             return;
 
-            Member m = event.getMember();
-            if (!m.hasPermission(Permission.ADMINISTRATOR)) {
-                EmbedBuilder embedBuilder = new EmbedBuilder()
-                        .setTitle("Varilx System")
-                        .setColor(Color.RED)
-                        .setDescription("Du hast keine Berechtigung auf diesen Command!")
-                        .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
-                event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-                return;
-            }
-            TextChannel channel = event.getChannel().asTextChannel();
-
-            TextInput giveawayItemInput = TextInput.create("wasverlost", "Was wird verlost?", TextInputStyle.PARAGRAPH)
-                    .setMinLength(5)
-                    .setRequired(true)
-                    .build();
-
-            TextInput giveawayDurationInput = TextInput.create("zahl", "Dauer des Giveaways.", TextInputStyle.SHORT)
-                    .setRequired(true)
-                    .build();
-
-            ActionRow actionRow1 = ActionRow.of(giveawayItemInput);
-            ActionRow actionRow2 = ActionRow.of(giveawayDurationInput);
-
-            Modal modal = Modal.create("giveaway", "Giveaway")
-                    .addActionRows(actionRow1, actionRow2)
-                    .build();
-
-            event.replyModal(modal).queue();
-
+        Member m = event.getMember();
+        if (!m.hasPermission(Permission.ADMINISTRATOR)) {
+            EmbedBuilder embedBuilder = new EmbedBuilder()
+                    .setTitle("Varilx System")
+                    .setColor(Color.RED)
+                    .setDescription("Du hast keine Berechtigung auf diesen Command!")
+                    .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
+            event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
+            return;
         }
+        TextChannel channel = event.getChannel().asTextChannel();
 
+        TextInput giveawayItemInput = TextInput.create("wasverlost", "Was wird verlost?", TextInputStyle.PARAGRAPH)
+                .setMinLength(5)
+                .setRequired(true)
+                .build();
 
+        TextInput giveawayDurationInput = TextInput.create("zahl", "Dauer des Giveaways.", TextInputStyle.SHORT)
+                .setRequired(true)
+                .build();
+
+        ActionRow actionRow1 = ActionRow.of(giveawayItemInput);
+        ActionRow actionRow2 = ActionRow.of(giveawayDurationInput);
+
+        Modal modal = Modal.create("giveaway", "Giveaway")
+                .addActionRows(actionRow1, actionRow2)
+                .build();
+
+        event.replyModal(modal).queue();
+
+    }
 
 
     @Override
@@ -82,6 +79,7 @@ public class Giveaway extends ListenerAdapter {
                 channel.sendMessageEmbeds(embedBuilder.build()).queue(message -> {
                     message.addReaction(Emoji.fromUnicode("\uD83C\uDF81")).queue();
                     new GiveawayThread(channel, message.getIdLong(), durationInSeconds, embedBuilder, dcusername, finalGiveawayItemInput).start();
+
                 });
             } catch (NumberFormatException e) {
                 event.reply("Ungültige Zahl angegeben.").setEphemeral(true).queue();

@@ -3,7 +3,7 @@ package de.subscripted.support;
 // Import statements...
 
 import de.subscripted.Main;
-import de.subscripted.user.TicketSQLManager;
+import de.subscripted.sql.TicketSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
