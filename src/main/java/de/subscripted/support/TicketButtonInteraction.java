@@ -25,47 +25,6 @@ public class TicketButtonInteraction extends ListenerAdapter {
     private Map<String, Integer> userTicketCount = new HashMap<>();
     private final int maxTicketsPerUser = 3;
 
-    public void onButtonInteraction(ButtonInteractionEvent event) {
-        if (event.getButton().getId().equals("create")) {
-            String userId = event.getUser().getId();
-            int ticketCount = userTicketCount.getOrDefault(userId, 0);
-
-            if (ticketCount >= maxTicketsPerUser) {
-                EmbedBuilder embedBuilder = new EmbedBuilder()
-                        .setColor(Color.RED)
-                        .setTitle("Varilx Support")
-                        .setDescription("Du hast bereits das Maximum an Tickets erstellt! (" + maxTicketsPerUser + "). Bitte schließe ein paar deiner Tickets.")
-                        .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
-
-                event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-                return;
-            }
-
-            Role role = event.getGuild().getRoleById("1134159388190462042");
-            if (event.getMember().getRoles().contains(role)) {
-                EmbedBuilder embedBuilder = new EmbedBuilder()
-                        .setColor(Color.RED)
-                        .setTitle("Varilx Support")
-                        .setDescription("Du bist gemutet. Um dich entmuten zu lassen, erstelle ein neues Thema auf unserem Forum!")
-                        .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
-                event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-                return;
-            }
-
-            TextInput problem = TextInput.create("problem", "Kurze Vorbeschreibung deines Problems", TextInputStyle.PARAGRAPH)
-                    .setMinLength(5)
-                    .setMaxLength(999)
-                    .setRequired(true)
-                    .build();
-
-            Modal modal = Modal.create("ticket", "Ticket")
-                    .addActionRow(problem)
-                    .build();
-
-            event.replyModal(modal).queue();
-        }
-    }
-
     @Override
     public void onModalInteraction(ModalInteractionEvent event) {
         String problem = event.getValue("problem").getAsString();

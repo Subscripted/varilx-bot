@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/MoveallTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/MoveallTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInside.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInside.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Unused/CreateJob.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Unused/CreateJob.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/OnLoad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/OnLoad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/MoneySystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/backend/MoneySystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/BewerbungsBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/BewerbungsBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInteraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Bugreport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Bugreport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/ReactionRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/ReactionRoles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/RulesBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/RulesBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Vorschläge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Vorschläge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/VorschlägeListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/MoveallTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/MoveallTo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInside.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInside.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/ReactionRoles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/ReactionRoles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/RulesBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/RulesBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Vorschläge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Vorschläge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets.db" beforeDir="false" afterPath="$PROJECT_DIR$/tickets.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/varilx_level.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilx_level.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/varilxcoins.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilxcoins.db" afterDir="false" />
     </list>
     <list id="339373ba-b5ed-4b1b-9b5e-af0da6c82a94" name="Changes by justin" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/OnLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/OnLoad.java" afterDir="false" />
@@ -220,7 +218,7 @@
       <workItem from="1691854707114" duration="11583000" />
       <workItem from="1691931049247" duration="11330000" />
       <workItem from="1691974735772" duration="2082000" />
-      <workItem from="1692021832334" duration="11768000" />
+      <workItem from="1692021832334" duration="13141000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -350,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692044233757</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="- Changed §2 in the Rules. Added autodelete for all Builder.">
+      <option name="closed" value="true" />
+      <created>1692050073483</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1692050073483</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

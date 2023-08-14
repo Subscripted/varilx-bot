@@ -69,19 +69,4 @@ public class RulesBuilder extends ListenerAdapter {
 
 
     }
-
-    public void onButtonInteraction(ButtonInteractionEvent event) {
-        Role role = event.getGuild().getRoleById("941719147883163759");
-        Member member = event.getMember();
-
-        if (!event.getButton().getId().equals("rules"))
-            return;
-
-        if (!member.getRoles().contains(role)) {
-            event.getGuild().addRoleToMember(member, role).queue();
-            event.reply("Du hast die Regeln akzeptiert!").setEphemeral(true).queue();
-        } else {
-            event.reply("Du hast die Regeln bereits akzeptiert!").setEphemeral(true).queue();
-        }
-    }
 }

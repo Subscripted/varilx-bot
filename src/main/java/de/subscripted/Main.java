@@ -1,6 +1,7 @@
 package de.subscripted;
 
 import de.subscripted.admin.*;
+import de.subscripted.backend.ButtonInteraction;
 import de.subscripted.backend.XPSystem;
 import de.subscripted.lavaplayer.*;
 import de.subscripted.serversafety.*;
@@ -96,7 +97,6 @@ public class Main {
                         new Vorschläge(),
                         new Chatfilter(),
                         new ReactionRoles(),
-                        new VorschlägeListener(),
                         new TeamAdd(),
                         new OnLoad(),
                         new Promote(),
@@ -120,7 +120,8 @@ public class Main {
                         new onLeave(),
                         new Serverinfo(),
                         new Bugreport(),
-                        new Userinfos()
+                        new Userinfos(),
+                        new ButtonInteraction(ticketSQLManager)
                 ).build().awaitReady();
 
 

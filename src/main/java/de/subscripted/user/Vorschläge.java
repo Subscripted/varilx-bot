@@ -51,44 +51,6 @@ public class Vorschläge extends ListenerAdapter {
         event.getMessage().delete().queue();
     }
 
-    public void onButtonInteraction(ButtonInteractionEvent event) {
-        if (!event.getButton().getId().equalsIgnoreCase("vorschlag"))
-            return;
-
-        Role role = event.getGuild().getRoleById("1134159388190462042");
-        if (event.getMember().getRoles().contains(role)) {
-            EmbedBuilder embedBuilder = new EmbedBuilder()
-                    .setColor(Color.RED)
-                    .setTitle("Varilx Support")
-                    .setDescription("Du bist gemutet. Um dich entmuten zu lassen, erstelle ein neues Thema auf unserem Forum!")
-                    .setFooter("Varilx Support Feature | Update 2023 ©", Main.redfooter);
-            event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-        }
-        String userId = event.getUser().getId();
-        Instant lastVorschlagTime = userCooldowns.get(userId);
-
-        if (lastVorschlagTime == null || lastVorschlagTime.isBefore(Instant.now().minusSeconds(1800))) {
-            TextInput message = TextInput.create("vorschlag", "Was ist dein Vorschlag / deine Idee?", TextInputStyle.PARAGRAPH)
-                    .setMinLength(5)
-                    .setRequired(true)
-                    .build();
-
-            TextInput url = TextInput.create("url", "Bild URL (Optional)", TextInputStyle.SHORT)
-                    .setMinLength(5)
-                    .setRequired(false)  // Set to optional
-                    .build();
-
-            Modal modal = Modal.create("vorschläge", "Vorschläge / Ideen")
-                    .addActionRows(ActionRow.of(message), ActionRow.of(url))
-                    .build();
-
-            event.replyModal(modal).queue();
-        } else {
-            event.reply("Du kannst nur alle 30 Minuten einen Vorschlag machen.").setEphemeral(true).queue();
-        }
-    }
-
-
         public void onModalInteraction(ModalInteractionEvent event) {
             String vorschlag = event.getValue("vorschlag").getAsString();
             String image = event.getValue("url").getAsString();

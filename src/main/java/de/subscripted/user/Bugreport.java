@@ -88,9 +88,4 @@ public class Bugreport extends ListenerAdapter {
         }
     }
 
-    public void onButtonInteraction(ButtonInteractionEvent event) {
-        if (event.getComponentId().equals("report_closed")) {
-            event.getChannel().deleteMessageById(event.getMessageId()).queue();
-        }
-    }
 }
