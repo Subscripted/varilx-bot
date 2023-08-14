@@ -24,13 +24,12 @@ public class MoneySystem {
 
 
     public void setCoins(User user, int coins) throws SQLException {
-        moneysqlManager.setCoins(String.valueOf(user), coins); // Die Methode aufrufen
-
+        moneysqlManager.setCoins(String.valueOf(user), coins);
         Guild guild = Main.getJda().getGuildById("886262410489520168");
         TextChannel moneyTopChannel = guild.getTextChannelById("1139090218385944636");
 
         moneyTopChannel.getHistory().retrievePast(1).queue(messages -> {
-            messages.get(0).editMessageEmbeds(TopMoneyList.sendTopMoneyList(guild)).queue(); // Embed aktualisieren
+            messages.get(0).editMessageEmbeds(TopMoneyList.sendTopMoneyList(guild)).queue();
         });
     }
 
@@ -51,7 +50,7 @@ public class MoneySystem {
 
     public void removeCoins(User user, int amount) throws SQLException {
         int currentCoins = moneysqlManager.getCoins(user.getId());
-        int newCoins = Math.max(0, currentCoins - amount); // Ensures that coins cannot go below 0
+        int newCoins = Math.max(0, currentCoins - amount);
         moneysqlManager.setCoins(user.getId(), newCoins);
         Guild guild = Main.getJda().getGuildById("886262410489520168");
 

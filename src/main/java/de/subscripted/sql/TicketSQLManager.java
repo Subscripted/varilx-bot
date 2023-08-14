@@ -40,7 +40,6 @@ public class TicketSQLManager {
             statement.setString(1, channelID);
             statement.setString(2, claimerID);
             int rowsAffected = statement.executeUpdate();
-            System.out.println(rowsAffected + " rows affected."); // Log-Ausgabe
         } catch (SQLException e) {
             e.printStackTrace();
         }

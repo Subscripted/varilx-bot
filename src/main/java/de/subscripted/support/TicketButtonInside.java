@@ -33,7 +33,7 @@ public class TicketButtonInside extends ListenerAdapter {
         this.ticketSQLManager = ticketSQLManager;
     }
 
-    private final Map<String, Boolean> closeButtonCooldownMap = new HashMap<>(); // Channel ID -> Cooldown status
+    private final Map<String, Boolean> closeButtonCooldownMap = new HashMap<>();
     private boolean claimed = false;
     private Member claimer = null;
     private final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(0);
