@@ -158,7 +158,7 @@ public class TicketButtonInside extends ListenerAdapter {
                                 .addField("Mitglieder :", contributingUsersText != null ? contributingUsersText.toString() : "\uD83D\uDFE5", false)
                                 .setColor(Color.GREEN)
                                 .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                                .setDescription(ticketContent.toString() + " \n\n\n");
+                                .setDescription(ticketContent.toString()  +" \n\n **~~---»-----------------------------------------«---~~**");
 
                         targetChannel.sendMessageEmbeds(ticketInfoEmbed.build()).queue();
                         TicketSQLManager.deleteClaimInfo(channelId);
