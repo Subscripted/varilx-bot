@@ -119,7 +119,8 @@ public class Main {
                         new RulesBuilder(),
                         new onLeave(),
                         new Serverinfo(),
-                        new Bugreport()
+                        new Bugreport(),
+                        new Userinfos()
                 ).build().awaitReady();
 
 
@@ -180,6 +181,7 @@ public class Main {
                 Commands.slash("queue", "Was ist in der queue"),
                 Commands.slash("work", "work"),
                 Commands.slash("corn", "uwu"),
+                Commands.slash("userinfo", "user").addOption(OptionType.USER, "nutzer", "nutzer", true),
                 Commands.slash("bugreport", "bugreport"),
                 Commands.slash("serverinfo", "serverinfo"),
                 Commands.slash("varonx", "Varonx").addOption(OptionType.USER, "nutzer", "nutzer", true),
@@ -202,7 +204,7 @@ public class Main {
                 .addSubcommands(new SubcommandData[]{(new SubcommandData("add", "add staff member")).addOption(OptionType.USER, "member", "enter a user.", true).addOption(OptionType.ROLE, "role", "enter a role.", true)}));
         commandData.add(Commands.slash("moveall", "move")
                 .addSubcommands(new SubcommandData[]{(new SubcommandData("to", "to").addOption(OptionType.CHANNEL, "channel", "channel", true))}));
-        guild.updateCommands().addCommands(commandData).queue();
+
 
     }
 

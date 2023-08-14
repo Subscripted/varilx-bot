@@ -4,32 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Added Serverinfo command and fixed some Issues / errors">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/GiveawaySQLiteManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Bugreport.java" afterDir="false" />
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Userinfos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Giveaway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Giveaway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInside.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInside.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/TicketSQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/TicketSQLManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Vorschläge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Vorschläge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/VorschlägeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/VorschlägeListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Giveaway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Giveaway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInside.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInside.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Chatfilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Chatfilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/PayCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/PayCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/TicketSQLManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Vorschläge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Vorschläge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/VorschlägeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/VorschlägeListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/XPCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/XPCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets.db" beforeDir="false" afterPath="$PROJECT_DIR$/tickets.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/varilx_level.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilx_level.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/varilxcoins.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilxcoins.db" afterDir="false" />
     </list>
@@ -223,7 +206,8 @@
       <workItem from="1691841782177" duration="2772000" />
       <workItem from="1691848347681" duration="7000" />
       <workItem from="1691854707114" duration="11583000" />
-      <workItem from="1691931049247" duration="3995000" />
+      <workItem from="1691931049247" duration="11330000" />
+      <workItem from="1691974735772" duration="1809000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -313,7 +297,23 @@
       <option name="project" value="LOCAL" />
       <updated>1691858809540</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- Added Bugreport command and fixed some Issues / errors">
+      <option name="closed" value="true" />
+      <created>1691938664553</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1691938664553</updated>
+    </task>
+    <task id="LOCAL-00013" summary="- Added Bugreport command and fixed some Issues / errors">
+      <option name="closed" value="true" />
+      <created>1691938693362</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1691938693362</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +336,7 @@
     <MESSAGE value="- Changed onJoinUserCount- Channel" />
     <MESSAGE value="- Changed the Speed of Changing Bot status from 5 sec to 10 sec, cause Performance issues!" />
     <MESSAGE value="- Added Serverinfo command and fixed some Issues / errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added Serverinfo command and fixed some Issues / errors" />
+    <MESSAGE value="- Added Bugreport command and fixed some Issues / errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added Bugreport command and fixed some Issues / errors" />
   </component>
 </project>
