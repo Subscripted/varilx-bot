@@ -76,10 +76,11 @@ public class Feedback extends ListenerAdapter {
                     .build();
 
 
-            event.replyModal(modal).complete();
+            event.replyModal(modal).queue();
         } else {
             event.reply("Du kannst nur alle 30 Minuten einen Vorschlag machen.").setEphemeral(true).queue();
         }
+
     }
 
 

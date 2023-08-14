@@ -1,6 +1,5 @@
 package de.subscripted.Unused;
 
-import de.subscripted.Unused.JobSQLManager;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

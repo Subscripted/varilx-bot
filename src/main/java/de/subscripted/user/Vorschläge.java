@@ -47,6 +47,8 @@ public class Vorschläge extends ListenerAdapter {
         Button button = Button.success("vorschlag", "Vorschlag -> ⭐");
 
         event.getChannel().sendMessageEmbeds(embedBuilder.build()).setActionRow(button).queue();
+
+        event.getMessage().delete().queue();
     }
 
     public void onButtonInteraction(ButtonInteractionEvent event) {

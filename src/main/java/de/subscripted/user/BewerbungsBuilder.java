@@ -43,5 +43,6 @@ public class BewerbungsBuilder extends ListenerAdapter {
         Button button1 = Button.link("https://forum.varilx.de/forum/topic/197-wir-suchen-dich%21-%7C-varilxde-bewerbungsphase/", "Formusbeitrag").withEmoji(Emoji.fromFormatted("<:Link:1114557715218436207>"));
 
         event.getChannel().asTextChannel().sendMessageEmbeds(embedBuilder.build()).setActionRow(button1, button).queue();
+        event.getMessage().delete().queue();
     }
 }

@@ -6,13 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/MoneySystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/MoneySystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/TicketSQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/TicketSQLManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInside.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInside.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Userinfos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Userinfos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets.db" beforeDir="false" afterPath="$PROJECT_DIR$/tickets.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/CreateJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/CreateJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/varilx_level.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilx_level.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/varilxcoins.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilxcoins.db" afterDir="false" />
+    </list>
+    <list id="339373ba-b5ed-4b1b-9b5e-af0da6c82a94" name="Changes by justin" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/OnLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/OnLoad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +45,15 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java">
+      <ranges>
+        <range start1="48" end1="48" start2="48" end2="49" changelist="339373ba-b5ed-4b1b-9b5e-af0da6c82a94" />
+        <range start1="78" end1="79" start2="79" end2="80" changelist="805e9077-0ac9-4b49-a53a-127d2b15407c" />
+        <range start1="82" end1="82" start2="83" end2="84" changelist="805e9077-0ac9-4b49-a53a-127d2b15407c" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="2Sbq1pfvTdeucqXe3AjkSjcNvGb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -206,7 +219,7 @@
       <workItem from="1691854707114" duration="11583000" />
       <workItem from="1691931049247" duration="11330000" />
       <workItem from="1691974735772" duration="2082000" />
-      <workItem from="1692021832334" duration="3362000" />
+      <workItem from="1692021832334" duration="8262000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -320,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691976761204</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="- Added the Full version of Userinfos">
+      <option name="closed" value="true" />
+      <created>1692026225653</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1692026225653</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,6 +366,7 @@
     <MESSAGE value="- Added Serverinfo command and fixed some Issues / errors" />
     <MESSAGE value="- Added Bugreport command and fixed some Issues / errors" />
     <MESSAGE value="- Added User Info Cmd (not ready yet and not available in proper version)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added User Info Cmd (not ready yet and not available in proper version)" />
+    <MESSAGE value="- Added the Full version of Userinfos" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added the Full version of Userinfos" />
   </component>
 </project>

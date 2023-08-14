@@ -61,7 +61,7 @@ public class ReactionRoles extends ListenerAdapter {
 
         tc.sendMessageEmbeds(embedBuilder.build()).setActionRow(Event, Changelog, Info, bedrock, java).queue();
         tc.sendMessage(" ").setActionRow(partner).queue();
-
+        event.getMessage().delete().queue();
 
     }
 

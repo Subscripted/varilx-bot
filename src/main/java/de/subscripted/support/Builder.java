@@ -55,6 +55,7 @@ public class Builder extends ListenerAdapter {
                 .setImage("https://cdn-longterm.mee6.xyz/plugins/welcome/images/886262410489520168/616250b3031b7010a2815e64e86581a02d011f396d5ab951717109abd2002829.png")
                 .setColor(Color.GREEN)
                 .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png");
+        event.getMessage().delete().queue();
 
         channel.sendMessageEmbeds(embedBuilder.build()).setActionRow(create, partner).queue();
     }
