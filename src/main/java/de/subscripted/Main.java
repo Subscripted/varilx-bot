@@ -40,11 +40,8 @@ import static de.subscripted.backend.Token.token;
 public class Main {
 
     public static XpSQLManager xpSqlManager;
-
     public static MoneySQLManager moneysqlManager;
-
     public static TicketSQLManager ticketSQLManager;
-
 
     public static String redfooter = "https://cdn.discordapp.com/attachments/1055223755909111808/1133836888449503262/Unbdassddasadsadssaasadedsddsdsadsanannt-1.png";
     private static final List<String> statusMessages = new ArrayList<>();
@@ -164,6 +161,7 @@ public class Main {
 
         jda.getGatewayIntents().add(GatewayIntent.GUILD_MEMBERS);
 
+
         jda.updateCommands().addCommands(
                 Commands.slash("unclaim", "Unclaime ein Ticket"),
                 Commands.slash("giveaway", "Starte ein Giveaway"),
@@ -199,15 +197,16 @@ public class Main {
                 Commands.slash("move", "move").addOption(OptionType.STRING, "nutzer", "nutzer", true),
                 Commands.slash("timeout", "Timeoute einen User").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "zeit", "zeit", true),
                 Commands.slash("addusertoticket", "Adde einen Nutzer zu einem Ticket").addOption(OptionType.USER, "user", "Nutzer den de entfernen willst!", true),
-                Commands.slash("embedbuilder", "Baue deinen embed").addOption(OptionType.STRING, "title", "title", false).addOption(OptionType.STRING, "field1", "field1", false).addOption(OptionType.STRING, "value1", "value1", false).addOption(OptionType.STRING, "field2", "field2", false).addOption(OptionType.STRING, "value2", "value2", false).addOption(OptionType.STRING, "field3", "field3", false).addOption(OptionType.STRING, "value3", "value3", false).addOption(OptionType.STRING, "field4", "flied4", false).addOption(OptionType.STRING, "value4", "value4", false).addOption(OptionType.STRING, "description", "description", false).addOption(OptionType.STRING, "footer", "footer", false).addOption(OptionType.STRING, "image", "image", false).addOption(OptionType.STRING, "thumbnail", "thumbnail", false).addOption(OptionType.STRING, "color", "color", false).addOption(OptionType.STRING, "author", "author", false).addOption(OptionType.STRING, "footerimage", "footerimage", false)
-        ).queue();
+                Commands.slash("embedbuilder", "Baue deinen embed").addOption(OptionType.STRING, "title", "title", false).addOption(OptionType.STRING, "field1", "field1", false).addOption(OptionType.STRING, "value1", "value1", false).addOption(OptionType.STRING, "field2", "field2", false).addOption(OptionType.STRING, "value2", "value2", false).addOption(OptionType.STRING, "field3", "field3", false).addOption(OptionType.STRING, "value3", "value3", false).addOption(OptionType.STRING, "field4", "flied4", false).addOption(OptionType.STRING, "value4", "value4", false).addOption(OptionType.STRING, "description", "description", false).addOption(OptionType.STRING, "footer", "footer", false).addOption(OptionType.STRING, "image", "image", false).addOption(OptionType.STRING, "thumbnail", "thumbnail", false).addOption(OptionType.STRING, "color", "color", false).addOption(OptionType.STRING, "author", "author", false).addOption(OptionType.STRING, "footerimage", "footerimage", false)).queue();
         List<CommandData> commandData = new ArrayList<>();
         commandData.add(Commands.slash("team", "Staff Command")
-                .addSubcommands(new SubcommandData[]{(new SubcommandData("add", "add staff member")).addOption(OptionType.USER, "member", "enter a user.", true).addOption(OptionType.ROLE, "role", "enter a role.", true)}));
+                .addSubcommands(new SubcommandData("add", "add staff member")
+                        .addOption(OptionType.USER, "member", "enter a user.", true)
+                        .addOption(OptionType.ROLE, "role", "enter a role.", true)));
         commandData.add(Commands.slash("moveall", "move")
-                .addSubcommands(new SubcommandData[]{(new SubcommandData("to", "to").addOption(OptionType.CHANNEL, "channel", "channel", true))}));
-
-
+                .addSubcommands(new SubcommandData("to", "to")
+                        .addOption(OptionType.CHANNEL, "channel", "channel", true)));
+        guild.updateCommands().addCommands(commandData).queue();
     }
 
     private static EmbedBuilder embed = new EmbedBuilder()
