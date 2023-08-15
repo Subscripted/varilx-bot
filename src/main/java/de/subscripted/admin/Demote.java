@@ -25,7 +25,6 @@ public class Demote extends ListenerAdapter {
             TextChannel tc = event.getGuild().getTextChannelById("1086316495405068308");
             assert member != null;
 
-            // Überprüfung der zu überprüfenden Rollen
             Role testphase = event.getGuild().getRoleById("1065943390937677855");
             Role teamRole = event.getGuild().getRoleById("1003618027037786205");
             Role JrContent = event.getGuild().getRoleById("1085914226310271126");
@@ -43,7 +42,6 @@ public class Demote extends ListenerAdapter {
             Role Builder = event.getGuild().getRoleById("1068989280225083412");
             Role SrBuilder = event.getGuild().getRoleById("1084469016707481630");
 
-            // Check if the member has the required permission
             if (!member.hasPermission(Permission.ADMINISTRATOR)) {
                 EmbedBuilder embedBuilder = new EmbedBuilder()
                         .setTitle("Varilx System")
@@ -62,7 +60,6 @@ public class Demote extends ListenerAdapter {
                 event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
             }
 
-            // Check if the target member is in the team
             if (!targetmember.getRoles().contains(teamRole)) {
                 EmbedBuilder embedBuilder = new EmbedBuilder()
                         .setTitle("Varilx System")
@@ -74,7 +71,6 @@ public class Demote extends ListenerAdapter {
             }
 
 
-            // Switch-Case-Block für die Rollenüberprüfung
             switch (targetmember.getRoles().get(0).getId()) {
                 case "1085914333160165417":
                     guild.removeRoleFromMember(targetmember, Content).queue();

@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static de.subscripted.backend.Token.token;
+
 
 public class Main {
 
@@ -62,7 +64,7 @@ public class Main {
         TicketSQLManager.initializeDatabase();
 
 
-        jda = JDABuilder.createDefault("OTUxMTI2NDAxNzA3Mjc4MzU2.GuBAYH.KVdQEUWB1JzxkR_XGV91ebKus24zFqoQt4DkVc")
+        jda = JDABuilder.createDefault(token)
                 .enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.MESSAGE_CONTENT)
                 .setStatus(OnlineStatus.ONLINE)
                 .setChunkingFilter(ChunkingFilter.ALL)

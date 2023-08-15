@@ -99,8 +99,6 @@ public class GiveawayThread extends Thread {
         super.start();
     }
 
-    // hello uwu. was ist du?
-    //
 
     private String formatTime(long days, long hours, long minutes, long seconds) {
         StringBuilder sb = new StringBuilder();

@@ -6,7 +6,6 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
@@ -29,6 +28,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class ButtonInteraction extends ListenerAdapter {
+
+    ///
     private Map<String, Map<String, Instant>> userButtonCooldowns = new HashMap<>();
     private Map<String, Integer> userTicketCount = new HashMap<>();
     private final int maxTicketsPerUser = 3;
@@ -36,12 +37,14 @@ public class ButtonInteraction extends ListenerAdapter {
     private boolean claimed = false;
     private Member claimer = null;
     private final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(0);
-
     TicketSQLManager ticketSQLManager;
+    ///
 
+    ///
     public ButtonInteraction(TicketSQLManager ticketSQLManager) {
         this.ticketSQLManager = ticketSQLManager;
     }
+    ///
 
     public void onButtonInteraction(ButtonInteractionEvent event) {
 
@@ -386,9 +389,6 @@ public class ButtonInteraction extends ListenerAdapter {
                                 .setDescription(ticketContent.toString()  +"\n**~~---»-----------------------------------------«---~~**");
                         targetChannel.sendMessageEmbeds(ticketInfoEmbed.build()).queue();
                         TicketSQLManager.deleteClaimInfo(channelId);
-
-
-
                     }
                     event.deferEdit().queue();
                 }
