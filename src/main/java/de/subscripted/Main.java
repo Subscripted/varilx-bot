@@ -190,7 +190,6 @@ public class Main {
                 Commands.slash("promote", "Promote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du promoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
                 Commands.slash("demote", "Demote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du demoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
                 Commands.slash("skip", "Skippe ein Lied"),
-                Commands.slash("vorschlag", "Erstelle einen Vorschlag"),
                 Commands.slash("nuke", "nuke diesen server"),
                 Commands.slash("ping", "Ping"),
                 Commands.slash("pay", "pay").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "coins", "coins", true),

@@ -23,7 +23,6 @@ import java.util.Map;
 
 public class TicketButtonInteraction extends ListenerAdapter {
     private Map<String, Integer> userTicketCount = new HashMap<>();
-    private final int maxTicketsPerUser = 3;
 
     @Override
     public void onModalInteraction(ModalInteractionEvent event) {
@@ -64,8 +63,6 @@ public class TicketButtonInteraction extends ListenerAdapter {
                             channel.sendMessage(user).queue();
                             channel.sendMessageEmbeds(embedBuilderuwu.build()).setActionRow(button, claim).queue();
                         });
-
-                // Erhöhe die Ticketzählung für den Benutzer
                 userTicketCount.put(userId, ticketCount + 1);
             }
             interactionHook.editOriginal("Ticket erstellt.").queue();

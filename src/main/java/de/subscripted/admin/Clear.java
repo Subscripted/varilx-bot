@@ -1,10 +1,12 @@
 package de.subscripted.admin;
 
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.hyperic.sigar.Mem;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -13,7 +15,10 @@ public class Clear extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        if (!event.getMember().hasPermission(Permission.ADMINISTRATOR))
+
+        Member member = event.getMember();
+
+        if (!member.hasPermission(Permission.ADMINISTRATOR))
             return;
 
         String[] command = event.getMessage().getContentRaw().split("\\s+");

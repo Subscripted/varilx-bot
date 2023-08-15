@@ -33,7 +33,7 @@ public class Feedback extends ListenerAdapter {
             return;
 
         EmbedBuilder embedBuilder = new EmbedBuilder()
-                .setTitle("Varilx Vorschläge")
+                .setTitle("Varilx Feedback")
                 .setColor(Color.GREEN)
                 .setDescription("Du willst dein Feedback über den Server da lassen? \n" +
                         "Dann drück einfach auf den Button unter dieser Nachricht. \n" +
@@ -44,49 +44,13 @@ public class Feedback extends ListenerAdapter {
         Button button = Button.secondary("feedbackbutton", "Feedback").withEmoji(Emoji.fromFormatted("<:varilxChatbox:1136013753301868555>"));
 
         event.getChannel().sendMessageEmbeds(embedBuilder.build()).setActionRow(button).queue();
-    }
 
-    public void onButtonInteraction(ButtonInteractionEvent event) {
-        if (!event.getButton().getId().equalsIgnoreCase("feedbackbutton"))
-            return;
-
-        String userId = event.getUser().getId();
-        Instant lastFeedBackTime = userCooldowns.get(userId);
-
-        if (lastFeedBackTime == null || lastFeedBackTime.isBefore(Instant.now().minusSeconds(1800))) {
-            Role role = event.getGuild().getRoleById("1134159388190462042");
-            if (event.getMember().getRoles().contains(role)) {
-                EmbedBuilder embedBuilder = new EmbedBuilder()
-                        .setColor(Color.RED)
-                        .setTitle("Varilx Support")
-                        .setDescription("Du bist gemutet. Um dich entmuten zu lassen erstell ein neues Thema auf unserem Forum!")
-                        .setFooter("Varilx Support Feature | Update 2023 ©", Main.redfooter);
-                event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-                return;
-            }
-
-            TextInput message = TextInput.create("feedback", "Dein Feedback", TextInputStyle.PARAGRAPH)
-                    .setMinLength(5)
-                    .setMaxLength(999)
-                    .setRequired(true)
-                    .build();
-
-            Modal modal = Modal.create("vaxfeedback", "Varilx Feedback")
-                    .addActionRow(message)
-                    .build();
-
-
-            event.replyModal(modal).queue();
-        } else {
-            event.reply("Du kannst nur alle 30 Minuten einen Vorschlag machen.").setEphemeral(true).queue();
-        }
-
+        event.getMessage().delete().queue();
     }
 
 
     public void onModalInteraction(ModalInteractionEvent event) {
         String feedback = event.getValue("feedback").getAsString();
-
         if (event.getModalId().equals("vaxfeedback")) {
             Member member = event.getMember();
             String dcusername = member.getAsMention();
@@ -112,7 +76,6 @@ public class Feedback extends ListenerAdapter {
 
             channel.sendMessageEmbeds(embedBuilder.build()).queue();
 
-            userCooldowns.put(event.getUser().getId(), Instant.now());
 
             event.getUser().openPrivateChannel().queue(privateChannel -> {
                 privateChannel.sendMessageEmbeds(DM.build()).queue();

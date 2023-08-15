@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
@@ -28,7 +29,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class ButtonInteraction extends ListenerAdapter {
-    private Map<String, Instant> userCooldowns = new HashMap<>();
+    private Map<String, Map<String, Instant>> userButtonCooldowns = new HashMap<>();
     private Map<String, Integer> userTicketCount = new HashMap<>();
     private final int maxTicketsPerUser = 3;
     private final Map<String, Boolean> closeButtonCooldownMap = new HashMap<>();
@@ -43,16 +44,20 @@ public class ButtonInteraction extends ListenerAdapter {
     }
 
     public void onButtonInteraction(ButtonInteractionEvent event) {
+
+
         Member member = event.getMember();
         TextChannel channel = event.getChannel().asTextChannel();
+        String userId = event.getUser().getId();
 
         Role Event = event.getGuild().getRoleById("1098654469710954728");
         Role Changelog = event.getGuild().getRoleById("1098654811030831144");
         Role Info = event.getGuild().getRoleById("1098654568658776124");
         Role bedrock = event.getGuild().getRoleById("1098652243609272361");
         Role java = event.getGuild().getRoleById("1098652312307769375");
-        Member member3 = event.getMember();
         Guild guild = event.getGuild();
+
+
 
 
         switch (event.getButton().getId()) {
@@ -70,37 +75,43 @@ public class ButtonInteraction extends ListenerAdapter {
                 event.deferEdit().queue();
                 break;
             case "vorschlag":
-                Role role = event.getGuild().getRoleById("1134159388190462042");
-                if (event.getMember().getRoles().contains(role)) {
-                    EmbedBuilder embedBuilder = new EmbedBuilder()
-                            .setColor(Color.RED)
-                            .setTitle("Varilx Support")
-                            .setDescription("Du bist gemutet. Um dich entmuten zu lassen, erstelle ein neues Thema auf unserem Forum!")
-                            .setFooter("Varilx Support Feature | Update 2023 ©", Main.redfooter);
-                    event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-                }
-                String userId = event.getUser().getId();
-                Instant lastVorschlagTime = userCooldowns.get(userId);
+                Instant lastVorschlagTime = userButtonCooldowns
+                        .computeIfAbsent(userId, k -> new HashMap<>())
+                        .getOrDefault("vorschlag", null);
 
                 if (lastVorschlagTime == null || lastVorschlagTime.isBefore(Instant.now().minusSeconds(1800))) {
-                    TextInput message = TextInput.create("vorschlag", "Was ist dein Vorschlag / deine Idee?", TextInputStyle.PARAGRAPH)
-                            .setMinLength(5)
-                            .setRequired(true)
-                            .build();
+                    Role role = event.getGuild().getRoleById("1134159388190462042");
+                    if (event.getMember().getRoles().contains(role)) {
+                        EmbedBuilder embedBuilder = new EmbedBuilder()
+                                .setColor(Color.RED)
+                                .setTitle("Varilx Support")
+                                .setDescription("Du bist gemutet. Um dich entmuten zu lassen, erstelle ein neues Thema auf unserem Forum!")
+                                .setFooter("Varilx Support Feature | Update 2023 ©", Main.redfooter);
+                        event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
+                    }
 
-                    TextInput url = TextInput.create("url", "Bild URL (Optional)", TextInputStyle.SHORT)
-                            .setMinLength(5)
-                            .setRequired(false)
-                            .build();
 
-                    Modal modal = Modal.create("vorschläge", "Vorschläge / Ideen")
-                            .addActionRows(ActionRow.of(message), ActionRow.of(url))
-                            .build();
+                        TextInput message = TextInput.create("vorschlag", "Was ist dein Vorschlag / deine Idee?", TextInputStyle.PARAGRAPH)
+                                .setMinLength(5)
+                                .setRequired(true)
+                                .build();
 
-                    event.replyModal(modal).queue();
-                } else {
-                    event.reply("Du kannst nur alle 30 Minuten einen Vorschlag machen.").setEphemeral(true).queue();
-                }
+                        TextInput url = TextInput.create("url", "Bild URL (Optional)", TextInputStyle.SHORT)
+                                .setMinLength(5)
+                                .setRequired(false)
+                                .build();
+
+                        Modal modal = Modal.create("vorschläge", "Vorschläge / Ideen")
+                                .addActionRows(ActionRow.of(message), ActionRow.of(url))
+                                .build();
+
+                        event.replyModal(modal).queue();
+                        userButtonCooldowns
+                                .computeIfAbsent(userId, k -> new HashMap<>())
+                                .put("vorschlag", Instant.now());
+                    } else {
+                        event.reply("Du kannst nur alle 30 Minuten einen Vorschlag machen.").setEphemeral(true).queue();
+                    }
                 break;
             case "rules":
                 Role role2 = event.getGuild().getRoleById("941719147883163759");
@@ -114,56 +125,58 @@ public class ButtonInteraction extends ListenerAdapter {
                 break;
 
             case "changelog":
-                if (member3.getRoles().contains(Changelog)) {
+                if (member.getRoles().contains(Changelog)) {
                     assert Changelog != null;
-                    guild.removeRoleFromMember(member3, Changelog).queue();
+                    guild.removeRoleFromMember(member, Changelog).queue();
                 } else {
                     assert Changelog != null;
-                    guild.addRoleToMember(member3, Changelog).queue();
+                    guild.addRoleToMember(member, Changelog).queue();
                     break;
                 }
             case "event":
-                if (member3.getRoles().contains(Event)) {
+                if (member.getRoles().contains(Event)) {
                     assert Event != null;
-                    guild.removeRoleFromMember(member3, Event).queue();
+                    guild.removeRoleFromMember(member, Event).queue();
                 } else {
                     assert Event != null;
-                    guild.addRoleToMember(member3, Event).queue();
+                    guild.addRoleToMember(member, Event).queue();
                     break;
                 }
 
             case "info":
-                if (member3.getRoles().contains(Info)) {
+                if (member.getRoles().contains(Info)) {
                     assert Info != null;
-                    guild.removeRoleFromMember(member3, Info).queue();
+                    guild.removeRoleFromMember(member, Info).queue();
                 } else {
                     assert Info != null;
-                    guild.addRoleToMember(member3, Info).queue();
+                    guild.addRoleToMember(member, Info).queue();
                     break;
                 }
 
             case "bedrock":
-                if (member3.getRoles().contains(bedrock)) {
+                if (member.getRoles().contains(bedrock)) {
                     assert bedrock != null;
-                    guild.removeRoleFromMember(member3, bedrock).queue();
+                    guild.removeRoleFromMember(member, bedrock).queue();
                 } else {
                     assert bedrock != null;
-                    guild.addRoleToMember(member3, bedrock).queue();
+                    guild.addRoleToMember(member, bedrock).queue();
                     break;
                 }
 
             case "java":
-                if (member3.getRoles().contains(java)) {
+                if (member.getRoles().contains(java)) {
                     assert java != null;
-                    guild.removeRoleFromMember(member3, java).queue();
+                    guild.removeRoleFromMember(member, java).queue();
                 } else {
                     assert java != null;
-                    guild.addRoleToMember(member3, java).queue();
+                    guild.addRoleToMember(member, java).queue();
                     break;
                 }
+
             case "feedbackbutton":
-                String userId2 = event.getUser().getId();
-                Instant lastFeedBackTime = userCooldowns.get(userId2);
+                Instant lastFeedBackTime = userButtonCooldowns
+                        .computeIfAbsent(userId, k -> new HashMap<>())
+                        .getOrDefault("feedbackbutton", null);
 
                 if (lastFeedBackTime == null || lastFeedBackTime.isBefore(Instant.now().minusSeconds(1800))) {
                     Role role3 = event.getGuild().getRoleById("1134159388190462042");
@@ -179,7 +192,7 @@ public class ButtonInteraction extends ListenerAdapter {
 
                     TextInput message = TextInput.create("feedback", "Dein Feedback", TextInputStyle.PARAGRAPH)
                             .setMinLength(5)
-                            .setMaxLength(999)
+                            .setMaxLength(4000)
                             .setRequired(true)
                             .build();
 
@@ -187,8 +200,10 @@ public class ButtonInteraction extends ListenerAdapter {
                             .addActionRow(message)
                             .build();
 
-
                     event.replyModal(modal).queue();
+                    userButtonCooldowns
+                            .computeIfAbsent(userId, k -> new HashMap<>())
+                            .put("feedbackbutton", Instant.now());
                 } else {
                     event.reply("Du kannst nur alle 30 Minuten einen Vorschlag machen.").setEphemeral(true).queue();
                 }
@@ -198,19 +213,32 @@ public class ButtonInteraction extends ListenerAdapter {
                 break;
 
             case "create":
-                    String userId4 = event.getUser().getId();
-                    int ticketCount = userTicketCount.getOrDefault(userId4, 0);
 
-                    if (ticketCount >= maxTicketsPerUser) {
-                        EmbedBuilder embedBuilder = new EmbedBuilder()
-                                .setColor(Color.RED)
-                                .setTitle("Varilx Support")
-                                .setDescription("Du hast bereits das Maximum an Tickets erstellt! (" + maxTicketsPerUser + "). Bitte schließe ein paar deiner Tickets.")
-                                .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+                int ticketCount = userTicketCount.getOrDefault(userId, 0);
 
-                        event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-                        return;
-                    }
+                long userTicketChannelCount = guild.getTextChannels().stream()
+                        .filter(textChannel -> textChannel.getName().toLowerCase().endsWith("ticket"))
+                        .filter(textChannel -> {
+                            String channelId = textChannel.getId();
+                            int index = channelId.lastIndexOf("ticket");
+                            if (index < 0) {
+                                return false;
+                            }
+                            String channelUserId = channelId.substring(0, index);
+                            return userId.equals(channelUserId);
+                        })
+                        .count();
+
+                if (ticketCount >= maxTicketsPerUser || userTicketChannelCount >= maxTicketsPerUser) {
+                    EmbedBuilder embedBuilder = new EmbedBuilder()
+                            .setColor(Color.RED)
+                            .setTitle("Varilx Support")
+                            .setDescription("Du hast bereits das Maximum an Tickets erstellt! (" + maxTicketsPerUser + "). Bitte schließe ein paar deiner Tickets.")
+                            .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+
+                    event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
+                    return;
+                }
 
                     Role role4 = event.getGuild().getRoleById("1134159388190462042");
                     if (event.getMember().getRoles().contains(role4)) {
@@ -234,6 +262,7 @@ public class ButtonInteraction extends ListenerAdapter {
                             .build();
 
                     event.replyModal(modal).queue();
+                userTicketCount.put(userId, ticketCount + 1);
                 break;
             case "ticket_closed":
                 String channelId = channel.getId();
@@ -288,6 +317,11 @@ public class ButtonInteraction extends ListenerAdapter {
                     }
                 }
                 executorService.schedule(() -> channel.delete().queue(), 5, TimeUnit.SECONDS);
+                int ticketCount2 = userTicketCount.getOrDefault(userId, 0);
+
+                if (ticketCount2 > 0) {
+                    userTicketCount.put(userId, ticketCount2 - 1);
+                }
 
                 closeButtonCooldownMap.put(channelId, true);
                 executorService.schedule(() -> closeButtonCooldownMap.put(channelId, false), 5, TimeUnit.SECONDS);
@@ -342,16 +376,18 @@ public class ButtonInteraction extends ListenerAdapter {
 
                         EmbedBuilder ticketInfoEmbed = new EmbedBuilder()
                                 .setTitle("Ticket Information")
-                                .addField("Ticket Name ", ticketName, false)
-                                .addField("Geschlossen von ", member.getAsMention(), false)
-                                .addField("Claimer : ", claimer != null ? claimer.getAsMention() : "\uD83D\uDFE5", false)
-                                .addField("Mitglieder :", contributingUsersText != null ? contributingUsersText.toString() : "\uD83D\uDFE5", false)
+                                .setAuthor("Varilx.de | Ticket")
+                                .addField("<:varilx_textchannel:1139957022696157294> Ticket Name ", ticketName, false)
+                                .addField("<:varilx_clendar:1139956980576960653> Geschlossen von ", member.getAsMention(), false)
+                                .addField("<:varilx_user:1139957321196376107> Claimer : ", claimer != null ? claimer.getAsMention() : "- **Nicht geclaimt**", false)
+                                .addField("<:varilx_user:1139957321196376107> Supporter :", contributingUsersText != null ? contributingUsersText.toString() : "\uD83D\uDFE5", false)
                                 .setColor(Color.GREEN)
                                 .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                                .setDescription(ticketContent.toString()  +" \n\n **~~---»-----------------------------------------«---~~**");
-
+                                .setDescription(ticketContent.toString()  +"\n**~~---»-----------------------------------------«---~~**");
                         targetChannel.sendMessageEmbeds(ticketInfoEmbed.build()).queue();
                         TicketSQLManager.deleteClaimInfo(channelId);
+
+
 
                     }
                     event.deferEdit().queue();
@@ -383,8 +419,6 @@ public class ButtonInteraction extends ListenerAdapter {
                 }
                 break;
         }
-        event.deferEdit().queue();
-
     }
 }
 

@@ -7,10 +7,14 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 public class SetTop10Money extends ListenerAdapter {
     public void onGuildReady(GuildReadyEvent event) {
         TextChannel moneyTopChannel = event.getGuild().getTextChannelById("1139090218385944636");
-        moneyTopChannel.getHistory().retrievePast(1).queue(messages -> {
-            messages.get(0).editMessageEmbeds(TopMoneyList.sendTopMoneyList(event.getGuild())).queue();
-        });
+
+        if (moneyTopChannel == null)
+            return;
+            moneyTopChannel.getHistory().retrievePast(1).queue(messages -> {
+                messages.get(0).editMessageEmbeds(TopMoneyList.sendTopMoneyList(event.getGuild())).queue();
+            });
+        }
     }
-}
+
 
 
