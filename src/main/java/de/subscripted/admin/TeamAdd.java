@@ -63,7 +63,17 @@ public class TeamAdd extends ListenerAdapter {
                             "Mit freundlichen Grüßen,\n"
                             + Main.getJda().getSelfUser().getAsMention()).queue();
                     event.reply("Du hast " + targetMember.getAsMention() + " in das " + role.getAsMention() + " Team aufgenommen!").setEphemeral(true).queue();
-                }else {
+
+                    EmbedBuilder embedBuilder = new EmbedBuilder()
+                            .setTitle("Varilx Team")
+                            .setColor(Color.GREEN)
+                            .setDescription("Wilkommen im Team " + targetMember.getAsMention() + "!\n\n" +
+                                    "- <:varilx_directory:1139957175972810812> Dein Bereich: " + role.getName() + "\n\n" +
+                                    "Bitte lies dir das Teamregelwerk durch!")
+                            .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                            .setFooter("Varilx Team Feature | Update 2023 © ", Main.getJda().getSelfUser().getAvatarUrl());
+                    targetMember.getUser().openPrivateChannel().complete().sendMessageEmbeds(embedBuilder.build()).queue();
+                } else {
                     EmbedBuilder embedBuilder = new EmbedBuilder()
                             .setTitle("Varilx System")
                             .setColor(Color.RED)
