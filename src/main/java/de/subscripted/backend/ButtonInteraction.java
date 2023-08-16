@@ -418,6 +418,7 @@ public class ButtonInteraction extends ListenerAdapter {
                     event.reply("Das Ticket wurde bereits geclaimt.").setEphemeral(true).queue();
                 }
                 break;
+
         }
     }
 }

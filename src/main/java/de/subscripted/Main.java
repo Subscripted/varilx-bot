@@ -3,6 +3,7 @@ package de.subscripted;
 import de.subscripted.admin.*;
 import de.subscripted.backend.ButtonInteraction;
 import de.subscripted.backend.XPSystem;
+import de.subscripted.games.EightBall;
 import de.subscripted.lavaplayer.*;
 import de.subscripted.serversafety.*;
 import de.subscripted.sql.MoneySQLManager;
@@ -119,7 +120,8 @@ public class Main {
                         new Serverinfo(),
                         new Bugreport(),
                         new Userinfos(),
-                        new ButtonInteraction(ticketSQLManager)
+                        new ButtonInteraction(ticketSQLManager),
+                        new EightBall()
                 ).build().awaitReady();
 
 
@@ -180,6 +182,7 @@ public class Main {
                 Commands.slash("nowplaying", "Welches lied spielt gerade!"),
                 Commands.slash("queue", "Was ist in der queue"),
                 Commands.slash("work", "work"),
+                Commands.slash("8ball", "8ball").addOption(OptionType.STRING, "message", "message", true),
                 Commands.slash("userinfo", "user").addOption(OptionType.USER, "nutzer", "nutzer", true),
                 Commands.slash("bugreport", "bugreport"),
                 Commands.slash("serverinfo", "serverinfo"),
