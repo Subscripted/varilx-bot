@@ -1,4 +1,5 @@
 de\subscripted\backend\Token.class
+de\subscripted\Unused\GiveawaySQLManager.class
 de\subscripted\admin\SetCoins.class
 de\subscripted\user\CoinsCommand.class
 de\subscripted\user\onLeave.class
