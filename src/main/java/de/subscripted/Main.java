@@ -12,6 +12,7 @@ import de.subscripted.sql.XpSQLManager;
 import de.subscripted.support.*;
 import de.subscripted.updated.OnReadyUpdate;
 import de.subscripted.user.*;
+import de.subscripted.working.EmbedBuilderBeta;
 import lombok.Getter;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
@@ -121,7 +122,8 @@ public class Main {
                         new Bugreport(),
                         new Userinfos(),
                         new ButtonInteraction(ticketSQLManager),
-                        new EightBall()
+                        new EightBall(),
+                        new EmbedBuilderBeta()
                 ).build().awaitReady();
 
 
@@ -192,6 +194,7 @@ public class Main {
                 Commands.slash("demote", "Demote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du demoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
                 Commands.slash("skip", "Skippe ein Lied"),
                 Commands.slash("ping", "Ping"),
+                Commands.slash("embedbuilderbeta", "embeds"),
                 Commands.slash("pay", "pay").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "coins", "coins", true),
                 Commands.slash("setcoins", "setcoins").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "coins", "coins", true),
                 Commands.slash("move", "move").addOption(OptionType.STRING, "nutzer", "nutzer", true),
