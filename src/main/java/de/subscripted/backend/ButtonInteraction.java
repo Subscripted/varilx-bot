@@ -1,6 +1,7 @@
 package de.subscripted.backend;
 
 import de.subscripted.Main;
+import de.subscripted.Unused.GiveawaySQLManager;
 import de.subscripted.sql.TicketSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
@@ -38,11 +39,13 @@ public class ButtonInteraction extends ListenerAdapter {
     private Member claimer = null;
     private final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(0);
     TicketSQLManager ticketSQLManager;
+    private GiveawaySQLManager sqlManager;
     ///
 
     ///
     public ButtonInteraction(TicketSQLManager ticketSQLManager) {
         this.ticketSQLManager = ticketSQLManager;
+        this.sqlManager = sqlManager;
     }
     ///
 
@@ -59,8 +62,6 @@ public class ButtonInteraction extends ListenerAdapter {
         Role bedrock = event.getGuild().getRoleById("1098652243609272361");
         Role java = event.getGuild().getRoleById("1098652312307769375");
         Guild guild = event.getGuild();
-
-
 
 
         switch (event.getButton().getId()) {
@@ -94,27 +95,27 @@ public class ButtonInteraction extends ListenerAdapter {
                     }
 
 
-                        TextInput message = TextInput.create("vorschlag", "Was ist dein Vorschlag / deine Idee?", TextInputStyle.PARAGRAPH)
-                                .setMinLength(5)
-                                .setRequired(true)
-                                .build();
+                    TextInput message = TextInput.create("vorschlag", "Was ist dein Vorschlag / deine Idee?", TextInputStyle.PARAGRAPH).setPlaceholder("z.B. ''Neue Items''")
+                            .setMinLength(5)
+                            .setRequired(true)
+                            .build();
 
-                        TextInput url = TextInput.create("url", "Bild URL (Optional)", TextInputStyle.SHORT)
-                                .setMinLength(5)
-                                .setRequired(false)
-                                .build();
+                    TextInput url = TextInput.create("url", "Bild URL (Optional)", TextInputStyle.SHORT)
+                            .setMinLength(5)
+                            .setRequired(false)
+                            .build();
 
-                        Modal modal = Modal.create("vorschläge", "Vorschläge / Ideen")
-                                .addActionRows(ActionRow.of(message), ActionRow.of(url))
-                                .build();
+                    Modal modal = Modal.create("vorschläge", "Vorschläge / Ideen")
+                            .addActionRows(ActionRow.of(message), ActionRow.of(url))
+                            .build();
 
-                        event.replyModal(modal).queue();
-                        userButtonCooldowns
-                                .computeIfAbsent(userId, k -> new HashMap<>())
-                                .put("vorschlag", Instant.now());
-                    } else {
-                        event.reply("Du kannst nur alle 30 Minuten einen Vorschlag machen.").setEphemeral(true).queue();
-                    }
+                    event.replyModal(modal).queue();
+                    userButtonCooldowns
+                            .computeIfAbsent(userId, k -> new HashMap<>())
+                            .put("vorschlag", Instant.now());
+                } else {
+                    event.reply("Du kannst nur alle 30 Minuten einen Vorschlag machen.").setEphemeral(true).queue();
+                }
                 break;
             case "rules":
                 Role role2 = event.getGuild().getRoleById("941719147883163759");
@@ -193,7 +194,7 @@ public class ButtonInteraction extends ListenerAdapter {
                         return;
                     }
 
-                    TextInput message = TextInput.create("feedback", "Dein Feedback", TextInputStyle.PARAGRAPH)
+                    TextInput message = TextInput.create("feedback", "Dein Feedback", TextInputStyle.PARAGRAPH).setPlaceholder("z.B. ''Varilx ist der Beste Server''")
                             .setMinLength(5)
                             .setMaxLength(4000)
                             .setRequired(true)
@@ -212,7 +213,7 @@ public class ButtonInteraction extends ListenerAdapter {
                 }
                 break;
             case "report_closed":
-                    event.getChannel().deleteMessageById(event.getMessageId()).queue();
+                event.getChannel().deleteMessageById(event.getMessageId()).queue();
                 break;
 
             case "create":
@@ -243,28 +244,28 @@ public class ButtonInteraction extends ListenerAdapter {
                     return;
                 }
 
-                    Role role4 = event.getGuild().getRoleById("1134159388190462042");
-                    if (event.getMember().getRoles().contains(role4)) {
-                        EmbedBuilder embedBuilder = new EmbedBuilder()
-                                .setColor(Color.RED)
-                                .setTitle("Varilx Support")
-                                .setDescription("Du bist gemutet. Um dich entmuten zu lassen, erstelle ein neues Thema auf unserem Forum!")
-                                .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
-                        event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-                        return;
-                    }
+                Role role4 = event.getGuild().getRoleById("1134159388190462042");
+                if (event.getMember().getRoles().contains(role4)) {
+                    EmbedBuilder embedBuilder = new EmbedBuilder()
+                            .setColor(Color.RED)
+                            .setTitle("Varilx Support")
+                            .setDescription("Du bist gemutet. Um dich entmuten zu lassen, erstelle ein neues Thema auf unserem Forum!")
+                            .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+                    event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
+                    return;
+                }
 
-                    TextInput problem = TextInput.create("problem", "Kurze Vorbeschreibung deines Problems", TextInputStyle.PARAGRAPH)
-                            .setMinLength(5)
-                            .setMaxLength(999)
-                            .setRequired(true)
-                            .build();
+                TextInput problem = TextInput.create("problem", "Kurze Vorbeschreibung deines Problems", TextInputStyle.PARAGRAPH).setPlaceholder("z.b. ''Ich kann kein /help machen''")
+                        .setMinLength(5)
+                        .setMaxLength(999)
+                        .setRequired(true)
+                        .build();
 
-                    Modal modal = Modal.create("ticket", "Ticket")
-                            .addActionRow(problem)
-                            .build();
+                Modal modal = Modal.create("ticket", "Ticket")
+                        .addActionRow(problem)
+                        .build();
 
-                    event.replyModal(modal).queue();
+                event.replyModal(modal).queue();
                 userTicketCount.put(userId, ticketCount + 1);
                 break;
             case "ticket_closed":
@@ -386,7 +387,7 @@ public class ButtonInteraction extends ListenerAdapter {
                                 .addField("<:varilx_user:1139957321196376107> Supporter :", contributingUsersText != null ? contributingUsersText.toString() : "\uD83D\uDFE5", false)
                                 .setColor(Color.GREEN)
                                 .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                                .setDescription(ticketContent.toString()  +"\n**~~---»-----------------------------------------«---~~**");
+                                .setDescription(ticketContent.toString() + "\n**~~---»-----------------------------------------«---~~**");
                         targetChannel.sendMessageEmbeds(ticketInfoEmbed.build()).queue();
                         TicketSQLManager.deleteClaimInfo(channelId);
                     }
@@ -413,12 +414,11 @@ public class ButtonInteraction extends ListenerAdapter {
                             .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                             .setColor(Color.CYAN);
                     event.replyEmbeds(builder.build()).queue();
-                    TicketSQLManager.saveClaimInfo(textChannel.getId() , claimer.getId());
+                    TicketSQLManager.saveClaimInfo(textChannel.getId(), claimer.getId());
                 } else {
                     event.reply("Das Ticket wurde bereits geclaimt.").setEphemeral(true).queue();
                 }
                 break;
-
         }
     }
 }

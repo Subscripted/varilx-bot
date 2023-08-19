@@ -49,7 +49,8 @@ public class Serverinfo extends ListenerAdapter {
                 .setDescription("<:varilx_discord:1139957449516924959> Name : **" + name + "**\n" +
                         "<:varilx_id:1139957240963539054> ID : **" + id + "**\n" +
                         "<:varilx_owner:1139957062638506094> Eigentümer: **" + eigentümer + "**\n" +
-                        "<:varilx_user:1139957321196376107> Mitglieder : **" + memberCount + "**\n\n" +
+                        "<:varilx_user:1139957321196376107> Mitglieder : **" + memberCount + "**\n" +
+                        "Commands : " + "\n\n" +
                         "<:varilx_channel:1139957362380263538> Channel : **" + channel + "**\n" +
                         "<:varilx_directory:1139957175972810812> davon Kategorien : **" + kategorien + "**\n" +
                         "<:varilx_textchannel:1139957022696157294> davon Text : **" + text + "**\n" +

@@ -43,7 +43,6 @@ public class Main {
     public static XpSQLManager xpSqlManager;
     public static MoneySQLManager moneysqlManager;
     public static TicketSQLManager ticketSQLManager;
-
     public static String redfooter = "https://cdn.discordapp.com/attachments/1055223755909111808/1133836888449503262/Unbdassddasadsadssaasadedsddsdsadsanannt-1.png";
     private static final List<String> statusMessages = new ArrayList<>();
     private static final List<Activity.ActivityType> activityTypes = new ArrayList<>();
@@ -59,6 +58,7 @@ public class Main {
         xpSqlManager = new XpSQLManager();
         moneysqlManager = new MoneySQLManager();
         ticketSQLManager = new TicketSQLManager();
+
         TicketSQLManager.initializeDatabase();
 
 
