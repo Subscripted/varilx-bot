@@ -13,6 +13,9 @@ import de.subscripted.support.*;
 import de.subscripted.updated.OnReadyUpdate;
 import de.subscripted.user.*;
 import de.subscripted.working.EmbedBuilderBeta;
+import de.subscripted.working.EmbedBuilderBetaModalInteractions;
+import de.subscripted.working.EmbedBuilderButtons;
+import de.subscripted.working.SendEmbedCommand;
 import lombok.Getter;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
@@ -42,8 +45,12 @@ import static de.subscripted.backend.Token.token;
 public class Main {
 
     public static XpSQLManager xpSqlManager;
+
     public static MoneySQLManager moneysqlManager;
+
     public static TicketSQLManager ticketSQLManager;
+
+
     public static String redfooter = "https://cdn.discordapp.com/attachments/1055223755909111808/1133836888449503262/Unbdassddasadsadssaasadedsddsdsadsanannt-1.png";
     private static final List<String> statusMessages = new ArrayList<>();
     private static final List<Activity.ActivityType> activityTypes = new ArrayList<>();
@@ -59,7 +66,6 @@ public class Main {
         xpSqlManager = new XpSQLManager();
         moneysqlManager = new MoneySQLManager();
         ticketSQLManager = new TicketSQLManager();
-
         TicketSQLManager.initializeDatabase();
 
 
@@ -121,9 +127,12 @@ public class Main {
                         new Serverinfo(),
                         new Bugreport(),
                         new Userinfos(),
-                        new ButtonInteraction(ticketSQLManager),
-                        new EightBall(),
-                        new EmbedBuilderBeta()
+                        new ButtonInteraction(ticketSQLManager, moneysqlManager),
+                        new EmbedBuilderBeta(),
+                        new EmbedBuilderButtons(),
+                        new EmbedBuilderBetaModalInteractions(),
+                        new SendEmbedCommand(),
+                        new EightBall()
                 ).build().awaitReady();
 
 
@@ -169,6 +178,7 @@ public class Main {
                 Commands.slash("unclaim", "Unclaime ein Ticket"),
                 Commands.slash("giveaway", "Starte ein Giveaway"),
                 Commands.slash("hilfe", "Hilfe"),
+                Commands.slash("8ball", "8ball").addOption(OptionType.STRING, "message", "message", true),
                 Commands.slash("mute", "Mute einen Nutzer").addOption(OptionType.USER, "nutzer", "Nutzer den du muten willst", true).addOption(OptionType.STRING, "grund", "Nenne den Grund für den Mute.", true),
                 Commands.slash("unmute", "Unmute einen Nutzer").addOption(OptionType.USER, "nutzer", "Nutzer den du Unmuten willst", true),
                 Commands.slash("ban", "Banne einen Nutzer").addOption(OptionType.USER, "nutzer", "Nutzer den du Bannen willst", true).addOption(OptionType.STRING, "grund", "Nenne den Grund für den Ban.", true),
@@ -184,7 +194,8 @@ public class Main {
                 Commands.slash("nowplaying", "Welches lied spielt gerade!"),
                 Commands.slash("queue", "Was ist in der queue"),
                 Commands.slash("work", "work"),
-                Commands.slash("8ball", "8ball").addOption(OptionType.STRING, "message", "message", true),
+                Commands.slash("corn", "uwu"),
+                Commands.slash("sendembed", "uwu").addOption(OptionType.STRING, "code", "code", true).addOption(OptionType.CHANNEL, "channel", "channel", true),
                 Commands.slash("userinfo", "user").addOption(OptionType.USER, "nutzer", "nutzer", true),
                 Commands.slash("bugreport", "bugreport"),
                 Commands.slash("serverinfo", "serverinfo"),
@@ -193,6 +204,7 @@ public class Main {
                 Commands.slash("promote", "Promote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du promoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
                 Commands.slash("demote", "Demote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du demoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
                 Commands.slash("skip", "Skippe ein Lied"),
+                Commands.slash("nuke", "nuke diesen server"),
                 Commands.slash("ping", "Ping"),
                 Commands.slash("embedbuilderbeta", "embeds"),
                 Commands.slash("pay", "pay").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "coins", "coins", true),
@@ -228,5 +240,6 @@ public class Main {
                 .setColor(Color.GREEN)
                 .setDescription(msg)
                 .build();
+
     }
 }

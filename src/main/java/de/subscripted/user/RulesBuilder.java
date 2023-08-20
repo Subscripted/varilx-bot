@@ -10,6 +10,8 @@ import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.components.ActionRow;
+import net.dv8tion.jda.api.interactions.components.ItemComponent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 
 import java.awt.*;
@@ -56,16 +58,17 @@ public class RulesBuilder extends ListenerAdapter {
                 .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
                 .setColor(Color.GREEN);
 
-        Button button = Button.secondary("rules", "Aktzeptieren").withEmoji(Emoji.fromFormatted("<:ys:1139209857438863471>"));
+
+
+        Button button = Button.secondary("rules", "Akzeptieren").withEmoji(Emoji.fromFormatted("<:ys:1139209857438863471>"));
         Button button1 = Button.link("https://tube-hosting.com/home", "Partner").withEmoji(Emoji.fromFormatted("<:TubehostingVarilx:1101657813794693120>"));
         Button button2 = Button.link("https://discord.com/terms", "TOS").withEmoji(Emoji.fromFormatted("<:discord:1048627445735096320>"));
         Button button3 = Button.link("https://discord.com/guidelines", "Guidelines").withEmoji(Emoji.fromFormatted("<:discordlogo11:1094722866903261205>"));
         Button button4 = Button.link("https://regelwerk.varilx.de/", "Forum").withEmoji(Emoji.fromFormatted("<:Share:1114840763608604802>"));
 
 
-        message.delete().queue();
-        event.getChannel().asTextChannel().sendMessageEmbeds(embedBuilder.build()).setActionRow(button2, button3, button4).queue();
-        event.getChannel().asTextChannel().sendMessage("").addActionRow(button, button1).queue();
+                message.delete().queue();
+        event.getChannel().asTextChannel().sendMessageEmbeds(embedBuilder.build()).addActionRow(button2, button3, button4).addActionRow(button, button1).queue();
 
 
     }

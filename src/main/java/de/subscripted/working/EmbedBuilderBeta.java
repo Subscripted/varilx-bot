@@ -1,19 +1,29 @@
 package de.subscripted.working;
 
 import de.subscripted.Main;
+import de.subscripted.sql.EmbedSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
-import net.dv8tion.jda.api.interactions.components.ItemComponent;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
 
 import java.awt.*;
+import java.sql.SQLException;
+import java.util.UUID;
+
 
 
 public class EmbedBuilderBeta extends ListenerAdapter {
+    EmbedSQLManager sqlManager;
+
+    public EmbedBuilderBeta (){
+        sqlManager = new EmbedSQLManager();
+
+    }
+
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
 
         Member member = event.getMember();
@@ -29,6 +39,13 @@ public class EmbedBuilderBeta extends ListenerAdapter {
                     .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
             event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
             return;
+        }
+
+        String embedCode = generateUniqueCode();
+        try {
+            sqlManager.saveEmbedCode(embedCode);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
 
         Button titleButton = Button.secondary("title", "Title");
@@ -54,5 +71,10 @@ public class EmbedBuilderBeta extends ListenerAdapter {
                 .addActionRow(fieldButton, imageButton, thumbnailButton)
                 .setEphemeral(true)
                 .queue();
+        event.getChannel().sendMessage(embedCode).queue();
+    }
+    private String generateUniqueCode() {
+        return UUID.randomUUID().toString().substring(0, 10);
     }
 }
+

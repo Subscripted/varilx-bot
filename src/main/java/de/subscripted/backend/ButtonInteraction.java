@@ -2,6 +2,7 @@ package de.subscripted.backend;
 
 import de.subscripted.Main;
 import de.subscripted.Unused.GiveawaySQLManager;
+import de.subscripted.sql.MoneySQLManager;
 import de.subscripted.sql.TicketSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
@@ -19,6 +20,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -40,12 +42,15 @@ public class ButtonInteraction extends ListenerAdapter {
     private final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(0);
     TicketSQLManager ticketSQLManager;
     private GiveawaySQLManager sqlManager;
+    MoneySQLManager moneySQLManager;
     ///
 
     ///
-    public ButtonInteraction(TicketSQLManager ticketSQLManager) {
+    public ButtonInteraction(TicketSQLManager ticketSQLManager, MoneySQLManager moneySQLManager) {
+
         this.ticketSQLManager = ticketSQLManager;
         this.sqlManager = sqlManager;
+        this.moneySQLManager = moneySQLManager;
     }
     ///
 
@@ -122,7 +127,13 @@ public class ButtonInteraction extends ListenerAdapter {
                 Member member7 = event.getMember();
                 if (!member7.getRoles().contains(role2)) {
                     event.getGuild().addRoleToMember(member7, role2).queue();
-                    event.reply("Du hast die Regeln akzeptiert!").setEphemeral(true).queue();
+                    int coins = 1000 ;
+                    event.reply("Du hast die Regeln akzeptiert und " + coins  + " Coins erhalten!").setEphemeral(true).queue();
+                    try {
+                        moneySQLManager.addCoins(member7.getId(), coins);
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
                 } else {
                     event.reply("Du hast die Regeln bereits akzeptiert!").setEphemeral(true).queue();
                 }

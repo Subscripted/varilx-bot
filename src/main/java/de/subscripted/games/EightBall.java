@@ -16,7 +16,7 @@ public class EightBall extends ListenerAdapter {
 
         String message = event.getOption("message").getAsString();
 
-        String[] replies = {"Ja", "Nein", "Vielleicht...", "Sehr wahrscheinlich", "Wahrscheinlich nicht...", "Auf jeden Fall!", "Nein, niemals!"};
+        String[] replies = {"Ja", "Nein", "Vielleicht...", "Sehr wahrscheinlich", "Wahrscheinlich nicht...", "Auf jeden Fall!", "Nein, niemals!", "Woher soll ich das wissen?"};
         String randomReply = replies[(int) (Math.random() * replies.length)];
 
         Random random = new Random();
