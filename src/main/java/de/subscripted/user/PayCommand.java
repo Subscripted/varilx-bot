@@ -19,6 +19,8 @@ public class PayCommand extends ListenerAdapter {
     }
 
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
+         if (!event.getName().equals("pay"))
+             return;
         Member from = event.getMember();
         Member to = event.getOption("nutzer").getAsMember();
         if (event.getOption("coins") != null) {

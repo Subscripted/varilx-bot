@@ -19,17 +19,6 @@ public class Mute extends ListenerAdapter {
         if (!event.getName().equals("mute"))
             return;
 
-
-        if (event.getMember().getId().equals("809536993972584449")){
-            EmbedBuilder embedBuilder = new EmbedBuilder()
-                    .setTitle("Varilx System")
-                    .setColor(Color.RED)
-                    .setDescription("Du hast keine Berechtigung Subscripted zu Muten du fogggggel!")
-                    .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
-            event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-            return;
-        }
-
         Member member = event.getMember();
         Role role = event.getGuild().getRoleById("1134159388190462042");
 

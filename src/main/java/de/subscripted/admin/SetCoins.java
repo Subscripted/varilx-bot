@@ -22,11 +22,13 @@ public class SetCoins extends ListenerAdapter {
     }
 
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
+        if (!event.getName().equals("setcoins"))
+            return;
+
         Member member = event.getMember();
         Member targetMember = event.getOption("nutzer").getAsMember();
 
-        if (!event.getName().equals("setcoins"))
-            return;
+
 
         if (!member.hasPermission(Permission.ADMINISTRATOR)) {
             EmbedBuilder embedBuilder = new EmbedBuilder()

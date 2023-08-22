@@ -4,8 +4,6 @@ import de.subscripted.sql.EmbedSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.MessageEmbed;
-
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -27,6 +25,7 @@ public class SendEmbedCommand extends ListenerAdapter {
             return;
 
 
+
         Member member = event.getMember();
         if (!member.hasPermission(Permission.ADMINISTRATOR)) {
             event.reply("Du hast keine Berechtigung, diesen Befehl auszuführen.")
@@ -34,62 +33,53 @@ public class SendEmbedCommand extends ListenerAdapter {
                     .queue();
             return;
         }
-
         String code = event.getOption("code").getAsString();
         TextChannel targetChannel = (TextChannel) event.getOption("channel").getAsChannel();
 
-        String embedData = null;
         try {
-            embedData = sqlManager.getEmbedData(code);
+            String embedData = sqlManager.getEmbedValueByKey(code, "data");
             if (embedData == null) {
-                System.out.println("Embed-Daten nicht gefunden!");
                 event.reply("Keine Embed-Daten für diesen Code gefunden.")
                         .setEphemeral(true)
                         .queue();
                 return;
             }
 
-            System.out.println("Embed-Daten gefunden: " + embedData);
+            DataObject embedJson = DataObject.fromJson(embedData);
+            EmbedBuilder embedBuilder = new EmbedBuilder();
 
+            String title = embedJson.getString("title");
+            if (title != null) {
+                embedBuilder.setTitle(title);
+            }
 
+            String color = embedJson.getString("color");
+            if (color != null) {
+                embedBuilder.setColor(Color.decode(color));
+            }
+
+            String description = embedJson.getString("description");
+            if (description != null) {
+                embedBuilder.setDescription(description);
+            }
+
+            String footer = embedJson.getString("footer");
+            if (footer != null) {
+                embedBuilder.setFooter(footer);
+            }
+
+            // ... handle other fields ...
+
+            targetChannel.sendMessageEmbeds(embedBuilder.build()).queue();
+
+            event.reply("Embed erfolgreich gesendet!")
+                    .setEphemeral(true)
+                    .queue();
         } catch (SQLException e) {
             event.reply("Ein Fehler ist aufgetreten.")
                     .setEphemeral(true)
                     .queue();
         }
-
-        DataObject embedJson = DataObject.fromJson(embedData);
-        EmbedBuilder embedBuilder = new EmbedBuilder();
-
-        for (String key : embedJson.keys()) {
-            String value = embedJson.getString(key);
-            if (value != null) {
-                switch (key) {
-                    case "title":
-                        embedBuilder.setTitle(value);
-                        break;
-                    case "color":
-                        embedBuilder.setColor(Color.decode(value));
-                        break;
-                    case "description":
-                        embedBuilder.setDescription(value);
-                        break;
-                    case "footer":
-                        embedBuilder.setFooter(value);
-                        break;
-                }
-
-
-                MessageEmbed embed = embedBuilder.build();
-                targetChannel.sendMessageEmbeds(embed).queue();
-
-                event.reply("Embed erfolgreich gesendet!")
-                        .setEphemeral(true)
-                        .queue();
-                event.reply("Ein Fehler ist aufgetreten.")
-                        .setEphemeral(true)
-                        .queue();
-            }
-        }
     }
 }
+

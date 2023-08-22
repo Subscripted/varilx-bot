@@ -1,5 +1,8 @@
 package de.subscripted;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import de.subscripted.admin.*;
 import de.subscripted.backend.ButtonInteraction;
 import de.subscripted.backend.XPSystem;
@@ -12,11 +15,10 @@ import de.subscripted.sql.XpSQLManager;
 import de.subscripted.support.*;
 import de.subscripted.updated.OnReadyUpdate;
 import de.subscripted.user.*;
-import de.subscripted.working.EmbedBuilderBeta;
-import de.subscripted.working.EmbedBuilderBetaModalInteractions;
-import de.subscripted.working.EmbedBuilderButtons;
-import de.subscripted.working.SendEmbedCommand;
+import de.subscripted.working.OwnChannelButtonBuilder;
+import de.subscripted.working.OwnVoiceChannelBuilder;
 import lombok.Getter;
+import lombok.SneakyThrows;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -34,6 +36,9 @@ import net.dv8tion.jda.api.utils.MemberCachePolicy;
 
 import javax.security.auth.login.LoginException;
 import java.awt.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -63,13 +68,16 @@ public class Main {
 
     public static void main(String[] args) throws LoginException, InterruptedException {
 
+        loadFiles();
+
         xpSqlManager = new XpSQLManager();
         moneysqlManager = new MoneySQLManager();
         ticketSQLManager = new TicketSQLManager();
         TicketSQLManager.initializeDatabase();
 
 
-        jda = JDABuilder.createDefault(token)
+
+        jda = JDABuilder.createDefault("OTUxMTI2NDAxNzA3Mjc4MzU2.GuBAYH.KVdQEUWB1JzxkR_XGV91ebKus24zFqoQt4DkVc")
                 .enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.MESSAGE_CONTENT)
                 .setStatus(OnlineStatus.ONLINE)
                 .setChunkingFilter(ChunkingFilter.ALL)
@@ -79,7 +87,6 @@ public class Main {
                         new TicketButtonInside(ticketSQLManager),
                         new Builder(),
                         new SupportVoiceJoin("970663709573783553", "970410291630333963"),
-                        new Giveaway(),
                         new OnJoin(),
                         new Mute(),
                         new Unmute(),
@@ -128,12 +135,14 @@ public class Main {
                         new Bugreport(),
                         new Userinfos(),
                         new ButtonInteraction(ticketSQLManager, moneysqlManager),
-                        new EmbedBuilderBeta(),
-                        new EmbedBuilderButtons(),
-                        new EmbedBuilderBetaModalInteractions(),
-                        new SendEmbedCommand(),
-                        new EightBall()
+                        new EightBall(),
+                        new OwnVoiceChannelBuilder(),
+                        new OwnChannelButtonBuilder(),
+                        new GiveawayCommand()
                 ).build().awaitReady();
+
+
+
 
 
         statusMessages.add("Varilx Botsystem");
@@ -176,7 +185,6 @@ public class Main {
 
         jda.updateCommands().addCommands(
                 Commands.slash("unclaim", "Unclaime ein Ticket"),
-                Commands.slash("giveaway", "Starte ein Giveaway"),
                 Commands.slash("hilfe", "Hilfe"),
                 Commands.slash("8ball", "8ball").addOption(OptionType.STRING, "message", "message", true),
                 Commands.slash("mute", "Mute einen Nutzer").addOption(OptionType.USER, "nutzer", "Nutzer den du muten willst", true).addOption(OptionType.STRING, "grund", "Nenne den Grund für den Mute.", true),
@@ -212,7 +220,11 @@ public class Main {
                 Commands.slash("move", "move").addOption(OptionType.STRING, "nutzer", "nutzer", true),
                 Commands.slash("timeout", "Timeoute einen User").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "zeit", "zeit", true),
                 Commands.slash("addusertoticket", "Adde einen Nutzer zu einem Ticket").addOption(OptionType.USER, "user", "Nutzer den de entfernen willst!", true),
-                Commands.slash("embedbuilder", "Baue deinen embed").addOption(OptionType.STRING, "title", "title", false).addOption(OptionType.STRING, "field1", "field1", false).addOption(OptionType.STRING, "value1", "value1", false).addOption(OptionType.STRING, "field2", "field2", false).addOption(OptionType.STRING, "value2", "value2", false).addOption(OptionType.STRING, "field3", "field3", false).addOption(OptionType.STRING, "value3", "value3", false).addOption(OptionType.STRING, "field4", "flied4", false).addOption(OptionType.STRING, "value4", "value4", false).addOption(OptionType.STRING, "description", "description", false).addOption(OptionType.STRING, "footer", "footer", false).addOption(OptionType.STRING, "image", "image", false).addOption(OptionType.STRING, "thumbnail", "thumbnail", false).addOption(OptionType.STRING, "color", "color", false).addOption(OptionType.STRING, "author", "author", false).addOption(OptionType.STRING, "footerimage", "footerimage", false)).queue();
+                Commands.slash("embedbuilder", "Baue deinen embed").addOption(OptionType.STRING, "title", "title", false).addOption(OptionType.STRING, "field1", "field1", false).addOption(OptionType.STRING, "value1", "value1", false).addOption(OptionType.STRING, "field2", "field2", false).addOption(OptionType.STRING, "value2", "value2", false).addOption(OptionType.STRING, "field3", "field3", false).addOption(OptionType.STRING, "value3", "value3", false).addOption(OptionType.STRING, "field4", "flied4", false).addOption(OptionType.STRING, "value4", "value4", false).addOption(OptionType.STRING, "description", "description", false).addOption(OptionType.STRING, "footer", "footer", false).addOption(OptionType.STRING, "image", "image", false).addOption(OptionType.STRING, "thumbnail", "thumbnail", false).addOption(OptionType.STRING, "color", "color", false).addOption(OptionType.STRING, "author", "author", false).addOption(OptionType.STRING, "footerimage", "footerimage", false),
+                Commands.slash("giveaway", "Startet einen Giveaway-Wettbewerb.")
+                        .addOption(OptionType.STRING, "preis", "Gib hier den Preis ein.", true)
+                        .addOption(OptionType.INTEGER, "gewinner", "Gib die Anzahl der Gewinner ein.", true)
+                        .addOption(OptionType.STRING, "dauer", "Gib die Dauer des Giveaways in Sekunden ein.", true)).queue();
         List<CommandData> commandData = new ArrayList<>();
         commandData.add(Commands.slash("team", "Staff Command")
                 .addSubcommands(new SubcommandData("add", "add staff member")
@@ -222,6 +234,8 @@ public class Main {
                 .addSubcommands(new SubcommandData("to", "to")
                         .addOption(OptionType.CHANNEL, "channel", "channel", true)));
         guild.updateCommands().addCommands(commandData).queue();
+
+        startGiveawayRunnable();
     }
 
     private static EmbedBuilder embed = new EmbedBuilder()
@@ -242,4 +256,33 @@ public class Main {
                 .build();
 
     }
+    private static void startGiveawayRunnable() {
+        GiveawayRunnable.run();
+    }
+
+    @SneakyThrows
+    private static void loadFiles() {
+
+        File file = new File("config.json");
+
+        if (!file.exists()) {
+            if (!file.createNewFile()) {
+                System.out.println("Could not create config file.");
+                return;
+            }
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty("token", "TOKEN_HERE");
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(jsonObject.toString());
+            fileWriter.close();
+        }
+
+        JsonParser parser = new JsonParser();
+        JsonElement jsonElement = parser.parse(new FileReader(file));
+        JsonObject jsonObject = jsonElement.getAsJsonObject();
+
+        token = jsonObject.get("token").getAsString();
+    }
+
+
 }

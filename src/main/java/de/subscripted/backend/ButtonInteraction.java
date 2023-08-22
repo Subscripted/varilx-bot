@@ -2,6 +2,9 @@ package de.subscripted.backend;
 
 import de.subscripted.Main;
 import de.subscripted.Unused.GiveawaySQLManager;
+import de.subscripted.admin.Giveaway;
+import de.subscripted.admin.GiveawayManager;
+import de.subscripted.admin.GiveawayRunnable;
 import de.subscripted.sql.MoneySQLManager;
 import de.subscripted.sql.TicketSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -24,8 +27,8 @@ import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -127,8 +130,8 @@ public class ButtonInteraction extends ListenerAdapter {
                 Member member7 = event.getMember();
                 if (!member7.getRoles().contains(role2)) {
                     event.getGuild().addRoleToMember(member7, role2).queue();
-                    int coins = 1000 ;
-                    event.reply("Du hast die Regeln akzeptiert und " + coins  + " Coins erhalten!").setEphemeral(true).queue();
+                    int coins = 1000;
+                    event.reply("Du hast die Regeln akzeptiert und " + coins + " Coins erhalten!").setEphemeral(true).queue();
                     try {
                         moneySQLManager.addCoins(member7.getId(), coins);
                     } catch (SQLException e) {
@@ -430,6 +433,27 @@ public class ButtonInteraction extends ListenerAdapter {
                     event.reply("Das Ticket wurde bereits geclaimt.").setEphemeral(true).queue();
                 }
                 break;
+            case "giveaway_join":
+                if (member == null) {
+                    return;
+                }
+
+                String messageId = event.getMessageId();
+                Giveaway giveaway = GiveawayManager.getGiveaway(messageId);
+
+                if (!GiveawayManager.isInGiveaway(giveaway, member.getId())) {
+
+                    giveaway.getUsers().add(member.getId());
+
+                    GiveawayManager.updateGiveaway(giveaway);
+                    GiveawayRunnable.updateRunnable();
+                    event.reply("Du bist jetzt im Giveaway!").setEphemeral(true).queue();
+                } else {
+                    event.reply("Du bist bereits im Giveaway!").setEphemeral(true).queue();
+
+
+                    break;
+                }
         }
     }
 }

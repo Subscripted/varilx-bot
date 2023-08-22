@@ -15,7 +15,8 @@ public class Clear extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-
+        if (event.getAuthor().isBot())
+        return;
         Member member = event.getMember();
 
         if (!member.hasPermission(Permission.ADMINISTRATOR))

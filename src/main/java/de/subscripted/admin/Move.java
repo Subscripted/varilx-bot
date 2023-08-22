@@ -14,6 +14,8 @@ import java.util.List;
 
 public class Move extends ListenerAdapter {
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
+        if (!event.getName().equals("move"))
+            return;
 
         Member member = event.getMember();
 
@@ -25,8 +27,6 @@ public class Move extends ListenerAdapter {
         }
 
 
-        if (!event.getName().equals("move"))
-            return;
 
         if (!event.getMember().hasPermission(Permission.ADMINISTRATOR)) {
             EmbedBuilder embedBuilder = new EmbedBuilder()
@@ -43,7 +43,7 @@ public class Move extends ListenerAdapter {
             EmbedBuilder embedBuilder = new EmbedBuilder()
                     .setTitle("Varilx Voice")
                     .setColor(Color.RED)
-                    .setDescription("DU bist in keinem Channel!")
+                    .setDescription("Du bist in keinem Channel!")
                     .setFooter("Varilx Voice Feature | Update 2023 © ", Main.redfooter);
             event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
             return;

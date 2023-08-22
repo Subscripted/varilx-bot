@@ -110,5 +110,7 @@ public class EmbedSQLManager {
         }
         return null;
     }
+    // ich mach ma solange mein giveaway xD
+
 
 }

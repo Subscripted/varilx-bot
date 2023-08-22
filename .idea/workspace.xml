@@ -4,30 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/EmbedSQLManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/EmbedBuilderBetaModalInteractions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/SendEmbedCommand.java" afterDir="false" />
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Added Beta of the Embedbuilder &lt;- Not finished Yet&#10;&#10;- Added 1k Varonx reward for accepting the Rules&#10;&#10;- Some small changes">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/TimeStampMaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnChannelButtonBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnVoiceChannelBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Giveaway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Giveaway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Promote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Promote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/SetCoins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/SetCoins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/TeamAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/TeamAdd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/games/EightBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/games/EightBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/RulesBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/RulesBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/working/EmbedBuilderBeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/EmbedBuilderBeta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/working/EmbedBuilderButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/EmbedBuilderButtons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/serversafety/Mute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/serversafety/Mute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/EmbedSQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/EmbedSQLManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInteraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/PayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/PayCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/working/SendEmbedCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/SendEmbedCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/games/EightBall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/games/EightBall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/working/EmbedBuilderBeta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/working/EmbedBuilderBeta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Promote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Promote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/TeamAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/TeamAdd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/serversafety/Mute.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/serversafety/Mute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInteraction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/RulesBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/RulesBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets.db" beforeDir="false" afterPath="$PROJECT_DIR$/tickets.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/varilx_level.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilx_level.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/varilxcoins.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilxcoins.db" afterDir="false" />
     </list>
-    <list id="339373ba-b5ed-4b1b-9b5e-af0da6c82a94" name="Changes by justin" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +73,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2Sbq1pfvTdeucqXe3AjkSjcNvGb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -72,7 +89,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HueMatrix/IdeaProjects/VarilxBot&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HueMatrix/IdeaProjects/EloriseV2Bot&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,6 +111,8 @@
       <recent name="C:\Users\HueMatrix\IdeaProjects\VarilxBot\src\main\java\de\subscripted\leveling\commands" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HueMatrix\IdeaProjects\VarilxBot\src\main\java\de\subscripted\backend" />
+      <recent name="C:\Users\HueMatrix\IdeaProjects\VarilxBot\src\main\java\de\subscripted\admin" />
       <recent name="C:\Users\HueMatrix\IdeaProjects\VarilxBot\src\main\java\de\subscripted\coins" />
     </key>
   </component>
@@ -234,6 +253,9 @@
       <workItem from="1692408426112" duration="2168000" />
       <workItem from="1692441977954" duration="9919000" />
       <workItem from="1692465659227" duration="7795000" />
+      <workItem from="1692557257506" duration="2269000" />
+      <workItem from="1692632926737" duration="2297000" />
+      <workItem from="1692731162315" duration="3476000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -433,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692404428485</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="- Added Beta of the Embedbuilder &lt;- Not finished Yet&#10;&#10;- Added 1k Varonx reward for accepting the Rules&#10;&#10;- Some small changes">
+      <created>1692532038802</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1692532038802</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,6 +497,7 @@
     <MESSAGE value="- Added an 8Ball Command" />
     <MESSAGE value="- Added a 8Ball Command" />
     <MESSAGE value="- Useless Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Useless Changes" />
+    <MESSAGE value="- Added Beta of the Embedbuilder &lt;- Not finished Yet&#10;&#10;- Added 1k Varonx reward for accepting the Rules&#10;&#10;- Some small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added Beta of the Embedbuilder &lt;- Not finished Yet&#10;&#10;- Added 1k Varonx reward for accepting the Rules&#10;&#10;- Some small changes" />
   </component>
 </project>

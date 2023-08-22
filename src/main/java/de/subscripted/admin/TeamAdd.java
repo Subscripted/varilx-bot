@@ -44,6 +44,8 @@ public class TeamAdd extends ListenerAdapter {
                 Role role = event.getOption("role").getAsRole();
                 Role teamrole = event.getGuild().getRoleById("1003618027037786205");
                 Role testphase = event.getGuild().getRoleById("1065943390937677855");
+                Role tickets = event.getGuild().getRoleById("1095297340715319356");
+
                 if (targetMember.getRoles().contains(role) || targetMember.getRoles().contains(teamrole)) {
                     event.reply("Der Nutzer hat diese Rolle bereits!").setEphemeral(true).queue();
                     return;
@@ -56,6 +58,7 @@ public class TeamAdd extends ListenerAdapter {
                     event.getGuild().addRoleToMember(targetMember, testphase).queue();
                     event.getGuild().addRoleToMember(targetMember, role).queue();
                     event.getGuild().addRoleToMember(targetMember, teamrole).queue();
+                    event.getGuild().addRoleToMember(targetMember, tickets).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n**Team Neuzugang**\n"
                             + " \n"
                             + "Wir begrüßen " + targetMember.getAsMention() + " im Bereich " + role.getAsMention() + " und wünschen eine lange und gute Zusammenarbeit!\n" +

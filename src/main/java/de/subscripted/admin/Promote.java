@@ -100,6 +100,8 @@ public class Promote extends ListenerAdapter {
                     event.getGuild().addRoleToMember(targetmember, JrMod).queue();
                     event.getGuild().addRoleToMember(targetmember, testphase).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + JrMod.getAsMention() + " befördert!").setEphemeral(true).queue();
+                    tc.sendMessage(teamrole.getAsMention() + "\n"
+                    + message).queue();
 
                     break;
                 case "904032740394041364":
