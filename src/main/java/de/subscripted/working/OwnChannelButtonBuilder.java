@@ -1,9 +1,12 @@
 package de.subscripted.working;
 
 import de.subscripted.Main;
+import de.subscripted.backend.ButtonInteraction;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
+import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
@@ -29,5 +32,13 @@ public class OwnChannelButtonBuilder extends ListenerAdapter {
 
         event.getChannel().sendMessageEmbeds(embedBuilder.build()).addActionRow(changename).queue();
         }
+    public void onButtonInteraction(ButtonInteractionEvent event){
+        if (!event.getButton().getId().equals("changename"))
+            return;
+
+        Member member = event.getMember();
+
+        if (member.getVoiceState().getChannel().getName().startsWith(member.getEffectiveName() + ""));
+    }
     }
 

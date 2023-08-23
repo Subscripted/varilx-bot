@@ -6,8 +6,7 @@ import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.hyperic.sigar.Mem;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -34,9 +33,15 @@ public class Clear extends ListenerAdapter {
                 }
 
                 TextChannel channel = event.getChannel().asTextChannel();
-                List<Message> messages = channel.getHistory().retrievePast(numToDelete + 1).complete();
+                List<Message> sortedMessages = new ArrayList<>();
+                for (Message message : channel.getHistory().retrievePast(numToDelete + 1).complete()) {
 
-                channel.deleteMessages(messages).queue();
+                    if(message.getId() != null){
+                        sortedMessages.add(message);
+                    }
+                }
+
+                channel.deleteMessages(sortedMessages).queue();
 
                 event.getMessage().delete().queueAfter(1, TimeUnit.SECONDS);
 

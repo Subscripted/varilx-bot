@@ -149,8 +149,8 @@ public class ButtonInteraction extends ListenerAdapter {
                 } else {
                     assert Changelog != null;
                     guild.addRoleToMember(member, Changelog).queue();
-                    break;
                 }
+                break;
             case "event":
                 if (member.getRoles().contains(Event)) {
                     assert Event != null;
@@ -158,8 +158,8 @@ public class ButtonInteraction extends ListenerAdapter {
                 } else {
                     assert Event != null;
                     guild.addRoleToMember(member, Event).queue();
-                    break;
                 }
+                break;
 
             case "info":
                 if (member.getRoles().contains(Info)) {
@@ -168,8 +168,8 @@ public class ButtonInteraction extends ListenerAdapter {
                 } else {
                     assert Info != null;
                     guild.addRoleToMember(member, Info).queue();
-                    break;
                 }
+                break;
 
             case "bedrock":
                 if (member.getRoles().contains(bedrock)) {
@@ -178,8 +178,8 @@ public class ButtonInteraction extends ListenerAdapter {
                 } else {
                     assert bedrock != null;
                     guild.addRoleToMember(member, bedrock).queue();
-                    break;
                 }
+                break;
 
             case "java":
                 if (member.getRoles().contains(java)) {
@@ -188,8 +188,8 @@ public class ButtonInteraction extends ListenerAdapter {
                 } else {
                     assert java != null;
                     guild.addRoleToMember(member, java).queue();
-                    break;
                 }
+                break;
 
             case "feedbackbutton":
                 Instant lastFeedBackTime = userButtonCooldowns
@@ -450,11 +450,10 @@ public class ButtonInteraction extends ListenerAdapter {
                     event.reply("Du bist jetzt im Giveaway!").setEphemeral(true).queue();
                 } else {
                     event.reply("Du bist bereits im Giveaway!").setEphemeral(true).queue();
-
-
                     break;
                 }
         }
+        event.deferEdit().queue();
     }
 }
 

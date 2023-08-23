@@ -50,8 +50,8 @@ public class Feedback extends ListenerAdapter {
 
 
     public void onModalInteraction(ModalInteractionEvent event) {
-        String feedback = event.getValue("feedback").getAsString();
         if (event.getModalId().equals("vaxfeedback")) {
+        String feedback = event.getValue("feedback").getAsString();
             Member member = event.getMember();
             String dcusername = member.getAsMention();
 
@@ -75,7 +75,7 @@ public class Feedback extends ListenerAdapter {
             MessageChannel channel = event.getGuild().getTextChannelById("1135973506773962882");
 
             channel.sendMessageEmbeds(embedBuilder.build()).queue();
-
+            event.deferEdit().queue();
 
             event.getUser().openPrivateChannel().queue(privateChannel -> {
                 privateChannel.sendMessageEmbeds(DM.build()).queue();

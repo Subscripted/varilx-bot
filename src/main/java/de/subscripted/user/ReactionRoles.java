@@ -59,8 +59,7 @@ public class ReactionRoles extends ListenerAdapter {
         Button partner = Button.link("https://tube-hosting.com/pricing", "Partner").withEmoji(Emoji.fromFormatted("<:TubehostingVarilx:1101657813794693120>"));
 
 
-        tc.sendMessageEmbeds(embedBuilder.build()).setActionRow(Event, Changelog, Info, bedrock, java).queue();
-        tc.sendMessage(" ").setActionRow(partner).queue();
+        tc.sendMessageEmbeds(embedBuilder.build()).addActionRow(Event, Changelog, Info, bedrock, java).addActionRow(partner).queue();
         event.getMessage().delete().queue();
 
     }
