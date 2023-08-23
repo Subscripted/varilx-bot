@@ -11,6 +11,9 @@ public class MoneySQLManager {
     private Connection connection;
 
     public MoneySQLManager() {
+        if (connection != null) {
+            return;
+        }
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:varilxcoins.db");
             createTableIfNotExists();
