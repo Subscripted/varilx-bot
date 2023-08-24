@@ -66,7 +66,7 @@ public class MoneySQLManager {
         }
     }
 
-    public void setCoins(String userId, int coins) throws SQLException {
+    public synchronized void setCoins(String userId, int coins) throws SQLException {
         if (!userAlreadyExists(userId)) {
             String query = "INSERT INTO players (user_id, coins) VALUES (?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -88,7 +88,7 @@ public class MoneySQLManager {
         });
     }
 
-    public void addCoins(String userId, int amount) throws SQLException {
+    public synchronized void addCoins(String userId, int amount) throws SQLException {
         int currentCoins = getCoins(userId);
         int newCoins = currentCoins + amount;
         setCoins(userId, newCoins);
@@ -101,7 +101,7 @@ public class MoneySQLManager {
         });
     }
 
-    public void removeCoins(String userId, int amount) throws SQLException {
+    public synchronized void removeCoins(String userId, int amount) throws SQLException {
         int currentCoins = getCoins(userId);
         if (currentCoins >= amount) {
             int newCoins = currentCoins - amount;

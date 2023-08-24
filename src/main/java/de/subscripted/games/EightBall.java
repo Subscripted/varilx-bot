@@ -27,7 +27,6 @@ public class EightBall extends ListenerAdapter {
                 .setFooter("Varilx Games Feature | Update 2023 © ", Main.getJda().getSelfUser().getAvatarUrl())
                 .setAuthor(event.getMember().getEffectiveName())
                 .setDescription("Frage: " + message + "\n\nAntwort: **" + randomReply + "**");
-
         event.replyEmbeds(embedBuilder.build()).queue();
     }
 }

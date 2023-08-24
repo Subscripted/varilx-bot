@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Added Beta of the Embedbuilder &lt;- Not finished Yet&#10;&#10;- Added 1k Varonx reward for accepting the Rules&#10;&#10;- Some small changes">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/ReactionRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/ReactionRoles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnChannelButtonBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnChannelButtonBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnVoiceChannelBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnVoiceChannelBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/MoneySQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/MoneySQLManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/varilx_level.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilx_level.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/varilxcoins.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilxcoins.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +226,8 @@
       <workItem from="1692557257506" duration="2269000" />
       <workItem from="1692632926737" duration="2297000" />
       <workItem from="1692731162315" duration="3476000" />
-      <workItem from="1692818214380" duration="4217000" />
+      <workItem from="1692818214380" duration="5105000" />
+      <workItem from="1692895156180" duration="3518000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -441,7 +434,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692532038802</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="- Token isn`t Public anymore">
+      <option name="closed" value="true" />
+      <created>1692822818242</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1692822818242</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,6 +478,7 @@
     <MESSAGE value="- Added a 8Ball Command" />
     <MESSAGE value="- Useless Changes" />
     <MESSAGE value="- Added Beta of the Embedbuilder &lt;- Not finished Yet&#10;&#10;- Added 1k Varonx reward for accepting the Rules&#10;&#10;- Some small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added Beta of the Embedbuilder &lt;- Not finished Yet&#10;&#10;- Added 1k Varonx reward for accepting the Rules&#10;&#10;- Some small changes" />
+    <MESSAGE value="- Token isn`t Public anymore" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Token isn`t Public anymore" />
   </component>
 </project>
