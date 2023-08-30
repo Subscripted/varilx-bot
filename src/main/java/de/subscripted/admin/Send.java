@@ -28,5 +28,7 @@ public class Send extends ListenerAdapter {
         String message = event.getOption("nachricht").getAsString();
 
         event.getChannel().sendMessage(message).queue();
+
+        event.reply("Erfolgreich gesendet!").setEphemeral(true).queue();
     }
 }

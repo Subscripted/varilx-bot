@@ -43,6 +43,7 @@ public class Promote extends ListenerAdapter {
             Role JrBuilder = event.getGuild().getRoleById("1068989467261665282");
             Role Builder = event.getGuild().getRoleById("1068989280225083412");
             Role SrBuilder = event.getGuild().getRoleById("1084469016707481630");
+            Role SrContent = event.getGuild().getRoleById("1145069370821849209");
 
             if (!member.hasPermission(Permission.ADMINISTRATOR)) {
                 EmbedBuilder embedBuilder = new EmbedBuilder()
@@ -63,7 +64,7 @@ public class Promote extends ListenerAdapter {
                 event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
                 return;
             }
-            if (targetmember.getRoles().contains(SrDev) || targetmember.getRoles().contains(SrBuilder) || targetmember.getRoles().contains(SrMod) || targetmember.getRoles().contains(Content)) {
+            if (targetmember.getRoles().contains(SrDev) || targetmember.getRoles().contains(SrBuilder) || targetmember.getRoles().contains(SrMod) || targetmember.getRoles().contains(SrContent)) {
                 EmbedBuilder embedBuilder = new EmbedBuilder()
                         .setTitle("Varilx Promote")
                         .setColor(Color.YELLOW)
@@ -77,6 +78,13 @@ public class Promote extends ListenerAdapter {
                     event.getGuild().removeRoleFromMember(targetmember, testphase).queue();
                     event.getGuild().addRoleToMember(targetmember, Content).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + Content.getAsMention() + " befördert!").setEphemeral(true).queue();
+                    tc.sendMessage(teamrole.getAsMention() + "\n"
+                            + message).queue();
+                    break;
+                case "1085914333160165417":
+                    event.getGuild().removeRoleFromMember(targetmember, Content).queue();
+                    event.getGuild().addRoleToMember(targetmember, SrContent).queue();
+                    event.reply("Du hast " + targetmember.getAsMention() + " auf " + SrContent.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
                             + message).queue();
                     break;

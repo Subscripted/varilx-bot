@@ -5,7 +5,6 @@ import de.subscripted.Unused.GiveawaySQLManager;
 import de.subscripted.admin.Giveaway;
 import de.subscripted.admin.GiveawayManager;
 import de.subscripted.admin.GiveawayRunnable;
-import de.subscripted.sql.MoneySQLManager;
 import de.subscripted.sql.TicketSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
@@ -23,7 +22,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -45,15 +43,13 @@ public class ButtonInteraction extends ListenerAdapter {
     private final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(0);
     TicketSQLManager ticketSQLManager;
     private GiveawaySQLManager sqlManager;
-    MoneySQLManager moneySQLManager;
     ///
 
     ///
-    public ButtonInteraction(TicketSQLManager ticketSQLManager, MoneySQLManager moneySQLManager) {
+    public ButtonInteraction(TicketSQLManager ticketSQLManager) {
 
         this.ticketSQLManager = ticketSQLManager;
         this.sqlManager = sqlManager;
-        this.moneySQLManager = moneySQLManager;
     }
     ///
 
@@ -130,13 +126,7 @@ public class ButtonInteraction extends ListenerAdapter {
                 Member member7 = event.getMember();
                 if (!member7.getRoles().contains(role2)) {
                     event.getGuild().addRoleToMember(member7, role2).queue();
-                    int coins = 1000;
-                    event.reply("Du hast die Regeln akzeptiert und " + coins + " Coins erhalten!").setEphemeral(true).queue();
-                    try {
-                        moneySQLManager.addCoins(member7.getId(), coins);
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    }
+                    event.reply("Du hast die Regeln akzeptiert!").setEphemeral(true).queue();
                 } else {
                     event.reply("Du hast die Regeln bereits akzeptiert!").setEphemeral(true).queue();
                 }
@@ -334,7 +324,7 @@ public class ButtonInteraction extends ListenerAdapter {
                         e.printStackTrace();
                     }
                 }
-                executorService.schedule(() -> channel.delete().queue(), 5, TimeUnit.SECONDS);
+                executorService.schedule(() ->   channel.delete().queue(), 5, TimeUnit.SECONDS);
                 int ticketCount2 = userTicketCount.getOrDefault(userId, 0);
 
                 if (ticketCount2 > 0) {
@@ -411,6 +401,7 @@ public class ButtonInteraction extends ListenerAdapter {
 
             case "claim":
                 Role teamRole = event.getGuild().getRoleById("1095297340715319356");
+                Role SrSupporter = event.getGuild().getRoleById("1081305944652255292");
                 TextChannel textChannel = event.getChannel().asTextChannel();
                 if (!member.getRoles().contains(teamRole)) {
                     event.reply("Du kannst keine Tickets beanspruchen.").setEphemeral(true).queue();
@@ -420,6 +411,7 @@ public class ButtonInteraction extends ListenerAdapter {
                     textChannel.getManager()
                             .removePermissionOverride(teamRole)
                             .putPermissionOverride(member, EnumSet.of(Permission.VIEW_CHANNEL), null)
+                            .putPermissionOverride(SrSupporter, EnumSet.of(Permission.VIEW_CHANNEL), null)
                             .queue();
                     claimed = true;
                     claimer = member;

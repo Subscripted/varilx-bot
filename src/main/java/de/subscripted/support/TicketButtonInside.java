@@ -61,12 +61,6 @@ public class TicketButtonInside extends ListenerAdapter {
                     .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                     .setColor(Color.GREEN);
             event.replyEmbeds(builder.build()).queue();
-        } else if (claimed == true && member.hasPermission(Permission.ADMINISTRATOR)) {
-            EmbedBuilder builder = new EmbedBuilder()
-                    .setDescription("Das Ticket wurde von " + member.getAsMention() + " freigegeben! : Staff Freigabe")
-                    .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                    .setColor(Color.WHITE);
-            event.replyEmbeds(builder.build()).queue();
         } else
             event.reply("Das Ticket ist nicht geclaimt.").setEphemeral(true).queue();
     }

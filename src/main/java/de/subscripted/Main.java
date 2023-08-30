@@ -3,20 +3,18 @@ package de.subscripted;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import de.subscripted.Music.core.MusicCommand;
 import de.subscripted.admin.*;
 import de.subscripted.backend.ButtonInteraction;
 import de.subscripted.backend.XPSystem;
 import de.subscripted.games.EightBall;
 import de.subscripted.lavaplayer.*;
 import de.subscripted.serversafety.*;
-import de.subscripted.sql.MoneySQLManager;
 import de.subscripted.sql.TicketSQLManager;
 import de.subscripted.sql.XpSQLManager;
 import de.subscripted.support.*;
 import de.subscripted.updated.OnReadyUpdate;
 import de.subscripted.user.*;
-import de.subscripted.working.OwnChannelButtonBuilder;
-import de.subscripted.working.OwnVoiceChannelBuilder;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -33,6 +31,7 @@ import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
+import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 import javax.security.auth.login.LoginException;
 import java.awt.*;
@@ -45,7 +44,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-
 public class Main {
 
     @Getter
@@ -53,7 +51,6 @@ public class Main {
 
     public static XpSQLManager xpSqlManager;
 
-    public static MoneySQLManager moneysqlManager;
 
     public static TicketSQLManager ticketSQLManager;
 
@@ -73,10 +70,8 @@ public class Main {
         loadFiles();
 
         xpSqlManager = new XpSQLManager();
-        moneysqlManager = new MoneySQLManager();
         ticketSQLManager = new TicketSQLManager();
         TicketSQLManager.initializeDatabase();
-
 
 
         jda = JDABuilder.createDefault(token)
@@ -84,6 +79,9 @@ public class Main {
                 .setStatus(OnlineStatus.ONLINE)
                 .setChunkingFilter(ChunkingFilter.ALL)
                 .setMemberCachePolicy(MemberCachePolicy.ALL)
+                .enableCache(CacheFlag.VOICE_STATE)
+                .setAutoReconnect(true)
+                .setBulkDeleteSplittingEnabled(false)
                 .addEventListeners(
                         new TicketButtonInteraction(),
                         new TicketButtonInside(ticketSQLManager),
@@ -123,29 +121,22 @@ public class Main {
                         new XPCommand(),
                         new SetLevelCommand(),
                         new XPSystem(),
-                        new WorkCommand(),
-                        new CoinsCommand(),
                         new MoveallTo(),
                         new Move(),
-                        new SetCoins(moneysqlManager),
-                        new PayCommand(moneysqlManager),
-                        new SetTop10Money(),
                         new BewerbungsBuilder(),
                         new RulesBuilder(),
                         new onLeave(),
                         new Serverinfo(),
                         new Bugreport(),
                         new Userinfos(),
-                        new ButtonInteraction(ticketSQLManager, moneysqlManager),
+                        new ButtonInteraction(ticketSQLManager),
                         new EightBall(),
-                        new OwnVoiceChannelBuilder(),
-                        new OwnChannelButtonBuilder(),
-                        new GiveawayCommand()
+                        new GiveawayCommand(),
+                        new MusicCommand()
                 ).build().awaitReady();
 
-
-
-
+        getJda().getGuilds().forEach(guild -> guild.getAudioManager().setSelfDeafened(true));
+        getJda().getGuilds().forEach(guild -> guild.getAudioManager().setSelfMuted(false));
 
         statusMessages.add("Varilx Botsystem");
         statusMessages.add("Tube-Hosting.DE");
@@ -199,26 +190,15 @@ public class Main {
                 Commands.slash("about", "Infos über den Bot"),
                 Commands.slash("send", "Sende eine Message mit dem Bot").addOption(OptionType.STRING, "nachricht", "Die Nachricht!", true),
                 Commands.slash("removeuserfromticket", "Entferne einen User von einem Ticket").addOption(OptionType.USER, "user", "Nutzer den de entfernen willst!", true),
-                Commands.slash("play", "Spiele ein Lied").addOption(OptionType.STRING, "name", "Lied das du spielen willst", true),
-                Commands.slash("stop", "Stoppe ein lied ein Lied"),
-                Commands.slash("nowplaying", "Welches lied spielt gerade!"),
-                Commands.slash("queue", "Was ist in der queue"),
-                Commands.slash("work", "work"),
-                Commands.slash("corn", "uwu"),
                 Commands.slash("sendembed", "uwu").addOption(OptionType.STRING, "code", "code", true).addOption(OptionType.CHANNEL, "channel", "channel", true),
                 Commands.slash("userinfo", "user").addOption(OptionType.USER, "nutzer", "nutzer", true),
                 Commands.slash("bugreport", "bugreport"),
                 Commands.slash("serverinfo", "serverinfo"),
-                Commands.slash("varonx", "Varonx").addOption(OptionType.USER, "nutzer", "nutzer", true),
-                Commands.slash("repeat", "Repeat"),
                 Commands.slash("promote", "Promote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du promoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
                 Commands.slash("demote", "Demote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du demoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
-                Commands.slash("skip", "Skippe ein Lied"),
                 Commands.slash("nuke", "nuke diesen server"),
                 Commands.slash("ping", "Ping"),
                 Commands.slash("embedbuilderbeta", "embeds"),
-                Commands.slash("pay", "pay").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "coins", "coins", true),
-                Commands.slash("setcoins", "setcoins").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "coins", "coins", true),
                 Commands.slash("move", "move").addOption(OptionType.STRING, "nutzer", "nutzer", true),
                 Commands.slash("timeout", "Timeoute einen User").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "zeit", "zeit", true),
                 Commands.slash("addusertoticket", "Adde einen Nutzer zu einem Ticket").addOption(OptionType.USER, "user", "Nutzer den de entfernen willst!", true),
@@ -235,6 +215,17 @@ public class Main {
         commandData.add(Commands.slash("moveall", "move")
                 .addSubcommands(new SubcommandData("to", "to")
                         .addOption(OptionType.CHANNEL, "channel", "channel", true)));
+        commandData.add(Commands.slash("music", "Allgemeiner Music Command")
+                .addSubcommands(new SubcommandData("play", "Spielt einen gewünschten Song/PlayList ab")
+                        .addOption(OptionType.STRING, "url", "Die URL oder der Name des Songs/PlayList", true))
+                .addSubcommands(new SubcommandData("skip", "Überspringt einen Song")
+                        .addOption(OptionType.INTEGER, "anzahl", "Die Anzahl an Songs die übersprungen werden sollen", false))
+                .addSubcommands(new SubcommandData("stop", "Stop den aktuellen Song"))
+                .addSubcommands(new SubcommandData("shuffel", "Shuffelt die aktuelle PlayList"))
+                .addSubcommands(new SubcommandData("np", "Zeigt den Aktuellen Song an"))
+                .addSubcommands(new SubcommandData("queue", "Zeigt die aktuelle Queue"))
+                .addSubcommands(new SubcommandData("volume", "Setzt das Volume auf das angegeben Volume")
+                        .addOption(OptionType.INTEGER, "volume", "Volume (ex: 80) in % aber ohne %", true)));
         guild.updateCommands().addCommands(commandData).queue();
 
         startGiveawayRunnable();
@@ -258,6 +249,7 @@ public class Main {
                 .build();
 
     }
+
     private static void startGiveawayRunnable() {
         GiveawayRunnable.run();
     }
@@ -286,5 +278,5 @@ public class Main {
         token = jsonObject.get("token").getAsString();
     }
 
-
 }
+

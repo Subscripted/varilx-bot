@@ -1,4 +1,5 @@
 package de.subscripted.working;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.channel.concrete.Category;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
@@ -13,11 +14,17 @@ public class OwnVoiceChannelBuilder extends ListenerAdapter {
         if (event.getChannelJoined() == null)
             return;
 
-        Member owner = event.getMember();
-        VoiceChannel voiceChannel = (VoiceChannel) event.getChannelJoined();
+        Member member = event.getMember();
+        VoiceChannel joinedChannel = (VoiceChannel) event.getChannelJoined();
+        VoiceChannel targetChannel = event.getGuild().getVoiceChannelById("1132261803280306258");
 
-        if (voiceChannel != null && voiceChannel.getId().equals("1132261803280306258")) {
+        if (joinedChannel != null && joinedChannel.equals(targetChannel)) {
             Category category = event.getGuild().getCategoryById("1132261801195753522");
+            if (category != null) {
+                VoiceChannel newChannel = (VoiceChannel) category.createVoiceChannel(member.getEffectiveName()).complete().getManager().putPermissionOverride(member, EnumSet.of(Permission.MANAGE_CHANNEL), null);
+                event.getGuild().moveVoiceMember(member, newChannel).queue();
+
+            }
         }
     }
 }

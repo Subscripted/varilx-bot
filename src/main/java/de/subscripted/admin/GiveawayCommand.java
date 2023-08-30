@@ -40,13 +40,13 @@ public class GiveawayCommand extends ListenerAdapter {
         int winners = optionMappingWinners.getAsInt();
         int duration = (int) parseDuration(optionMappingDuration.getAsString());
 
-        event.reply(guild.getPublicRole().getAsMention()).addEmbeds(
+        event.reply(guild.getRoleById("1098654469710954728").getAsMention()).addEmbeds(
                         new EmbedBuilder()
                                 .setTitle("<a:Vaxparty:1137213809128382474> Giveaway <a:Vaxparty:1137213809128382474>")
                                 .setFooter("Varilx Giveway | Updated 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                                 .setColor(Color.GREEN)
                                 .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
-                                .setDescription("- Gestartet von: " + member.getAsMention() + "\n" + "- Was wurde verlost: **" + prize + "** \n"  + "- Restzeit: <t:" + TimeStampMaker.getTime(duration) + ":R>")
+                                .setDescription("- Gestartet von: " + member.getAsMention() + "\n" + "- Was wird verlost: **" + prize + "** \n"  + "- Restzeit: <t:" + TimeStampMaker.getTime(duration) + ":R>")
 
                                 .setTimestamp(OffsetDateTime.now(Clock.systemUTC()))
                                 .build())
