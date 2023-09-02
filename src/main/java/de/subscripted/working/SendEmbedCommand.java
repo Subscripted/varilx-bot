@@ -45,25 +45,24 @@ public class SendEmbedCommand extends ListenerAdapter {
                 return;
             }
 
-            DataObject embedJson = DataObject.fromJson(embedData);
             EmbedBuilder embedBuilder = new EmbedBuilder();
 
-            String title = embedJson.getString("title");
+            String title = sqlManager.getEmbedValueByKey(code, "title");
             if (title != null) {
                 embedBuilder.setTitle(title);
             }
 
-            String color = embedJson.getString("color");
+            String color = sqlManager.getEmbedValueByKey(code, "color");
             if (color != null) {
                 embedBuilder.setColor(Color.decode(color));
             }
 
-            String description = embedJson.getString("description");
+            String description = sqlManager.getEmbedValueByKey(code, "description");
             if (description != null) {
                 embedBuilder.setDescription(description);
             }
 
-            String footer = embedJson.getString("footer");
+            String footer = sqlManager.getEmbedValueByKey(code, "footer");
             if (footer != null) {
                 embedBuilder.setFooter(footer);
             }

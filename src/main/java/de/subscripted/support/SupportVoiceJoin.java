@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.events.guild.voice.GuildVoiceUpdateEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.hyperic.sigar.RPC;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
@@ -31,9 +32,16 @@ public class SupportVoiceJoin extends ListenerAdapter {
         VoiceChannel audioChannel = (VoiceChannel) event.getChannelJoined();
         EmbedBuilder embedBuilder = getBuilder(event, audioChannel);
 
+        Role role = event.getGuild().getRoleById("1003618027037786205");
+
+        if (event.getMember().getRoles().contains(role))
+            return;
+
         if (audioChannel.getId().equals(targetChannelId)) {
             sendEmbedToTextChannel(event, embedBuilder);
             sendEmbedToPrivateChannels(event, embedBuilder);
+
+
         }
     }
 
@@ -70,6 +78,7 @@ public class SupportVoiceJoin extends ListenerAdapter {
                 });
         }
     }
+
 
     @NotNull
     private static EmbedBuilder getBuilder(GuildVoiceUpdateEvent event, VoiceChannel audioChannel) {

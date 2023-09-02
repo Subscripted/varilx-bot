@@ -15,6 +15,9 @@ import de.subscripted.sql.XpSQLManager;
 import de.subscripted.support.*;
 import de.subscripted.updated.OnReadyUpdate;
 import de.subscripted.user.*;
+import de.subscripted.working.EmbedBuilderBetaModalInteractions;
+import de.subscripted.working.EmbedBuilderButtons;
+import de.subscripted.working.SendEmbedCommand;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -132,7 +135,10 @@ public class Main {
                         new ButtonInteraction(ticketSQLManager),
                         new EightBall(),
                         new GiveawayCommand(),
-                        new MusicCommand()
+                        new MusicCommand(),
+                        new SendEmbedCommand(),
+                        new EmbedBuilderBetaModalInteractions(),
+                        new EmbedBuilderButtons()
                 ).build().awaitReady();
 
         getJda().getGuilds().forEach(guild -> guild.getAudioManager().setSelfDeafened(true));
@@ -178,8 +184,8 @@ public class Main {
 
         jda.updateCommands().addCommands(
                 Commands.slash("unclaim", "Unclaime ein Ticket"),
-                Commands.slash("hilfe", "Hilfe"),
-                Commands.slash("8ball", "8ball").addOption(OptionType.STRING, "message", "message", true),
+                Commands.slash("hilfe", "Dieser Befehl gibt an, wie du hier Hilfe erhalten kannst."),
+                Commands.slash("8ball", "Dem 8Ball kannst du verschiedene Fragen stellen").addOption(OptionType.STRING, "message", "Deine Frage bzw Nachricht", true),
                 Commands.slash("mute", "Mute einen Nutzer").addOption(OptionType.USER, "nutzer", "Nutzer den du muten willst", true).addOption(OptionType.STRING, "grund", "Nenne den Grund für den Mute.", true),
                 Commands.slash("unmute", "Unmute einen Nutzer").addOption(OptionType.USER, "nutzer", "Nutzer den du Unmuten willst", true),
                 Commands.slash("ban", "Banne einen Nutzer").addOption(OptionType.USER, "nutzer", "Nutzer den du Bannen willst", true).addOption(OptionType.STRING, "grund", "Nenne den Grund für den Ban.", true),
@@ -191,30 +197,29 @@ public class Main {
                 Commands.slash("send", "Sende eine Message mit dem Bot").addOption(OptionType.STRING, "nachricht", "Die Nachricht!", true),
                 Commands.slash("removeuserfromticket", "Entferne einen User von einem Ticket").addOption(OptionType.USER, "user", "Nutzer den de entfernen willst!", true),
                 Commands.slash("sendembed", "uwu").addOption(OptionType.STRING, "code", "code", true).addOption(OptionType.CHANNEL, "channel", "channel", true),
-                Commands.slash("userinfo", "user").addOption(OptionType.USER, "nutzer", "nutzer", true),
-                Commands.slash("bugreport", "bugreport"),
-                Commands.slash("serverinfo", "serverinfo"),
-                Commands.slash("promote", "Promote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du promoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
-                Commands.slash("demote", "Demote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du demoten willst!", true).addOption(OptionType.STRING, "message", "message", true),
-                Commands.slash("nuke", "nuke diesen server"),
+                Commands.slash("userinfo", "Zeigt dir Infos über einen Nutzer an").addOption(OptionType.USER, "nutzer", "Nutzer", true),
+                Commands.slash("bugreport", "Reporte einen Bug!"),
+                Commands.slash("serverinfo", "Zeigt dir Infos über den Server an!"),
+                Commands.slash("promote", "Promote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du promoten willst!", true).addOption(OptionType.STRING, "message", "Deine Nachricht", true),
+                Commands.slash("demote", "Demote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du demoten willst!", true).addOption(OptionType.STRING, "message", "Deine Nachricht", true),
                 Commands.slash("ping", "Ping"),
                 Commands.slash("embedbuilderbeta", "embeds"),
-                Commands.slash("move", "move").addOption(OptionType.STRING, "nutzer", "nutzer", true),
+                Commands.slash("move", "Move einen oder mehrere Nutzer zu dir").addOption(OptionType.STRING, "nutzer", "Der / Die Nutzer", true),
                 Commands.slash("timeout", "Timeoute einen User").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "zeit", "zeit", true),
                 Commands.slash("addusertoticket", "Adde einen Nutzer zu einem Ticket").addOption(OptionType.USER, "user", "Nutzer den de entfernen willst!", true),
                 Commands.slash("embedbuilder", "Baue deinen embed").addOption(OptionType.STRING, "title", "title", false).addOption(OptionType.STRING, "field1", "field1", false).addOption(OptionType.STRING, "value1", "value1", false).addOption(OptionType.STRING, "field2", "field2", false).addOption(OptionType.STRING, "value2", "value2", false).addOption(OptionType.STRING, "field3", "field3", false).addOption(OptionType.STRING, "value3", "value3", false).addOption(OptionType.STRING, "field4", "flied4", false).addOption(OptionType.STRING, "value4", "value4", false).addOption(OptionType.STRING, "description", "description", false).addOption(OptionType.STRING, "footer", "footer", false).addOption(OptionType.STRING, "image", "image", false).addOption(OptionType.STRING, "thumbnail", "thumbnail", false).addOption(OptionType.STRING, "color", "color", false).addOption(OptionType.STRING, "author", "author", false).addOption(OptionType.STRING, "footerimage", "footerimage", false),
-                Commands.slash("giveaway", "Startet einen Giveaway-Wettbewerb.")
+                Commands.slash("giveaway", "Startet eine Verlosung")
                         .addOption(OptionType.STRING, "preis", "Gib hier den Preis ein.", true)
                         .addOption(OptionType.INTEGER, "gewinner", "Gib die Anzahl der Gewinner ein.", true)
                         .addOption(OptionType.STRING, "dauer", "Gib die Dauer des Giveaways in Sekunden ein.", true)).queue();
         List<CommandData> commandData = new ArrayList<>();
         commandData.add(Commands.slash("team", "Staff Command")
-                .addSubcommands(new SubcommandData("add", "add staff member")
-                        .addOption(OptionType.USER, "member", "enter a user.", true)
-                        .addOption(OptionType.ROLE, "role", "enter a role.", true)));
-        commandData.add(Commands.slash("moveall", "move")
-                .addSubcommands(new SubcommandData("to", "to")
-                        .addOption(OptionType.CHANNEL, "channel", "channel", true)));
+                .addSubcommands(new SubcommandData("add", "Füge jemanden in das Team hinzu")
+                        .addOption(OptionType.USER, "member", "Nutzer den du hinzufügen willst", true)
+                        .addOption(OptionType.ROLE, "role", "Die Rolle die der Nutzer bekommt", true)));
+        commandData.add(Commands.slash("moveall", "Move alle die in deinem Channel sind wo anders hin!")
+                .addSubcommands(new SubcommandData("to", "Move alle die in deinem Channel sind wo anders hin!")
+                        .addOption(OptionType.CHANNEL, "channel", "Channel in den alle Ggemoved werden sollen!", true)));
         commandData.add(Commands.slash("music", "Allgemeiner Music Command")
                 .addSubcommands(new SubcommandData("play", "Spielt einen gewünschten Song/PlayList ab")
                         .addOption(OptionType.STRING, "url", "Die URL oder der Name des Songs/PlayList", true))

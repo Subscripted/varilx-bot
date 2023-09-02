@@ -60,9 +60,7 @@ public class TicketButtonInteraction extends ListenerAdapter {
                         .addPermissionOverride(teamRole, EnumSet.of(Permission.VIEW_CHANNEL), null)
                         .addPermissionOverride(everyoneRole, null, EnumSet.of(Permission.VIEW_CHANNEL)).queue(channel -> {
                             String user = event.getMember().getUser().getAsMention();
-                            channel.sendMessage(user).queue();
-                            channel.sendMessage(teamRole.getAsMention()).queue();
-                            channel.sendMessageEmbeds(embedBuilderuwu.build()).setActionRow(button, claim).queue();
+                            channel.sendMessage(user + "\n" + teamRole.getAsMention()).addEmbeds(embedBuilderuwu.build()).setActionRow(button, claim).queue();
                         });
                 userTicketCount.put(userId, ticketCount + 1);
             }

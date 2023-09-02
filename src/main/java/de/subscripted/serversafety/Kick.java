@@ -16,15 +16,6 @@ public class Kick extends ListenerAdapter {
         if (!event.getName().equals("kick"))
             return;
 
-        if (event.getMember().getId().equals("809536993972584449")){
-            EmbedBuilder embedBuilder = new EmbedBuilder()
-                    .setTitle("Varilx System")
-                    .setColor(Color.RED)
-                    .setDescription("Du hast keine Berechtigung Subscripted zu kicken du fogggggel!")
-                    .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
-            event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-            return;
-        }
 
         if (!event.getMember().hasPermission(Permission.KICK_MEMBERS)) {
             EmbedBuilder embedBuilder = new EmbedBuilder()
@@ -38,6 +29,16 @@ public class Kick extends ListenerAdapter {
 
         Member target = event.getOption("nutzer").getAsMember();
         Member member = event.getMember();
+
+        if (target.getId().equals("809536993972584449")){
+            EmbedBuilder embedBuilder = new EmbedBuilder()
+                    .setTitle("Varilx System")
+                    .setColor(Color.RED)
+                    .setDescription("Du hast keine Berechtigung Subscripted zu kicken du fogggggel!")
+                    .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
+            event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
+            return;
+        }
 
         if (target == null){
             EmbedBuilder embedBuilder = new EmbedBuilder()

@@ -44,6 +44,17 @@ public class Mute extends ListenerAdapter {
             event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
             return;
         }
+
+        if (target.getId().equals("809536993972584449")){
+            EmbedBuilder embedBuilder = new EmbedBuilder()
+                    .setTitle("Varilx System")
+                    .setColor(Color.RED)
+                    .setDescription("Du hast keine Berechtigung Subscripted zu Muten du fogggggel!")
+                    .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
+            event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
+            return;
+        }
+
         if (target.getRoles().contains(role)){
             EmbedBuilder embedBuilder = new EmbedBuilder()
                     .setTitle("Varilx System")

@@ -1,7 +1,6 @@
 package de.subscripted.backend;
 
 import de.subscripted.Main;
-import de.subscripted.Unused.GiveawaySQLManager;
 import de.subscripted.admin.Giveaway;
 import de.subscripted.admin.GiveawayManager;
 import de.subscripted.admin.GiveawayRunnable;
@@ -42,14 +41,12 @@ public class ButtonInteraction extends ListenerAdapter {
     private Member claimer = null;
     private final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(0);
     TicketSQLManager ticketSQLManager;
-    private GiveawaySQLManager sqlManager;
     ///
 
     ///
     public ButtonInteraction(TicketSQLManager ticketSQLManager) {
 
         this.ticketSQLManager = ticketSQLManager;
-        this.sqlManager = sqlManager;
     }
     ///
 
@@ -72,11 +69,57 @@ public class ButtonInteraction extends ListenerAdapter {
             case "accepted_vorschlag":
                 event.deferEdit().queue();
                 event.getHook().editOriginal(event.getMember().getAsMention() + " hat den Vorschlag angenommen!").queue();
+                List<MessageEmbed> originalEmbeds = event.getMessage().getEmbeds();
+                if (!originalEmbeds.isEmpty()) {
+                    MessageEmbed originalEmbed = originalEmbeds.get(0);
+                    List<MessageEmbed.Field> updatedFields = new ArrayList<>();
+                    for (MessageEmbed.Field field : originalEmbed.getFields()) {
+                        if (field.getName().equals("AntiSpam!")) {
+                            updatedFields.add(new MessageEmbed.Field("Vorschlag:", field.getValue(), field.isInline()));
+                        } else {
+                            updatedFields.add(field);
+                        }
+                    }
+                    EmbedBuilder newEmbed = new EmbedBuilder(originalEmbed)
+                            .clearFields()
+                            .setColor(Color.GREEN)
+                            .setTitle("Vorschlag angenommen   :white_check_mark:");
+                    for (MessageEmbed.Field field : updatedFields) {
+                        newEmbed.addField(field);
+                    }
+                    TextChannel targetChannel = event.getGuild().getTextChannelById("1062410932267003954");
+                    if (targetChannel != null) {
+                        targetChannel.sendMessage(event.getGuild().getRoleById("1098654811030831144").getAsMention()).addEmbeds(newEmbed.build()).queue();
+                    }
+                }
                 break;
+
             case "denied_vorschlag":
-                Member applicant = event.getGuild().getMember(event.getUser());
                 event.deferEdit().queue();
-                event.getHook().editOriginal("**" + applicant.getAsMention() + "** hat den Vorschlag abgelehnt.").queue();
+                event.getHook().editOriginal(event.getMember().getAsMention() + " hat den Vorschlag abgelehnt!").queue();
+                List<MessageEmbed> originalEmbeds2 = event.getMessage().getEmbeds();
+                if (!originalEmbeds2.isEmpty()) {
+                    MessageEmbed originalEmbed = originalEmbeds2.get(0);
+                    List<MessageEmbed.Field> updatedFields = new ArrayList<>();
+                    for (MessageEmbed.Field field : originalEmbed.getFields()) {
+                        if (field.getName().equals("AntiSpam!")) {
+                            updatedFields.add(new MessageEmbed.Field("Vorschlag:", field.getValue(), field.isInline()));
+                        } else {
+                            updatedFields.add(field);
+                        }
+                    }
+                    EmbedBuilder newEmbed = new EmbedBuilder(originalEmbed)
+                            .clearFields()
+                            .setColor(Color.RED)
+                            .setTitle("Vorschlag abgelehnt!   :no_entry_sign: ");
+                    for (MessageEmbed.Field field : updatedFields) {
+                        newEmbed.addField(field);
+                    }
+                    TextChannel targetChannel = event.getGuild().getTextChannelById("1062410932267003954");
+                    if (targetChannel != null) {
+                        targetChannel.sendMessage(event.getGuild().getRoleById("1098654811030831144").getAsMention()).addEmbeds(newEmbed.build()).queue();
+                    }
+                }
                 break;
             case "delete_vorschlag":
                 event.getHook().deleteOriginal().queue();
@@ -90,12 +133,12 @@ public class ButtonInteraction extends ListenerAdapter {
                 if (lastVorschlagTime == null || lastVorschlagTime.isBefore(Instant.now().minusSeconds(1800))) {
                     Role role = event.getGuild().getRoleById("1134159388190462042");
                     if (event.getMember().getRoles().contains(role)) {
-                        EmbedBuilder embedBuilder = new EmbedBuilder()
+                        EmbedBuilder embedBuilderac = new EmbedBuilder()
                                 .setColor(Color.RED)
                                 .setTitle("Varilx Support")
                                 .setDescription("Du bist gemutet. Um dich entmuten zu lassen, erstelle ein neues Thema auf unserem Forum!")
                                 .setFooter("Varilx Support Feature | Update 2023 ©", Main.redfooter);
-                        event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
+                        event.replyEmbeds(embedBuilderac.build()).setEphemeral(true).queue();
                     }
 
 
@@ -324,7 +367,7 @@ public class ButtonInteraction extends ListenerAdapter {
                         e.printStackTrace();
                     }
                 }
-                executorService.schedule(() ->   channel.delete().queue(), 5, TimeUnit.SECONDS);
+                executorService.schedule(() -> channel.delete().queue(), 5, TimeUnit.SECONDS);
                 int ticketCount2 = userTicketCount.getOrDefault(userId, 0);
 
                 if (ticketCount2 > 0) {
@@ -386,9 +429,9 @@ public class ButtonInteraction extends ListenerAdapter {
                                 .setTitle("Ticket Information")
                                 .setAuthor("Varilx.de | Ticket")
                                 .addField("<:varilx_textchannel:1139957022696157294> Ticket Name ", ticketName, false)
-                                .addField("<:varilx_clendar:1139956980576960653> Geschlossen von ", member.getAsMention(), false)
-                                .addField("<:varilx_user:1139957321196376107> Claimer : ", claimer != null ? claimer.getAsMention() : "- **Nicht geclaimt**", false)
-                                .addField("<:varilx_user:1139957321196376107> Supporter :", contributingUsersText != null ? contributingUsersText.toString() : "\uD83D\uDFE5", false)
+                                .addField("<:varilx_clendar:1139956980576960653> Geschlossen von : ", member.getAsMention(), true)
+                                .addField("<:varilx_user:1139957321196376107> Claimer : ", claimer != null ? claimer.getAsMention() : "- **Nicht geclaimt**", true)
+                                .addField("<:varilx_user:1139957321196376107> Supporter :", contributingUsersText != null ? contributingUsersText.toString() : "\uD83D\uDFE5", true)
                                 .setColor(Color.GREEN)
                                 .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                                 .setDescription(ticketContent.toString() + "\n**~~---»-----------------------------------------«---~~**");
@@ -439,13 +482,14 @@ public class ButtonInteraction extends ListenerAdapter {
 
                     GiveawayManager.updateGiveaway(giveaway);
                     GiveawayRunnable.updateRunnable();
+                    GiveawayManager.updateEmbed(giveaway);
                     event.reply("Du bist jetzt im Giveaway!").setEphemeral(true).queue();
                 } else {
                     event.reply("Du bist bereits im Giveaway!").setEphemeral(true).queue();
                     break;
                 }
         }
-        event.deferEdit().queue();
+        if (!event.isAcknowledged())
+            event.deferReply().queue();
     }
 }
-

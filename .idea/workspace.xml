@@ -5,52 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Music/core/MusicCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/core/AudioInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/core/PlayerSendHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/core/TrackManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/CoinsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/CreateJob.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/GiveawaySQLManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/GiveawaySQLiteManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/JobSQLManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/MoneySQLManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/MoneySystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/PayCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/SetCoins.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/SetTop10Money.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/TopMoneyList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/UnusedTicketClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/WorkCommand.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Promote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Promote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Send.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Send.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/SetCoins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/SetCoins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/SetTop10Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/SetTop10Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/TopMoneyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/TopMoneyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/MoneySystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/MoneySystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/serversafety/Ban.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/serversafety/Ban.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/MoneySQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/MoneySQLManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInside.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInside.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Chatfilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Chatfilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/CoinsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/CoinsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/PayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/PayCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/WorkCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Unused/WorkCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnVoiceChannelBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnVoiceChannelBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/serversafety/Kick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/serversafety/Kick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/serversafety/Mute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/serversafety/Mute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/EmbedSQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/EmbedSQLManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/SupportVoiceJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/SupportVoiceJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInteraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/working/SendEmbedCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/SendEmbedCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Promote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Promote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Send.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Send.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/SetCoins.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/SetTop10Money.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/TopMoneyList$MemberCoins.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/TopMoneyList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Unused/CreateJob.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Unused/GiveawaySQLManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Unused/GiveawaySQLiteManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Unused/JobSQLManager.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/MoneySystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/games/EightBall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/games/EightBall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/sql/MoneySQLManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInside.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInside.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Chatfilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Chatfilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/CoinsCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/PayCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/WorkCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/serversafety/Ban.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/serversafety/Ban.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/serversafety/Kick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/serversafety/Kick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/serversafety/Mute.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/serversafety/Mute.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/SupportVoiceJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/SupportVoiceJoin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInteraction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tickets.db" beforeDir="false" afterPath="$PROJECT_DIR$/tickets.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/varilx_level.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilx_level.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/varilxcoins.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilxcoins.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +275,16 @@
       <workItem from="1693133780177" duration="6494000" />
       <workItem from="1693247687532" duration="1519000" />
       <workItem from="1693333234209" duration="5418000" />
-      <workItem from="1693386694651" duration="857000" />
+      <workItem from="1693386694651" duration="9241000" />
+      <workItem from="1693412752483" duration="16000" />
+      <workItem from="1693413240262" duration="79000" />
+      <workItem from="1693415088586" duration="2413000" />
+      <workItem from="1693493556725" duration="437000" />
+      <workItem from="1693497167833" duration="985000" />
+      <workItem from="1693502200788" duration="505000" />
+      <workItem from="1693579216310" duration="1015000" />
+      <workItem from="1693605122336" duration="805000" />
+      <workItem from="1693654440804" duration="2816000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -501,7 +507,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692904636708</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Nothing changed">
+      <option name="closed" value="true" />
+      <created>1693387660401</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1693387660401</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -46,7 +46,7 @@ public class GiveawayCommand extends ListenerAdapter {
                                 .setFooter("Varilx Giveway | Updated 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                                 .setColor(Color.GREEN)
                                 .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
-                                .setDescription("- Gestartet von: " + member.getAsMention() + "\n" + "- Was wird verlost: **" + prize + "** \n"  + "- Restzeit: <t:" + TimeStampMaker.getTime(duration) + ":R>")
+                                .setDescription("- Gestartet von: " + member.getAsMention() + "\n" + "- Was wird verlost: **" + prize + "** \n"  + "- Restzeit: <t:" + TimeStampMaker.getTime(duration) + ":R>\n" + "- Teilnehmer: 0")
 
                                 .setTimestamp(OffsetDateTime.now(Clock.systemUTC()))
                                 .build())
