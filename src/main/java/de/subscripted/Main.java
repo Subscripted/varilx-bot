@@ -232,7 +232,6 @@ public class Main {
                 .addSubcommands(new SubcommandData("volume", "Setzt das Volume auf das angegeben Volume")
                         .addOption(OptionType.INTEGER, "volume", "Volume (ex: 80) in % aber ohne %", true)));
         guild.updateCommands().addCommands(commandData).queue();
-
         startGiveawayRunnable();
     }
 

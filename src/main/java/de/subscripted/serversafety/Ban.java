@@ -17,15 +17,7 @@ public class Ban extends ListenerAdapter {
             return;
 
 
-        if (event.getMember().getId().equals("809536993972584449")){
-            EmbedBuilder embedBuilder = new EmbedBuilder()
-                    .setTitle("Varilx System")
-                    .setColor(Color.RED)
-                    .setDescription("Du hast keine Berechtigung Subscripted zu bannen du fogggggel!")
-                    .setFooter("Varilx Safety Feature | Update 2023 © ", Main.redfooter);
-            event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
-            return;
-        }
+
 
         if (!event.getMember().hasPermission(Permission.BAN_MEMBERS)) {
             EmbedBuilder embedBuilder = new EmbedBuilder()

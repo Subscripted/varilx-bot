@@ -12,6 +12,7 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
+import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.interactions.components.text.TextInput;
 import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;
 import net.dv8tion.jda.api.interactions.modals.Modal;
@@ -117,7 +118,7 @@ public class ButtonInteraction extends ListenerAdapter {
                     }
                     TextChannel targetChannel = event.getGuild().getTextChannelById("1062410932267003954");
                     if (targetChannel != null) {
-                        targetChannel.sendMessage(event.getGuild().getRoleById("1098654811030831144").getAsMention()).addEmbeds(newEmbed.build()).queue();
+                        targetChannel.sendMessageEmbeds(newEmbed.build()).queue();
                     }
                 }
                 break;
@@ -485,11 +486,17 @@ public class ButtonInteraction extends ListenerAdapter {
                     GiveawayManager.updateEmbed(giveaway);
                     event.reply("Du bist jetzt im Giveaway!").setEphemeral(true).queue();
                 } else {
-                    event.reply("Du bist bereits im Giveaway!").setEphemeral(true).queue();
-                    break;
+                    Button button = Button.secondary("gwleave", "Leave");
+                    EmbedBuilder embedBuilder1 = new EmbedBuilder()
+                            .setTitle("Varilx Giveaway")
+                            .setColor(Color.yellow)
+                            .setDescription("Du nimmst bereits an diesem Giveway teil! ")
+                            .setFooter("Varilx Giveaway Feature | Update 2023 ©", Main.getJda().getSelfUser().getAvatarUrl());
+                    event.replyEmbeds(embedBuilder1.build()).setEphemeral(true).queue();
                 }
+                break;
         }
         if (!event.isAcknowledged())
-            event.deferReply().queue();
+            event.deferEdit().queue();
     }
 }

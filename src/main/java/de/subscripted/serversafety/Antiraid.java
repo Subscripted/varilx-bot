@@ -35,7 +35,7 @@ public class Antiraid extends ListenerAdapter {
         EmbedBuilder dcantiraid = new EmbedBuilder()
                 .setColor(Color.RED)
                 .setTitle("Varilx Antiraid")
-                .setDescription("Varilx System hat " + user.getAsMention() + " gekickt")
+                .setDescription("Varilx System hat )" + user.getEffectiveName() + ") / (" + event.getMember().getNickname() + ") gekickt")
                 .addField("Grund", "Der Account des Users war jünger als 2 Tage!", false)
                 .addField("Weitere Infos:" , "Erstellung des Account,s " + "```" + accountCreationTime + "```", false)
                 .setFooter("Varilx Server Schutz Feature | Update 2023 © ", Main.redfooter);
