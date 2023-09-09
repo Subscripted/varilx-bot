@@ -32,7 +32,7 @@ public class AddRemoveTicket extends ListenerAdapter {
             Member mentionedMember = event.getOption("user").getAsMember();
             Member member = event.getMember();
 
-            if (mentionedMember.hasPermission(textChannel, Permission.VIEW_CHANNEL)){
+            if (mentionedMember.hasPermission(textChannel, Permission.VIEW_CHANNEL)) {
                 event.reply(mentionedMember.getAsMention() + " kann dieses Ticket bereits sehen!").setEphemeral(true).queue();
                 return;
             }
@@ -44,7 +44,15 @@ public class AddRemoveTicket extends ListenerAdapter {
                     .setDescription("Folgende Nutzer wurde von " + member.getAsMention() + " zu dem Ticket hinzugefügt: " + mentionedMember.getAsMention())
                     .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                     .setColor(Color.GREEN);
-            event.replyEmbeds(builder.build()).queue();
+
+            EmbedBuilder builder2 = new EmbedBuilder()
+                    .setDescription("Du wurdest zu " + event.getChannel().getName() + " hinzugefügt!")
+                    .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
+                    .setColor(Color.GREEN);
+
+            event.reply(mentionedMember.getAsMention()).addEmbeds(builder.build()).queue();
+
+            mentionedMember.getUser().openPrivateChannel().complete().sendMessageEmbeds(builder2.build());
 
         } else if (event.getName().equals("removeuserfromticket")) {
             Role teamRole = event.getGuild().getRoleById("1003618027037786205");
