@@ -28,7 +28,6 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
-import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -211,16 +210,16 @@ public class Main {
                 Commands.slash("giveaway", "Startet eine Verlosung")
                         .addOption(OptionType.STRING, "preis", "Gib hier den Preis ein.", true)
                         .addOption(OptionType.INTEGER, "gewinner", "Gib die Anzahl der Gewinner ein.", true)
-                        .addOption(OptionType.STRING, "dauer", "Gib die Dauer des Giveaways in Sekunden ein.", true)).queue();
-        List<CommandData> commandData = new ArrayList<>();
-        commandData.add(Commands.slash("team", "Staff Command")
+                        .addOption(OptionType.STRING, "dauer", "Gib die Dauer des Giveaways in Sekunden ein.", true),
+        Commands.slash("team", "Staff Command")
                 .addSubcommands(new SubcommandData("add", "Füge jemanden in das Team hinzu")
                         .addOption(OptionType.USER, "member", "Nutzer den du hinzufügen willst", true)
-                        .addOption(OptionType.ROLE, "role", "Die Rolle die der Nutzer bekommt", true)));
-        commandData.add(Commands.slash("moveall", "Move alle die in deinem Channel sind wo anders hin!")
+                        .addOption(OptionType.ROLE, "role", "Die Rolle die der Nutzer bekommt", true)),
+        Commands.slash("moveall", "Move alle die in deinem Channel sind wo anders hin!")
                 .addSubcommands(new SubcommandData("to", "Move alle die in deinem Channel sind wo anders hin!")
-                        .addOption(OptionType.CHANNEL, "channel", "Channel in den alle Ggemoved werden sollen!", true)));
-        commandData.add(Commands.slash("music", "Allgemeiner Music Command")
+                        .addOption(OptionType.CHANNEL, "channel", "Channel in den alle Ggemoved werden sollen!", true)),
+
+        Commands.slash("music", "Allgemeiner Music Command")
                 .addSubcommands(new SubcommandData("play", "Spielt einen gewünschten Song/PlayList ab")
                         .addOption(OptionType.STRING, "url", "Die URL oder der Name des Songs/PlayList", true))
                 .addSubcommands(new SubcommandData("skip", "Überspringt einen Song")
@@ -230,8 +229,9 @@ public class Main {
                 .addSubcommands(new SubcommandData("np", "Zeigt den Aktuellen Song an"))
                 .addSubcommands(new SubcommandData("queue", "Zeigt die aktuelle Queue"))
                 .addSubcommands(new SubcommandData("volume", "Setzt das Volume auf das angegeben Volume")
-                        .addOption(OptionType.INTEGER, "volume", "Volume (ex: 80) in % aber ohne %", true)));
-        guild.updateCommands().addCommands(commandData).queue();
+                        .addOption(OptionType.INTEGER, "volume", "Volume (ex: 80) in % aber ohne %", true))).queue();
+        assert guild != null;
+        guild.updateCommands().queue();
         startGiveawayRunnable();
     }
 
