@@ -13,7 +13,6 @@ public class OwnVoiceChannelBuilder extends ListenerAdapter {
     public void onGuildVoiceUpdate(GuildVoiceUpdateEvent event) {
         if (event.getChannelJoined() == null)
             return;
-
         Member member = event.getMember();
         VoiceChannel joinedChannel = (VoiceChannel) event.getChannelJoined();
         VoiceChannel targetChannel = event.getGuild().getVoiceChannelById("1132261803280306258");
@@ -23,7 +22,6 @@ public class OwnVoiceChannelBuilder extends ListenerAdapter {
             if (category != null) {
                 VoiceChannel newChannel = (VoiceChannel) category.createVoiceChannel(member.getEffectiveName()).complete().getManager().putPermissionOverride(member, EnumSet.of(Permission.MANAGE_CHANNEL), null);
                 event.getGuild().moveVoiceMember(member, newChannel).queue();
-
             }
         }
     }

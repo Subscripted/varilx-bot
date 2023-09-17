@@ -1,5 +1,6 @@
 package de.subscripted.admin;
 
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
@@ -44,6 +45,8 @@ public class Clear extends ListenerAdapter {
                 channel.deleteMessages(sortedMessages).queue();
 
                 event.getMessage().delete().queueAfter(1, TimeUnit.SECONDS);
+
+
 
             } catch (NumberFormatException e) {
                 event.getChannel().sendMessage("Bitte gib eine Zahl zwischen 1 und 100 ein.").queue();

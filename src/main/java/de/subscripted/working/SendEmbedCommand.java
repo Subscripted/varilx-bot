@@ -67,7 +67,6 @@ public class SendEmbedCommand extends ListenerAdapter {
                 embedBuilder.setFooter(footer);
             }
 
-            // ... handle other fields ...
 
             targetChannel.sendMessageEmbeds(embedBuilder.build()).queue();
 

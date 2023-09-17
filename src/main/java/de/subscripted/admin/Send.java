@@ -24,11 +24,8 @@ public class Send extends ListenerAdapter {
             event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
             return;
         }
-
         String message = event.getOption("nachricht").getAsString();
-
         event.getChannel().sendMessage(message).queue();
-
         event.reply("Erfolgreich gesendet!").setEphemeral(true).queue();
     }
 }

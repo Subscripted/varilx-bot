@@ -3,11 +3,9 @@ package de.subscripted.support;
 import de.subscripted.Main;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Role;
-
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.events.guild.voice.GuildVoiceUpdateEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.hyperic.sigar.RPC;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
@@ -55,11 +53,9 @@ public class SupportVoiceJoin extends ListenerAdapter {
         Role role6 = event.getGuild().getRoleById("1081305694755639376");
 
 
-            event.getGuild().getTextChannelById(destinationChannelId).sendMessage(role1.getAsMention() + role2.getAsMention() + role3.getAsMention()  + "\n" + role4.getAsMention() + role5.getAsMention() + role6.getAsMention() ).queue();
-            event.getGuild().getTextChannelById(destinationChannelId).sendMessageEmbeds(embedBuilder.build()).queue();
-        }
-
-
+        event.getGuild().getTextChannelById(destinationChannelId).sendMessage(role1.getAsMention() + role2.getAsMention() + role3.getAsMention() + "\n" + role4.getAsMention() + role5.getAsMention() + role6.getAsMention()).queue();
+        event.getGuild().getTextChannelById(destinationChannelId).sendMessageEmbeds(embedBuilder.build()).queue();
+    }
 
 
     private void sendEmbedToPrivateChannels(GuildVoiceUpdateEvent event, EmbedBuilder embedBuilder) {
@@ -75,7 +71,7 @@ public class SupportVoiceJoin extends ListenerAdapter {
         for (Role role : roleList) {
             event.getGuild().getMembersWithRoles(role).forEach(member -> {
                 member.getUser().openPrivateChannel().complete().sendMessageEmbeds(embedBuilder.build()).queue();
-                });
+            });
         }
     }
 

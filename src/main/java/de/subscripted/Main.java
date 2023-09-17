@@ -11,6 +11,7 @@ import de.subscripted.games.EightBall;
 import de.subscripted.lavaplayer.*;
 import de.subscripted.serversafety.*;
 import de.subscripted.sql.TicketSQLManager;
+import de.subscripted.sql.WarnSQLManager;
 import de.subscripted.sql.XpSQLManager;
 import de.subscripted.support.*;
 import de.subscripted.updated.OnReadyUpdate;
@@ -56,6 +57,8 @@ public class Main {
 
     public static TicketSQLManager ticketSQLManager;
 
+    public static WarnSQLManager warnSQLManager;
+
 
     public static String redfooter = "https://cdn.discordapp.com/attachments/1055223755909111808/1133836888449503262/Unbdassddasadsadssaasadedsddsdsadsanannt-1.png";
     private static final List<String> statusMessages = new ArrayList<>();
@@ -73,6 +76,7 @@ public class Main {
 
         xpSqlManager = new XpSQLManager();
         ticketSQLManager = new TicketSQLManager();
+        warnSQLManager = new WarnSQLManager();
         TicketSQLManager.initializeDatabase();
 
 
@@ -137,7 +141,9 @@ public class Main {
                         new MusicCommand(),
                         new SendEmbedCommand(),
                         new EmbedBuilderBetaModalInteractions(),
-                        new EmbedBuilderButtons()
+                        new EmbedBuilderButtons(),
+                        new Warn(warnSQLManager),
+                        new GetWarns(warnSQLManager)
                 ).build().awaitReady();
 
         getJda().getGuilds().forEach(guild -> guild.getAudioManager().setSelfDeafened(true));
@@ -211,15 +217,17 @@ public class Main {
                         .addOption(OptionType.STRING, "preis", "Gib hier den Preis ein.", true)
                         .addOption(OptionType.INTEGER, "gewinner", "Gib die Anzahl der Gewinner ein.", true)
                         .addOption(OptionType.STRING, "dauer", "Gib die Dauer des Giveaways in Sekunden ein.", true),
-        Commands.slash("team", "Staff Command")
+                Commands.slash("warn", "Verwarne einen Nutzer").addOption(OptionType.USER, "nutzer", "Nutzer den du verwarnen willst!"),
+                Commands.slash("getwarn", "Reason für warns").addOption(OptionType.USER, "nutzer", "Nutzer halt", true),
+                Commands.slash("team", "Staff Command")
                 .addSubcommands(new SubcommandData("add", "Füge jemanden in das Team hinzu")
                         .addOption(OptionType.USER, "member", "Nutzer den du hinzufügen willst", true)
                         .addOption(OptionType.ROLE, "role", "Die Rolle die der Nutzer bekommt", true)),
-        Commands.slash("moveall", "Move alle die in deinem Channel sind wo anders hin!")
+                Commands.slash("moveall", "Move alle die in deinem Channel sind wo anders hin!")
                 .addSubcommands(new SubcommandData("to", "Move alle die in deinem Channel sind wo anders hin!")
                         .addOption(OptionType.CHANNEL, "channel", "Channel in den alle Ggemoved werden sollen!", true)),
 
-        Commands.slash("music", "Allgemeiner Music Command")
+                Commands.slash("music", "Allgemeiner Music Command")
                 .addSubcommands(new SubcommandData("play", "Spielt einen gewünschten Song/PlayList ab")
                         .addOption(OptionType.STRING, "url", "Die URL oder der Name des Songs/PlayList", true))
                 .addSubcommands(new SubcommandData("skip", "Überspringt einen Song")
