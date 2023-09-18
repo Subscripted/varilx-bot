@@ -41,6 +41,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -70,7 +71,7 @@ public class Main {
     private static JDA jda;
 
 
-    public static void main(String[] args) throws LoginException, InterruptedException {
+    public static void main(String[] args) throws LoginException, InterruptedException, SQLException {
 
         loadFiles();
 
@@ -143,7 +144,8 @@ public class Main {
                         new EmbedBuilderBetaModalInteractions(),
                         new EmbedBuilderButtons(),
                         new Warn(warnSQLManager),
-                        new GetWarns(warnSQLManager)
+                        new GetWarns(warnSQLManager),
+                        new ClearWarns(warnSQLManager)
                 ).build().awaitReady();
 
         getJda().getGuilds().forEach(guild -> guild.getAudioManager().setSelfDeafened(true));
@@ -226,7 +228,7 @@ public class Main {
                 Commands.slash("moveall", "Move alle die in deinem Channel sind wo anders hin!")
                 .addSubcommands(new SubcommandData("to", "Move alle die in deinem Channel sind wo anders hin!")
                         .addOption(OptionType.CHANNEL, "channel", "Channel in den alle Ggemoved werden sollen!", true)),
-
+                Commands.slash("deletewarns", "Lösche alle warns eines Nutzers").addOption(OptionType.USER, "nutzer", "Nutzer von dem du die Warns löschen willst!"),
                 Commands.slash("music", "Allgemeiner Music Command")
                 .addSubcommands(new SubcommandData("play", "Spielt einen gewünschten Song/PlayList ab")
                         .addOption(OptionType.STRING, "url", "Die URL oder der Name des Songs/PlayList", true))

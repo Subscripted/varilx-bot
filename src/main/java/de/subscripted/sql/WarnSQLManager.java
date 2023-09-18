@@ -54,21 +54,21 @@ public class WarnSQLManager {
             while (resultSet.next()) {
                 reasons.add(resultSet.getString("reason"));
             }
-            if (reasons == null){
+            if (reasons.isEmpty()){
                 return noWarns();
             }
             return String.join("\n", reasons);
         }
     }
-    public void clearReasons(String userId) throws SQLException {
+
+    public boolean clearReasons(String userId) throws SQLException {
         String query = "DELETE FROM warnings WHERE user_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, userId);
-            statement.executeUpdate();
+            int rowsDeleted = statement.executeUpdate();
+            return rowsDeleted > 0;
         }
     }
-
-
 
 
     public void setReason(String userId, String reason) throws SQLException {
@@ -78,10 +78,9 @@ public class WarnSQLManager {
             statement.setString(2, reason);
             statement.executeUpdate();
         }
-
     }
-    public String noWarns(){
-        String reason = "Keine Warns";
-        return reason;
+
+    public String noWarns() {
+        return "Keine Warns";
     }
 }
