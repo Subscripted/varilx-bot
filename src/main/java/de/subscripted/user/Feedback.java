@@ -23,7 +23,6 @@ import java.util.Map;
 
 public class Feedback extends ListenerAdapter {
 
-    private Map<String, Instant> userCooldowns = new HashMap<>();
 
     public void onMessageReceived(MessageReceivedEvent event) {
         if (!event.getMessage().getContentRaw().equalsIgnoreCase("!feedback"))
