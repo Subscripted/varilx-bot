@@ -43,14 +43,14 @@ public class GiveawayCommand extends ListenerAdapter {
         event.reply(guild.getRoleById("1098654469710954728").getAsMention()).addEmbeds(
                         new EmbedBuilder()
                                 .setTitle("<a:Vaxparty:1137213809128382474> Giveaway <a:Vaxparty:1137213809128382474>")
-                                .setFooter("Varilx Giveway | Updated 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
+                                .setFooter("Varilx Giveway | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                                 .setColor(Color.GREEN)
                                 .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
-                                .setDescription("- Gestartet von: " + member.getAsMention() + "\n" + "- Was wird verlost: **" + prize + "** \n"  + "- Restzeit: <t:" + TimeStampMaker.getTime(duration) + ":R>\n" + "- Teilnehmer: 0")
+                                .setDescription("- Gestartet von: " + member.getAsMention() + "\n" + "- Was wird verlost: **" + prize + "** \n"  + "- Restzeit: <t:" + TimeStampMaker.getTime(duration) + ":R>\n" + "- Teilnehmer: -")
 
                                 .setTimestamp(OffsetDateTime.now(Clock.systemUTC()))
                                 .build())
-                .addActionRow(Button.primary("giveaway_join", Emoji.fromUnicode("U+1F389")))
+                .addActionRow(Button.success("giveaway_join", Emoji.fromFormatted("<a:Vaxparty:1137213809128382474>")))
                 .complete().retrieveOriginal().queue(message -> {
                     GiveawayManager.create(member, prize, winners, TimeStampMaker.getTime(duration), message.getChannel().getId(), message.getId());
                     GiveawayRunnable.updateRunnable();

@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/ClearWarns.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Added something what is not finished yet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/WarnSQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/WarnSQLManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Ping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Ping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/XPSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/backend/XPSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/SupportVoiceJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/SupportVoiceJoin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Bugreport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Bugreport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Ping.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Ping.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/varilx_level.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilx_level.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,8 +103,10 @@
       <command value="mvn instal" />
       <command value="mvn --debug" />
       <command value="mvn --debug install" />
-      <command value="mvn install" />
       <command value="mvn deploy" />
+      <command value="push" />
+      <command value="mvn installl" />
+      <command value="mvn install" />
     </option>
   </component>
   <component name="RunManager">
@@ -279,7 +285,9 @@
       <workItem from="1694898382080" duration="1130000" />
       <workItem from="1694961886806" duration="2932000" />
       <workItem from="1695032285879" duration="82000" />
-      <workItem from="1695032402025" duration="3535000" />
+      <workItem from="1695032402025" duration="5549000" />
+      <workItem from="1695107178145" duration="1678000" />
+      <workItem from="1695110673056" duration="1157000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -550,7 +558,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694259418421</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="- Added something what is not finished yet">
+      <option name="closed" value="true" />
+      <created>1695036175081</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1695036175081</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,6 +608,7 @@
     <MESSAGE value="Fixed some Bugs&#10;&#10;- Changed für AntiRaid the user.getAsMention to user.getEffectiveName" />
     <MESSAGE value="- Text- Changes" />
     <MESSAGE value="- Fixed: Subcommands wont loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Fixed: Subcommands wont loading" />
+    <MESSAGE value="- Added something what is not finished yet" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added something what is not finished yet" />
   </component>
 </project>

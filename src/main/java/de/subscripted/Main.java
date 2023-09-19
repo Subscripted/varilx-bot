@@ -41,6 +41,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -174,14 +175,14 @@ public class Main {
                 if (currentStatusIndex >= statusMessages.size()) {
                     currentStatusIndex = 0;
                 }
+
                 String newStatusMessage = statusMessages.get(currentStatusIndex);
                 Activity.ActivityType newActivityType = activityTypes.get(currentStatusIndex);
                 String newActivityDetail = activityDetails.get(currentStatusIndex);
                 Activity newActivity = Activity.of(newActivityType, newActivityDetail);
                 jda.getPresence().setActivity(newActivity);
-                System.out.println("Status changed to: " + newStatusMessage);
             }
-        }, 0, 10000);
+        }, 0, 3000);
 
 
         Guild guild = jda.getGuildById("886262410489520168");

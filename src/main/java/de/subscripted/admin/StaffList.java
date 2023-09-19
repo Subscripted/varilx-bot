@@ -27,13 +27,9 @@ public class StaffList {
 
 
         LocalTime currentTime = LocalTime.now(ZoneId.systemDefault());
-
-        // Add some hours to the current time (for example, adding 3 hours)
         int hoursToAdd = 3;
         ZonedDateTime zonedDateTime = currentTime.atDate(LocalDate.now()).atZone(ZoneId.systemDefault()).plusHours(2);
         LocalTime newTime = zonedDateTime.toLocalTime();
-
-        // Format the new time as HH:mm
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         String formattedTime = formatter.format(newTime);
 
@@ -42,8 +38,6 @@ public class StaffList {
         builder.setColor(Color.GREEN);
         builder.setTitle("Varilx Team Liste");
         builder.setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png");
-
-        // Define role IDs and corresponding role names here
         String[][] roles = {
                  {"888391247365046272", "<@&888391247365046272>"},
                 {"888504288198918185", "<@&888504288198918185>"},

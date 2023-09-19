@@ -31,6 +31,7 @@ public class MusicCommand extends ListenerAdapter {
     public static final AudioPlayerManager MANAGER = new DefaultAudioPlayerManager();
     private final Map<Guild, Map.Entry<AudioPlayer, TrackManager>> players = new HashMap<>();
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
+        assert event.getSubcommandName() != null;
         if (!event.getSubcommandName().equals("play"))
             return;
             guild = event.getGuild();

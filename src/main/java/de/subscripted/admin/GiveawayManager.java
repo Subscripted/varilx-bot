@@ -173,7 +173,7 @@ public class GiveawayManager {
         textChannel.retrieveMessageById(giveaway.getMessageId()).queue(message -> message.editMessageEmbeds(
                         new EmbedBuilder()
                                 .setTitle("<a:Vaxparty:1137213809128382474> Giveaway <a:Vaxparty:1137213809128382474>")
-                                .setFooter("Varilx Giveway | Updated 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
+                                .setFooter("Varilx Giveway | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                                 .setColor(Color.DARK_GRAY)
                                 .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
                                 .setDescription("- Gestartet von: " + user.getAsMention() + "\n" + "- Was wurde verlost: **" + prize + "** \n" + "- Gewinner: " + finalWinner + "\n- Restzeit: **ABGELAUFEN**" + "\n" + "- Wurde beendet am: <t:" + TimeStampMaker.getTime(0) + ":R>\n" + "- Teilnehmer: " + giveaway.getUsers().size())
@@ -218,7 +218,7 @@ public class GiveawayManager {
             message.editMessageEmbeds(
                     new EmbedBuilder()
                     .setTitle("<a:Vaxparty:1137213809128382474> Giveaway <a:Vaxparty:1137213809128382474>")
-                    .setFooter("Varilx Giveway | Updated 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
+                    .setFooter("Varilx Giveway | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                     .setColor(Color.GREEN)
                     .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
                     .setDescription("- Gestartet von: " + giveaway.getCreator().getAsMention() + "\n" + "- Was wird verlost: **" + giveaway.getPrize() + "** \n"  + "- Restzeit: <t:" + giveaway.getEndTime() + ":R> \n" + "- Teilnehmer: " + giveaway.getUsers().size())
