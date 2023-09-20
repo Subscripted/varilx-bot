@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Small Bugfixes 2">
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Forgott a line">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -274,7 +275,7 @@
       <workItem from="1695107178145" duration="1678000" />
       <workItem from="1695110673056" duration="1157000" />
       <workItem from="1695191271183" duration="73000" />
-      <workItem from="1695195283376" duration="5014000" />
+      <workItem from="1695195283376" duration="6520000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -577,7 +578,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695207392713</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="- Forgott a line">
+      <option name="closed" value="true" />
+      <created>1695207646686</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1695207646686</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +604,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- Changed the Speed of Changing Bot status from 5 sec to 10 sec, cause Performance issues!" />
     <MESSAGE value="- Added Serverinfo command and fixed some Issues / errors" />
     <MESSAGE value="- Added Bugreport command and fixed some Issues / errors" />
     <MESSAGE value="- Added User Info Cmd (not ready yet and not available in proper version)" />
@@ -620,6 +628,7 @@
     <MESSAGE value="- Added Support Finished System" />
     <MESSAGE value="- Small Bugfixes" />
     <MESSAGE value="- Small Bugfixes 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Small Bugfixes 2" />
+    <MESSAGE value="- Forgott a line" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Forgott a line" />
   </component>
 </project>
