@@ -7,20 +7,17 @@
     <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Added something what is not finished yet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Ping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Ping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/SupportVoiceJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/SupportVoiceJoin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/XPSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/backend/XPSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/StaffList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/StaffList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/SupportVoiceJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/SupportVoiceJoin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Bugreport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Bugreport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Ping.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Ping.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/varilx_level.db" beforeDir="false" afterPath="$PROJECT_DIR$/varilx_level.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,6 +285,8 @@
       <workItem from="1695032402025" duration="5549000" />
       <workItem from="1695107178145" duration="1678000" />
       <workItem from="1695110673056" duration="1157000" />
+      <workItem from="1695191271183" duration="73000" />
+      <workItem from="1695195283376" duration="3259000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />

@@ -4,8 +4,10 @@ import de.subscripted.Main;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
+import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.guild.voice.GuildVoiceUpdateEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
@@ -53,8 +55,9 @@ public class SupportVoiceJoin extends ListenerAdapter {
         Role role6 = event.getGuild().getRoleById("1081305694755639376");
 
 
-        event.getGuild().getTextChannelById(destinationChannelId).sendMessage(role1.getAsMention() + role2.getAsMention() + role3.getAsMention() + "\n" + role4.getAsMention() + role5.getAsMention() + role6.getAsMention()).queue();
-        event.getGuild().getTextChannelById(destinationChannelId).sendMessageEmbeds(embedBuilder.build()).queue();
+        Button button = Button.secondary("erledigt_support", "Erledigt").withEmoji(Emoji.fromFormatted("<:varilx_voicestate:1139957544761176188>"));
+
+        event.getGuild().getTextChannelById(destinationChannelId).sendMessage(role1.getAsMention() + role2.getAsMention() + role3.getAsMention() + "\n" + role4.getAsMention() + role5.getAsMention() + role6.getAsMention()).addEmbeds(embedBuilder.build()).addActionRow(button).queue();
     }
 
 

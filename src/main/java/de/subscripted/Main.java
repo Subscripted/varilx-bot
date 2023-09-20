@@ -94,7 +94,7 @@ public class Main {
                         new TicketButtonInteraction(),
                         new TicketButtonInside(ticketSQLManager),
                         new Builder(),
-                        new SupportVoiceJoin("970663709573783553", "970410291630333963"),
+                        new SupportVoiceJoin("970663709573783553", "1153687092803686471"),
                         new OnJoin(),
                         new Mute(),
                         new Unmute(),

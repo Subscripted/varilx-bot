@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
@@ -468,6 +469,28 @@ public class ButtonInteraction extends ListenerAdapter {
                 } else {
                     event.reply("Das Ticket wurde bereits geclaimt.").setEphemeral(true).queue();
                 }
+                break;
+            case "erledigt_support":
+
+                VoiceChannel voiceChannel1 = guild.getVoiceChannelById("1078320408199168131");
+                Member interactionMember = event.getMember();
+                if (interactionMember.getVoiceState().getChannel().asVoiceChannel() != voiceChannel1) {
+                    EmbedBuilder embedBuilder1 = new EmbedBuilder()
+                            .setTitle("Varilx Support")
+                            .setColor(Color.YELLOW)
+                            .setDescription("Du musst dich in " + voiceChannel1.getAsMention() + " befinden, um den Support dieses Users als abgeschlossen zu aktzeptieren!")
+                            .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+                    event.replyEmbeds(embedBuilder1.build()).setEphemeral(true).queue();
+                    return;
+                }
+
+                event.getInteraction().getMessage().delete().queue();
+                EmbedBuilder embedBuilder2 = new EmbedBuilder()
+                        .setTitle("Varilx Support")
+                        .setColor(Color.GREEN)
+                        .setDescription(interactionMember.getAsMention() + " hat sich um einen VoiceSupport gekümmert!")
+                        .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+                guild.getTextChannelById("1153965718275108914").sendMessageEmbeds(embedBuilder2.build()).queue();
                 break;
             case "giveaway_join":
                 if (member == null) {
