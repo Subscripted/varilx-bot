@@ -20,8 +20,8 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 
 import java.awt.*;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MusicCommand extends ListenerAdapter {
@@ -30,20 +30,21 @@ public class MusicCommand extends ListenerAdapter {
     private Guild guild;
     public static final AudioPlayerManager MANAGER = new DefaultAudioPlayerManager();
     private final Map<Guild, Map.Entry<AudioPlayer, TrackManager>> players = new HashMap<>();
+
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
         assert event.getSubcommandName() != null;
         if (!event.getSubcommandName().equals("play"))
             return;
-            guild = event.getGuild();
-            if (event.getOption("url") != null) {
-                String url = event.getOption("url").getAsString();
-                if (!(url.startsWith("http://") || url.startsWith("https://"))) {
-                    url = "ytsearch: " + url;
-                    loadTrack(url, event.getMember(), (TextChannel) event.getChannel());
-                    event.reply("✅").queue();
-                }
-                return;
+        guild = event.getGuild();
+        if (event.getOption("url") != null) {
+            String url = event.getOption("url").getAsString();
+            if (!(url.startsWith("http://") || url.startsWith("https://"))) {
+                url = "ytsearch: " + url;
+                loadTrack(url, event.getMember(), (TextChannel) event.getChannel());
+                event.reply("✅").queue();
             }
+            return;
+        }
 
 
         if (event.getSubcommandName().equals("volume")) {
@@ -116,7 +117,7 @@ public class MusicCommand extends ListenerAdapter {
                             .addField("Ersteller", trackInfo.author, true)
                             .setThumbnail("https://img.youtube.com/vi/" + uri.split("&list=")[0]
                                     .replace("https://youtube.com/watch?v=", "")
-                                    .replace("https://www.youtube.com/watch?v=", "")+ "/0.jpg")
+                                    .replace("https://www.youtube.com/watch?v=", "") + "/0.jpg")
                             .setFooter("Hinzugefügt von " + event.getUser().getAsTag(), event.getUser().getAvatarUrl())
                             .build()
             ).queue();
@@ -197,7 +198,7 @@ public class MusicCommand extends ListenerAdapter {
                                     .setDescription("**Song Hinzugefügt**")
                                     .addField("Title", "**[" + track.getInfo().title + "]("
                                             + track.getInfo().uri + ")**", false)
-                                    .addField("Dauer", "`[ "+ getTimestamp(track.getPosition())
+                                    .addField("Dauer", "`[ " + getTimestamp(track.getPosition())
                                             + " / " + getTimestamp(track.getDuration()) + " ]`", true)
                                     .addField("Ersteller", track.getInfo().author, true)
                                     .setThumbnail("https://img.youtube.com/vi/" + track.getInfo().uri.split("&list=")[0]
@@ -214,11 +215,11 @@ public class MusicCommand extends ListenerAdapter {
                                 .setColor(Color.decode("#2f3136"))
                                 .setDescription("**PlayList Hinzugefügt**")
                                 .addField("Title", "**[" + track.getInfo().title + "](" + track.getInfo().uri + ")**", false)
-                                .addField("Songs", "`[ "+ playlist.getTracks().size() + " ]`", true)
+                                .addField("Songs", "`[ " + playlist.getTracks().size() + " ]`", true)
                                 .addField("Ersteller", track.getInfo().author, true)
                                 .setThumbnail("https://img.youtube.com/vi/" + track.getInfo().uri.split("&list=")[0]
                                         .replace("https://youtube.com/watch?v=", "")
-                                        .replace("https://www.youtube.com/watch?v=", "")  + "/0.jpg")
+                                        .replace("https://www.youtube.com/watch?v=", "") + "/0.jpg")
                                 .setFooter("Hinzugefügt von " + author.getUser().getAsTag(), author.getUser().getAvatarUrl())
                                 .build()
                 ).queue();
@@ -250,6 +251,7 @@ public class MusicCommand extends ListenerAdapter {
     private void skip(Guild guild) {
         getPlayer(guild).stopTrack();
     }
+
     private String buildQueueMessage(AudioInfo info) {
         AudioTrackInfo trackInfo = info.track().getInfo();
         String title = trackInfo.title;
