@@ -474,7 +474,7 @@ public class ButtonInteraction extends ListenerAdapter {
 
                 VoiceChannel voiceChannel1 = guild.getVoiceChannelById("1078320408199168131");
                 Member interactionMember = event.getMember();
-                if (interactionMember.getVoiceState().getChannel().asVoiceChannel() != voiceChannel1) {
+                if (interactionMember.getVoiceState().getChannel().asVoiceChannel() != voiceChannel1 || interactionMember.getVoiceState() == null) {
                     EmbedBuilder embedBuilder1 = new EmbedBuilder()
                             .setTitle("Varilx Support")
                             .setColor(Color.YELLOW)
