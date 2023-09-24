@@ -6,10 +6,12 @@ import com.google.gson.JsonParser;
 import de.subscripted.Music.core.MusicCommand;
 import de.subscripted.admin.*;
 import de.subscripted.backend.ButtonInteraction;
+import de.subscripted.backend.ModalInteractionsHandler;
 import de.subscripted.backend.XPSystem;
 import de.subscripted.games.EightBall;
 import de.subscripted.lavaplayer.*;
 import de.subscripted.serversafety.*;
+import de.subscripted.sql.TicketCountSQLManager;
 import de.subscripted.sql.TicketSQLManager;
 import de.subscripted.sql.WarnSQLManager;
 import de.subscripted.sql.XpSQLManager;
@@ -61,6 +63,8 @@ public class Main {
 
     public static WarnSQLManager warnSQLManager;
 
+    public static TicketCountSQLManager ticketCountSQLManager;
+
 
     public static String redfooter = "https://cdn.discordapp.com/attachments/1055223755909111808/1133836888449503262/Unbdassddasadsadssaasadedsddsdsadsanannt-1.png";
     private static final List<String> statusMessages = new ArrayList<>();
@@ -79,7 +83,9 @@ public class Main {
         xpSqlManager = new XpSQLManager();
         ticketSQLManager = new TicketSQLManager();
         warnSQLManager = new WarnSQLManager();
+        ticketCountSQLManager = new TicketCountSQLManager();
         TicketSQLManager.initializeDatabase();
+        TicketCountSQLManager.initializeDatabase();
 
 
         jda = JDABuilder.createDefault(token)
@@ -91,8 +97,8 @@ public class Main {
                 .setAutoReconnect(true)
                 .setBulkDeleteSplittingEnabled(false)
                 .addEventListeners(
-                        new TicketButtonInteraction(),
                         new TicketButtonInside(ticketSQLManager),
+                        new ModalInteractionsHandler(ticketCountSQLManager),
                         new Builder(),
                         new SupportVoiceJoin("970663709573783553", "1153687092803686471"),
                         new OnJoin(),
@@ -137,7 +143,7 @@ public class Main {
                         new Serverinfo(),
                         new Bugreport(),
                         new Userinfos(),
-                        new ButtonInteraction(ticketSQLManager),
+                        new ButtonInteraction(ticketSQLManager, ticketCountSQLManager),
                         new EightBall(),
                         new GiveawayCommand(),
                         new MusicCommand(),

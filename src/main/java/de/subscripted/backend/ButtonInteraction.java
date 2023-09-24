@@ -4,6 +4,7 @@ import de.subscripted.Main;
 import de.subscripted.admin.Giveaway;
 import de.subscripted.admin.GiveawayManager;
 import de.subscripted.admin.GiveawayRunnable;
+import de.subscripted.sql.TicketCountSQLManager;
 import de.subscripted.sql.TicketSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
@@ -36,19 +37,20 @@ public class ButtonInteraction extends ListenerAdapter {
 
     ///
     private Map<String, Map<String, Instant>> userButtonCooldowns = new HashMap<>();
-    private Map<String, Integer> userTicketCount = new HashMap<>();
     private final int maxTicketsPerUser = 3;
     private final Map<String, Boolean> closeButtonCooldownMap = new HashMap<>();
     private boolean claimed = false;
     private Member claimer = null;
     private final ScheduledExecutorService executorService = Executors.newScheduledThreadPool(0);
     TicketSQLManager ticketSQLManager;
+    TicketCountSQLManager ticketCountSQLManager;
     ///
 
     ///
-    public ButtonInteraction(TicketSQLManager ticketSQLManager) {
+    public ButtonInteraction(TicketSQLManager ticketSQLManager, TicketCountSQLManager ticketCountSQLManager) {
 
         this.ticketSQLManager = ticketSQLManager;
+        this.ticketCountSQLManager = ticketCountSQLManager;
     }
     ///
 
@@ -267,28 +269,13 @@ public class ButtonInteraction extends ListenerAdapter {
 
             case "create":
 
-                int ticketCount = userTicketCount.getOrDefault(userId, 0);
-
-                long userTicketChannelCount = guild.getTextChannels().stream()
-                        .filter(textChannel -> textChannel.getName().toLowerCase().endsWith("ticket"))
-                        .filter(textChannel -> {
-                            String channelId = textChannel.getId();
-                            int index = channelId.lastIndexOf("ticket");
-                            if (index < 0) {
-                                return false;
-                            }
-                            String channelUserId = channelId.substring(0, index);
-                            return userId.equals(channelUserId);
-                        })
-                        .count();
-
-                if (ticketCount >= maxTicketsPerUser || userTicketChannelCount >= maxTicketsPerUser) {
+                int ticketCount = ticketCountSQLManager.getCount(userId);
+                if (ticketCount == 3) {
                     EmbedBuilder embedBuilder = new EmbedBuilder()
                             .setColor(Color.RED)
                             .setTitle("Varilx Support")
                             .setDescription("Du hast bereits das Maximum an Tickets erstellt! (" + maxTicketsPerUser + "). Bitte schließe ein paar deiner Tickets.")
                             .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
-
                     event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
                     return;
                 }
@@ -315,8 +302,8 @@ public class ButtonInteraction extends ListenerAdapter {
                         .build();
 
                 event.replyModal(modal).queue();
-                userTicketCount.put(userId, ticketCount + 1);
                 break;
+
             case "ticket_closed":
                 String channelId = channel.getId();
                 if (closeButtonCooldownMap.containsKey(channelId) && closeButtonCooldownMap.get(channelId)) {
@@ -370,10 +357,10 @@ public class ButtonInteraction extends ListenerAdapter {
                     }
                 }
                 executorService.schedule(() -> channel.delete().queue(), 5, TimeUnit.SECONDS);
-                int ticketCount2 = userTicketCount.getOrDefault(userId, 0);
+                int ticketCount2 = ticketCountSQLManager.getCount(userId);
 
                 if (ticketCount2 > 0) {
-                    userTicketCount.put(userId, ticketCount2 - 1);
+                    ticketCountSQLManager.removeCount(userId);
                 }
 
                 closeButtonCooldownMap.put(channelId, true);
