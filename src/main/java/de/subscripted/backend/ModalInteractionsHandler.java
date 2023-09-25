@@ -68,7 +68,7 @@ public class ModalInteractionsHandler extends ListenerAdapter {
                                 .addPermissionOverride(teamRole, EnumSet.of(Permission.VIEW_CHANNEL), null)
                                 .addPermissionOverride(everyoneRole, null, EnumSet.of(Permission.VIEW_CHANNEL)).queue(channel -> {
                                     String user = event.getMember().getUser().getAsMention();
-                                    channel.sendMessage(user).addEmbeds(embedBuilderuwu.build()).setActionRow(button, claim).queue();
+                                    channel.sendMessage(user + teamRole.getAsMention()).addEmbeds(embedBuilderuwu.build()).setActionRow(button, claim).queue();
                                     ticketCountSQLManager.addCount(userId);
                                 });
                     }
