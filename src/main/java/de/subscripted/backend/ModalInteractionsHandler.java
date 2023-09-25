@@ -28,7 +28,8 @@ public class ModalInteractionsHandler extends ListenerAdapter {
 
     private final int maxTicketsPerUser = 3;
     private static final int COOLDOWN_SECONDS = 30 * 60;
-    public ModalInteractionsHandler(TicketCountSQLManager ticketCountSQLManager){
+
+    public ModalInteractionsHandler(TicketCountSQLManager ticketCountSQLManager) {
         this.ticketCountSQLManager = ticketCountSQLManager;
     }
 
@@ -37,48 +38,31 @@ public class ModalInteractionsHandler extends ListenerAdapter {
         switch (event.getModalId()) {
             case "ticket":
                 String problem = event.getValue("problem").getAsString();
+                String member = event.getUser().getName();
                 Guild guild = event.getGuild();
+                Category category = event.getGuild().getCategoryById("928337279376850975");
+                guild.createTextChannel(member + "s Ticket", category)
+                        .addPermissionOverride(event.getMember(), EnumSet.of(Permission.VIEW_CHANNEL), null)
+                        .addPermissionOverride(guild.getRoleById("1095297340715319356"), EnumSet.of(Permission.VIEW_CHANNEL), null)
+                        .addPermissionOverride(guild.getPublicRole(), null, EnumSet.of(Permission.VIEW_CHANNEL)).queue(channel -> {
+                            String ticketChannelMention = channel.getAsMention();
+                            Button button = Button.danger("ticket_closed", "Ticket Schließen -> 🗑️");
+                            Button claim = Button.primary("claim", "Claimen -> 🔒");
 
-                event.deferReply().setEphemeral(true).queue(interactionHook -> {
-                    if (event.getModalId().equals("ticket")) {
-                        String member = event.getUser().getName();
-                        Member member2 = event.getMember();
+                            EmbedBuilder embedBuilderuwu = new EmbedBuilder()
+                                    .setColor(Color.GREEN)
+                                    .setTitle("Varilx Tickets")
+                                    .addField("Beschreibung des Problems", problem, false)
+                                    .setDescription(" · Bitte gedulde dich ein bisschen, es wird sich bald jemand um dich kümmern.\n" +
+                                            " · Sollten wir nicht erreichbar sein, melde dich bitte im Forum! \n" +
+                                            "https://forum.varilx.de/forum/view/8-support/")
+                                    .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                                    .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+                            channel.sendMessage(event.getMember().getAsMention() + " " + guild.getRoleById("1095297340715319356").getAsMention()).addEmbeds(embedBuilderuwu.build()).setActionRow(button, claim).queue();
+                            ticketCountSQLManager.addCount(userId);
+                        });
 
-                        Button button = Button.danger("ticket_closed", "Ticket Schließen -> 🗑️");
-                        Button claim = Button.primary("claim", "Claimen -> 🔒");
-
-                        EmbedBuilder embedBuilderuwu = new EmbedBuilder()
-                                .setColor(Color.GREEN)
-                                .setTitle("Varilx Tickets")
-                                .addField("Beschreibung des Problems", problem, false)
-                                .setDescription(" · Bitte gedulde dich ein bisschen, es wird sich bald jemand um dich kümmern.\n" +
-                                        " · Sollten wir nicht erreichbar sein, melde dich bitte im Forum! \n" +
-                                        "https://forum.varilx.de/forum/view/8-support/")
-                                .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
-                                .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
-
-                        Category category = event.getGuild().getCategoryById("928337279376850975");
-
-                        Role teamRole = event.getGuild().getRoleById("1095297340715319356");
-
-                        Role everyoneRole = event.getGuild().getRolesByName("@everyone", true).get(0);
-
-                        guild.createTextChannel(member + "s Ticket", category)
-                                .addPermissionOverride(member2, EnumSet.of(Permission.VIEW_CHANNEL), null)
-                                .addPermissionOverride(teamRole, EnumSet.of(Permission.VIEW_CHANNEL), null)
-                                .addPermissionOverride(everyoneRole, null, EnumSet.of(Permission.VIEW_CHANNEL)).queue(channel -> {
-                                    String user = event.getMember().getUser().getAsMention();
-                                    channel.sendMessage(user + teamRole.getAsMention()).addEmbeds(embedBuilderuwu.build()).setActionRow(button, claim).queue();
-                                    ticketCountSQLManager.addCount(userId);
-                                });
-                    }
-                    event.reply("Dein Ticket wurde erstellt!").setEphemeral(true).queue();
-                });
                 break;
-
         }
     }
 }
-
-
-
