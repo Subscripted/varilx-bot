@@ -6,4 +6,5 @@ de\subscripted\sql\TicketCountSQLManager.class
 de\subscripted\user\onLeave.class
 de\subscripted\working\OwnVoiceChannelBuilder.class
 de\subscripted\Main$1.class
+de\subscripted\user\BinaryTranslationCommand.class
 de\subscripted\Main.class

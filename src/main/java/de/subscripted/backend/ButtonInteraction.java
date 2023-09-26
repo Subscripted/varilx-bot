@@ -9,6 +9,7 @@ import de.subscripted.sql.TicketSQLManager;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.entities.channel.concrete.PrivateChannel;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
@@ -457,11 +458,12 @@ public class ButtonInteraction extends ListenerAdapter {
                     event.reply("Das Ticket wurde bereits geclaimt.").setEphemeral(true).queue();
                 }
                 break;
-            case "erledigt_support":
 
+            case "erledigt_support":
                 VoiceChannel voiceChannel1 = guild.getVoiceChannelById("1078320408199168131");
                 Member interactionMember = event.getMember();
-                if (interactionMember.getVoiceState().getChannel() == null || !interactionMember.getVoiceState().getChannel().equals(voiceChannel1)) {                    EmbedBuilder embedBuilder1 = new EmbedBuilder()
+                if (interactionMember.getVoiceState().getChannel() == null || !interactionMember.getVoiceState().getChannel().equals(voiceChannel1)) {
+                    EmbedBuilder embedBuilder1 = new EmbedBuilder()
                             .setTitle("Varilx Support")
                             .setColor(Color.YELLOW)
                             .setDescription("Du musst dich in " + voiceChannel1.getAsMention() + " befinden, um den Support dieses Users als abgeschlossen zu aktzeptieren!")
@@ -469,19 +471,37 @@ public class ButtonInteraction extends ListenerAdapter {
                     event.replyEmbeds(embedBuilder1.build()).setEphemeral(true).queue();
                     return;
                 }
-
                 event.getInteraction().getMessage().delete().queue();
+
+                EmbedBuilder embedBuilder1 = new EmbedBuilder()
+                        .setTitle("Varilx Support")
+                        .setColor(Color.GREEN)
+                        .setDescription("Du hast dich um den Support gekümmert? Dann bestätige dies doch bitte mit dem Knopf unter dieser Nachricht!")
+                        .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+
+                Button button = Button.success("erledigterdmsupport", "Support abgeschlossen!");
+
+                event.getInteraction().getUser().openPrivateChannel().complete().sendMessageEmbeds(embedBuilder1.build()).addActionRow(button).queue();
+                break;
+
+
+            case "erledigterdmsupport":
+                Member member1 = event.getInteraction().getMember();
                 EmbedBuilder embedBuilder2 = new EmbedBuilder()
                         .setTitle("Varilx Support")
                         .setColor(Color.GREEN)
-                        .setDescription(interactionMember.getAsMention() + " hat sich um einen VoiceSupport gekümmert!")
+                        .setDescription(member1.getAsMention() + " hat sich um einen VoiceSupport gekümmert!")
                         .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
-                guild.getTextChannelById("1153965718275108914").sendMessageEmbeds(embedBuilder2.build()).queue();
+                Guild guild1 = event.getJDA().getGuildById("886262410489520168");
+                guild1.getTextChannelById("1153965718275108914").sendMessageEmbeds(embedBuilder2.build()).queue();
+                event.getInteraction().getMessage().delete().queue();
                 break;
+
             case "giveaway_join":
                 if (member == null) {
                     return;
                 }
+
 
                 String messageId = event.getMessageId();
                 Giveaway giveaway = GiveawayManager.getGiveaway(messageId);
@@ -495,13 +515,12 @@ public class ButtonInteraction extends ListenerAdapter {
                     GiveawayManager.updateEmbed(giveaway);
                     event.reply("Du bist jetzt im Giveaway!").setEphemeral(true).queue();
                 } else {
-                    Button button = Button.secondary("gwleave", "Leave");
-                    EmbedBuilder embedBuilder1 = new EmbedBuilder()
+                    EmbedBuilder embedBuilder4 = new EmbedBuilder()
                             .setTitle("Varilx Giveaway")
                             .setColor(Color.yellow)
                             .setDescription("Du nimmst bereits an diesem Giveway teil! ")
                             .setFooter("Varilx Giveaway Feature | Update 2023 ©", Main.getJda().getSelfUser().getAvatarUrl());
-                    event.replyEmbeds(embedBuilder1.build()).setEphemeral(true).queue();
+                    event.replyEmbeds(embedBuilder4.build()).setEphemeral(true).queue();
                 }
                 break;
         }

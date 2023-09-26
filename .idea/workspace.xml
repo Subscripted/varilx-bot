@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Added something what is not finished yet">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/TicketCountSQLManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Commit for unfinished Version">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/BinaryTranslationCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ModalInteractionsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ModalInteractionsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/TicketButtonInteraction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/SupportVoiceJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/SupportVoiceJoin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Music/core/MusicCommand$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Music/core/MusicCommand$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Music/core/MusicCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Music/core/MusicCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/TicketButtonInteraction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/SupportVoiceJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/SupportVoiceJoin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +77,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -291,10 +284,11 @@
       <workItem from="1695032402025" duration="5549000" />
       <workItem from="1695107178145" duration="1678000" />
       <workItem from="1695110673056" duration="1157000" />
-      <workItem from="1695237046701" duration="1069000" />
-      <workItem from="1695487577010" duration="70000" />
-      <workItem from="1695487656968" duration="4191000" />
-      <workItem from="1695570279242" duration="9868000" />
+      <workItem from="1695191271183" duration="73000" />
+      <workItem from="1695195283376" duration="6520000" />
+      <workItem from="1695645817233" duration="274000" />
+      <workItem from="1695709831365" duration="501000" />
+      <workItem from="1695710532514" duration="6563000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -573,7 +567,55 @@
       <option name="project" value="LOCAL" />
       <updated>1695036175081</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="- Added Support Finished System">
+      <option name="closed" value="true" />
+      <created>1695200796226</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1695200796226</updated>
+    </task>
+    <task id="LOCAL-00037" summary="- Small Bugfixes">
+      <option name="closed" value="true" />
+      <created>1695207322806</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1695207322806</updated>
+    </task>
+    <task id="LOCAL-00038" summary="- Small Bugfixes 2">
+      <option name="closed" value="true" />
+      <created>1695207392713</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1695207392713</updated>
+    </task>
+    <task id="LOCAL-00039" summary="- Forgott a line">
+      <option name="closed" value="true" />
+      <created>1695207646686</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1695207646686</updated>
+    </task>
+    <task id="LOCAL-00040" summary="- Tickets will open faster now">
+      <option name="closed" value="true" />
+      <created>1695626886681</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1695626886681</updated>
+    </task>
+    <task id="LOCAL-00041" summary="- Commit for unfinished Version">
+      <option name="closed" value="true" />
+      <created>1695643809956</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1695643809956</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,12 +633,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added VarilxBotSource" />
-    <MESSAGE value="- Added onJoinMemberCount- Channel" />
-    <MESSAGE value="- Changed onJoinUserCount- Channel" />
-    <MESSAGE value="- Changed the Speed of Changing Bot status from 5 sec to 10 sec, cause Performance issues!" />
-    <MESSAGE value="- Added Serverinfo command and fixed some Issues / errors" />
-    <MESSAGE value="- Added Bugreport command and fixed some Issues / errors" />
     <MESSAGE value="- Added User Info Cmd (not ready yet and not available in proper version)" />
     <MESSAGE value="- Added the Full version of Userinfos" />
     <MESSAGE value="- Changed §2 in the Rules. Added autodelete for all Builder." />
@@ -616,6 +652,12 @@
     <MESSAGE value="- Text- Changes" />
     <MESSAGE value="- Fixed: Subcommands wont loading" />
     <MESSAGE value="- Added something what is not finished yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added something what is not finished yet" />
+    <MESSAGE value="- Added Support Finished System" />
+    <MESSAGE value="- Small Bugfixes" />
+    <MESSAGE value="- Small Bugfixes 2" />
+    <MESSAGE value="- Forgott a line" />
+    <MESSAGE value="- Tickets will open faster now" />
+    <MESSAGE value="- Commit for unfinished Version" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Commit for unfinished Version" />
   </component>
 </project>

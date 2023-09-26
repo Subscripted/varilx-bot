@@ -34,8 +34,7 @@ public class SupportVoiceJoin extends ListenerAdapter {
 
         Role role = event.getGuild().getRoleById("1003618027037786205");
 
-        if (event.getMember().getRoles().contains(role))
-            return;
+
 
         if (audioChannel.getId().equals(targetChannelId)) {
             sendEmbedToTextChannel(event, embedBuilder);
