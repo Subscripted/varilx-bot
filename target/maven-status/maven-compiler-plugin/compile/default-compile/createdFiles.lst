@@ -3,6 +3,7 @@ de\subscripted\working\OwnChannelButtonBuilder.class
 de\subscripted\backend\ModalInteractionsHandler.class
 de\subscripted\admin\Clear.class
 de\subscripted\sql\TicketCountSQLManager.class
+de\subscripted\admin\NickCommand.class
 de\subscripted\user\onLeave.class
 de\subscripted\working\OwnVoiceChannelBuilder.class
 de\subscripted\Main$1.class

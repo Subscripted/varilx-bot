@@ -33,7 +33,7 @@ public class BinaryTranslationCommand extends ListenerAdapter {
     }
 
     private boolean isBinary(String input) {
-        return input.matches("^[01]+$"); // Leerzeichen wurden entfernt
+        return input.matches("^[01]+$");
     }
 
     private String binaryToText(String binary) {

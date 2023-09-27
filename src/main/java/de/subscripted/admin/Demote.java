@@ -29,6 +29,7 @@ public class Demote extends ListenerAdapter {
             Role teamRole = event.getGuild().getRoleById("1003618027037786205");
             Role JrContent = event.getGuild().getRoleById("1085914226310271126");
             Role Content = event.getGuild().getRoleById("1085914333160165417");
+            Role SrContent = event.getGuild().getRoleById("1145069370821849209");
             Role JrSup = event.getGuild().getRoleById("1062409445470113883");
             Role Sup = event.getGuild().getRoleById("906598926688321578");
             Role SrSup = event.getGuild().getRoleById("1081305944652255292");
@@ -72,7 +73,17 @@ public class Demote extends ListenerAdapter {
 
 
             switch (targetmember.getRoles().get(0).getId()) {
+                case "1145069370821849209":
+                    targetmember.modifyNickname("Content | " + targetmember.getUser().getName()).queue();
+                    guild.removeRoleFromMember(targetmember, SrContent).queue();
+                    guild.addRoleToMember(targetmember, Content).queue();
+                    event.reply("Du hast " + targetmember.getAsMention() + " auf " + Content.getAsMention() + " zurückgestuft!").setEphemeral(true).queue();
+                    tc.sendMessage(teamrole.getAsMention() + "\n"
+                            + message).queue();
+                    break;
+
                 case "1085914333160165417":
+                    targetmember.modifyNickname("JrContent | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, Content).queue();
                     guild.addRoleToMember(targetmember, JrContent).queue();
                     guild.addRoleToMember(targetmember, testphase).queue();
@@ -81,6 +92,7 @@ public class Demote extends ListenerAdapter {
                             + message).queue();
                     break;
                 case "906598926688321578":
+                    targetmember.modifyNickname("JrSup | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, Sup).queue();
                     guild.addRoleToMember(targetmember, JrSup).queue();
                     guild.addRoleToMember(targetmember, testphase).queue();
@@ -89,6 +101,7 @@ public class Demote extends ListenerAdapter {
                             + message).queue();
                     break;
                 case "1081305944652255292":
+                    targetmember.modifyNickname("Sup | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, SrSup).queue();
                     guild.addRoleToMember(targetmember, Sup).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + Sup.getAsMention() + " zurückgestuft!").setEphemeral(true).queue();
@@ -96,6 +109,7 @@ public class Demote extends ListenerAdapter {
                             + message).queue();
                     break;
                 case "904032740394041364":
+                    targetmember.modifyNickname("SrSup | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, JrMod).queue();
                     guild.removeRoleFromMember(targetmember, testphase).queue();
                     guild.addRoleToMember(targetmember, SrSup).queue();
@@ -104,6 +118,7 @@ public class Demote extends ListenerAdapter {
                             + message).queue();
                     break;
                 case "888503993117073420":
+                    targetmember.modifyNickname("JrMod | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, Mod).queue();
                     guild.addRoleToMember(targetmember, JrMod).queue();
                     guild.addRoleToMember(targetmember, testphase).queue();
@@ -112,6 +127,7 @@ public class Demote extends ListenerAdapter {
                             + message).queue();
                     break;
                 case "1081305694755639376":
+                    targetmember.modifyNickname("Mod | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, SrMod).queue();
                     guild.addRoleToMember(targetmember, Mod).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + Mod.getAsMention() + " zurückgestuft!").setEphemeral(true).queue();
@@ -119,6 +135,7 @@ public class Demote extends ListenerAdapter {
                             + message).queue();
                     break;
                 case "1066702211217887232":
+                    targetmember.modifyNickname("JrDev | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, Dev).queue();
                     guild.addRoleToMember(targetmember, JrDev).queue();
                     guild.addRoleToMember(targetmember, testphase).queue();
@@ -127,6 +144,7 @@ public class Demote extends ListenerAdapter {
                             + message).queue();
                     break;
                 case "1066702576025866260":
+                    targetmember.modifyNickname("Dev | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, SrDev).queue();
                     guild.addRoleToMember(targetmember, Dev).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + Dev.getAsMention() + " zurückgestuft!").setEphemeral(true).queue();
@@ -134,6 +152,7 @@ public class Demote extends ListenerAdapter {
                             + message).queue();
                     break;
                 case "1068989280225083412":
+                    targetmember.modifyNickname("JrBuilder | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, Builder).queue();
                     guild.addRoleToMember(targetmember, JrBuilder).queue();
                     guild.addRoleToMember(targetmember, testphase).queue();
@@ -142,6 +161,7 @@ public class Demote extends ListenerAdapter {
                             + message).queue();
                     break;
                 case "1084469016707481630":
+                    targetmember.modifyNickname("Builder | " + targetmember.getUser().getName()).queue();
                     guild.removeRoleFromMember(targetmember, SrBuilder).queue();
                     guild.addRoleToMember(targetmember, Builder).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + JrBuilder.getAsMention() + " zurückgestuft!").setEphemeral(true).queue();

@@ -104,6 +104,7 @@ public class Main {
                         new OnJoin(),
                         new Mute(),
                         new Unmute(),
+                        new NickCommand(),
                         new Ban(),
                         new BinaryTranslationCommand(),
                         new Unban(),
@@ -198,6 +199,7 @@ public class Main {
 
 
         jda.updateCommands().addCommands(
+                Commands.slash("nick", "nick").addOption(OptionType.USER, "nutzer", "jaja", true).addOption(OptionType.STRING, "newname", "test", true),
                 Commands.slash("unclaim", "Unclaime ein Ticket"),
                 Commands.slash("hilfe", "Dieser Befehl gibt an, wie du hier Hilfe erhalten kannst."),
                 Commands.slash("8ball", "Dem 8Ball kannst du verschiedene Fragen stellen").addOption(OptionType.STRING, "message", "Deine Frage bzw Nachricht", true),
@@ -218,7 +220,7 @@ public class Main {
                 Commands.slash("promote", "Promote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du promoten willst!", true).addOption(OptionType.STRING, "message", "Deine Nachricht", true),
                 Commands.slash("demote", "Demote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du demoten willst!", true).addOption(OptionType.STRING, "message", "Deine Nachricht", true),
                 Commands.slash("ping", "Ping"),
-                Commands.slash("binärtotext", "Deine Binär- Zahlen").addOption(OptionType.STRING, "code", "Code"),
+                Commands.slash("binärtotext", "Deine Binär- Zahlen").addOption(OptionType.STRING, "code", "Von Binär in Text oder Text in Binär", true),
                 Commands.slash("embedbuilderbeta", "embeds"),
                 Commands.slash("move", "Move einen oder mehrere Nutzer zu dir").addOption(OptionType.STRING, "nutzer", "Der / Die Nutzer", true),
                 Commands.slash("timeout", "Timeoute einen User").addOption(OptionType.USER, "nutzer", "nutzer", true).addOption(OptionType.STRING, "zeit", "zeit", true),
