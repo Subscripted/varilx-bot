@@ -39,7 +39,7 @@ public class StaffList {
         builder.setTitle("Varilx Team Liste");
         builder.setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png");
         String[][] roles = {
-                 {"888391247365046272", "<@&888391247365046272>"},
+                {"888391247365046272", "<@&888391247365046272>"},
                 {"888504288198918185", "<@&888504288198918185>"},
                 {"1085908394092793946", "<@&1085908394092793946>"},
                 {"1074767531509809202", "<@&1074767531509809202>"},
@@ -132,7 +132,7 @@ public class StaffList {
                     membersWithRole.add(member.getAsMention());
                 }
 
-                descriptionBuilder.append("» " + roleMention).append(" « (").append("**" + membersWithRole.size() + "**").append(")\n");
+                descriptionBuilder.append("➥ " + roleMention).append("  ⸨").append("**" + membersWithRole.size() + "**").append("⸩\n");
                 if (!membersWithRole.isEmpty()) {
                     descriptionBuilder.append(String.join(", ", membersWithRole)).append("\n");
                 } else {
@@ -142,7 +142,7 @@ public class StaffList {
             }
         }
         builder.setDescription(descriptionBuilder.toString());
-        builder.setFooter("Last updated " + last_update + " " + formattedTime + " Uhr", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
+        builder.setFooter("Letztes Update: " + last_update + " um " + formattedTime + " Uhr", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
         return builder.build();
     }
 }

@@ -36,7 +36,7 @@ public class BewerbungsBuilder extends ListenerAdapter {
                         "Lese dir bitte unseren ganzen Forum beitrag zum Bewerben durch, bevor du dich bewerben willst (Erster Button unter dieser Nachricht)!\n" +
                         "Wo kann ich mich Bewerben?\n" +
                         "Unter https://forum.varilx.de/bewerben/")
-                .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                .setThumbnail(Main.getEmbedBild())
                 .setImage("https://cdn.discordapp.com/attachments/1104111151937245284/1139017969444339722/ValuniaNET-Thumbddnail-Wiederhergestellt.png");
 
         Button button = Button.link("https://forum.varilx.de/bewerben/", "Bewerben").withEmoji(Emoji.fromFormatted("<:Varilx:1128364477335748698>"));

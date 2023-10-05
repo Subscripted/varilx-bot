@@ -4,20 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Support Activity Check is almost finished&#10;- Added Binary to text">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/NickCommand.java" afterDir="false" />
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Some little Fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Demote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Demote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Promote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Promote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/StaffList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/StaffList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/TeamAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/TeamAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/BinaryTranslationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/BinaryTranslationCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/Builder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/BewerbungsBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/BewerbungsBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Bugreport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Bugreport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/OnJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/OnJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/RulesBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/RulesBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Userinfos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Userinfos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Vorschläge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Vorschläge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/XPCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/XPCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Demote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Demote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Promote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Promote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/StaffList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/StaffList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/TeamAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/TeamAdd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/BewerbungsBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/BewerbungsBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Bugreport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Bugreport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/OnJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/OnJoin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/RulesBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/RulesBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Userinfos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Userinfos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Vorschläge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Vorschläge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/XPCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/XPCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +98,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -286,12 +305,12 @@
       <workItem from="1695032402025" duration="5549000" />
       <workItem from="1695107178145" duration="1678000" />
       <workItem from="1695110673056" duration="1157000" />
-      <workItem from="1695191271183" duration="73000" />
-      <workItem from="1695195283376" duration="6520000" />
-      <workItem from="1695645817233" duration="274000" />
-      <workItem from="1695709831365" duration="501000" />
-      <workItem from="1695710532514" duration="7790000" />
-      <workItem from="1695798721138" duration="7610000" />
+      <workItem from="1695237046701" duration="1069000" />
+      <workItem from="1695487577010" duration="70000" />
+      <workItem from="1695487656968" duration="4191000" />
+      <workItem from="1695570279242" duration="9868000" />
+      <workItem from="1696094067286" duration="2051000" />
+      <workItem from="1696144941783" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -570,63 +589,7 @@
       <option name="project" value="LOCAL" />
       <updated>1695036175081</updated>
     </task>
-    <task id="LOCAL-00036" summary="- Added Support Finished System">
-      <option name="closed" value="true" />
-      <created>1695200796226</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1695200796226</updated>
-    </task>
-    <task id="LOCAL-00037" summary="- Small Bugfixes">
-      <option name="closed" value="true" />
-      <created>1695207322806</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1695207322806</updated>
-    </task>
-    <task id="LOCAL-00038" summary="- Small Bugfixes 2">
-      <option name="closed" value="true" />
-      <created>1695207392713</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1695207392713</updated>
-    </task>
-    <task id="LOCAL-00039" summary="- Forgott a line">
-      <option name="closed" value="true" />
-      <created>1695207646686</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1695207646686</updated>
-    </task>
-    <task id="LOCAL-00040" summary="- Tickets will open faster now">
-      <option name="closed" value="true" />
-      <created>1695626886681</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1695626886681</updated>
-    </task>
-    <task id="LOCAL-00041" summary="- Commit for unfinished Version">
-      <option name="closed" value="true" />
-      <created>1695643809956</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1695643809956</updated>
-    </task>
-    <task id="LOCAL-00042" summary="- Support Activity Check is almost finished&#10;- Added Binary to text">
-      <option name="closed" value="true" />
-      <created>1695722099640</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1695722099640</updated>
-    </task>
-    <option name="localTasksCounter" value="43" />
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,6 +607,13 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added VarilxBotSource" />
+    <MESSAGE value="- Added onJoinMemberCount- Channel" />
+    <MESSAGE value="- Changed onJoinUserCount- Channel" />
+    <MESSAGE value="- Changed the Speed of Changing Bot status from 5 sec to 10 sec, cause Performance issues!" />
+    <MESSAGE value="- Added Serverinfo command and fixed some Issues / errors" />
+    <MESSAGE value="- Added Bugreport command and fixed some Issues / errors" />
+    <MESSAGE value="- Added User Info Cmd (not ready yet and not available in proper version)" />
     <MESSAGE value="- Added the Full version of Userinfos" />
     <MESSAGE value="- Changed §2 in the Rules. Added autodelete for all Builder." />
     <MESSAGE value="Added a Button Interaction class that now handles each Button Interaction. These issues and bugs have been fixed:&#10;&#10;- Many of the buttons didn't give any feedback and didn't work -&gt; Fixed&#10;&#10;- There were a lot of unperformant codes - Fixed" />
@@ -662,13 +632,6 @@
     <MESSAGE value="- Text- Changes" />
     <MESSAGE value="- Fixed: Subcommands wont loading" />
     <MESSAGE value="- Added something what is not finished yet" />
-    <MESSAGE value="- Added Support Finished System" />
-    <MESSAGE value="- Small Bugfixes" />
-    <MESSAGE value="- Small Bugfixes 2" />
-    <MESSAGE value="- Forgott a line" />
-    <MESSAGE value="- Tickets will open faster now" />
-    <MESSAGE value="- Commit for unfinished Version" />
-    <MESSAGE value="- Support Activity Check is almost finished&#10;- Added Binary to text" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Support Activity Check is almost finished&#10;- Added Binary to text" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added something what is not finished yet" />
   </component>
 </project>

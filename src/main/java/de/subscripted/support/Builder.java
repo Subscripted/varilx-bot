@@ -52,7 +52,7 @@ public class Builder extends ListenerAdapter {
                         "\uD83C\uDDEC\uD83C\uDDE7 Englisch\n" +
                         "\uD83C\uDDE9\uD83C\uDDEA Deutsch")
                 .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                .setImage("https://cdn-longterm.mee6.xyz/plugins/welcome/images/886262410489520168/616250b3031b7010a2815e64e86581a02d011f396d5ab951717109abd2002829.png")
+                .setImage(Main.getEmbedBild())
                 .setColor(Color.GREEN)
                 .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png");
         event.getMessage().delete().queue();

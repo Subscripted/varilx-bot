@@ -47,7 +47,7 @@ public class XPCommand extends ListenerAdapter {
                             + "- Dein Level: " + level + "\n"
                             + "- Dein Fortschritt: " + printUserXPState(xp, XPSystem.getRequiredXP(level + 1)) + " / " + Math.round(((double) xp / XPSystem.getRequiredXP(level + 1)) * 100) * 1 + "%")
                     .setFooter("Varilx XP Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                    .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png");
+                    .setThumbnail(Main.getEmbedBild());
             event.replyEmbeds(embedBuilder.build()).queue();
         } else {
             embedBuilder = new EmbedBuilder()
@@ -56,7 +56,7 @@ public class XPCommand extends ListenerAdapter {
                     .setDescription("- XP von " + target.getAsMention() + ": " + xp + "\n"
                             + "- Level von " + target.getAsMention() + ": " + level + "\n"
                             + "- Vortschritt : " + printUserXPState(xp, XPSystem.getRequiredXP(level + 1)) + " / " + Math.round(((double) xp / XPSystem.getRequiredXP(level + 1)) * 100) * 1 + "%")
-                    .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                    .setThumbnail(Main.getEmbedBild())
                     .setFooter("Varilx XP Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
                     .setAuthor(target.getEffectiveName());
             event.replyEmbeds(embedBuilder.build()).queue();

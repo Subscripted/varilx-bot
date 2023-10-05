@@ -74,7 +74,7 @@ public class Vorschläge extends ListenerAdapter {
                     .setTitle("Varilx Vorschläge")
                     .addField("```Vorschlag / Idee: ```", " " + vorschlag, false)
                     .addField("AntiSpam!", "Geschrieben von: " + dcusername, false)
-                    .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                    .setThumbnail(Main.getEmbedBild())
                     .setFooter("Varilx Vorschlag Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
 
 
@@ -83,14 +83,14 @@ public class Vorschläge extends ListenerAdapter {
                     .setTitle("Varilx Vorschläge")
                     .addField("```Dein Vorschlag / Idee: ```", " " + vorschlag, false)
                     .setDescription("Danke für deinen Vorschlag / deine Idee, " + dcusername)
-                    .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                    .setThumbnail(Main.getEmbedBild())
                     .setFooter("Varilx Vorschlag Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
                 EmbedBuilder umfragemessage = new EmbedBuilder();
                 umfragemessage.setColor(Color.GREEN);
                 umfragemessage.setTitle("Varilx Vorschläge");
                 umfragemessage.addField("```Vorschlag / Idee: ```", " " + vorschlag, false);
                 umfragemessage.addField("Idee kommt von:", " " + dcusername, false);
-                umfragemessage.setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.pngg");
+                umfragemessage.setThumbnail(Main.getEmbedBild());
 
                 if (image != null && !image.isEmpty()) {
                     umfragemessage.setImage(image);

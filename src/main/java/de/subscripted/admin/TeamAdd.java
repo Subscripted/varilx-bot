@@ -120,7 +120,7 @@ public class TeamAdd extends ListenerAdapter {
                             .setDescription("Wilkommen im Team " + targetMember.getAsMention() + "!\n\n" +
                                     "- <:varilx_directory:1139957175972810812> Dein Bereich: " + role.getName() + "\n\n" +
                                     "Bitte lies dir das Teamregelwerk durch!")
-                            .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                            .setThumbnail(Main.getEmbedBild())
                             .setFooter("Varilx Team Feature | Update 2023 © ", Main.getJda().getSelfUser().getAvatarUrl());
                     targetMember.getUser().openPrivateChannel().complete().sendMessageEmbeds(embedBuilder.build()).queue();
                 } else {

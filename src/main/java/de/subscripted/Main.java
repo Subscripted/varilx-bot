@@ -53,8 +53,11 @@ import java.util.TimerTask;
 
 public class Main {
 
+
     @Getter
     private static String token;
+    @Getter
+    private static String embedBild = "https://cdn.discordapp.com/attachments/1055223755909111808/1156719294139351040/2023-09-0DASDSASD3_22.23.53-min.png?ex=65194a0a&is=6517f88a&hm=8409a924c982133d8b4580a5a74414d6dff0d0528c15009e8d178e7a2d56bc77&";
 
     public static XpSQLManager xpSqlManager;
 
@@ -233,24 +236,24 @@ public class Main {
                 Commands.slash("warn", "Verwarne einen Nutzer").addOption(OptionType.USER, "nutzer", "Nutzer den du verwarnen willst!"),
                 Commands.slash("getwarn", "Reason für warns").addOption(OptionType.USER, "nutzer", "Nutzer halt", true),
                 Commands.slash("team", "Staff Command")
-                .addSubcommands(new SubcommandData("add", "Füge jemanden in das Team hinzu")
-                        .addOption(OptionType.USER, "member", "Nutzer den du hinzufügen willst", true)
-                        .addOption(OptionType.ROLE, "role", "Die Rolle die der Nutzer bekommt", true)),
+                        .addSubcommands(new SubcommandData("add", "Füge jemanden in das Team hinzu")
+                                .addOption(OptionType.USER, "member", "Nutzer den du hinzufügen willst", true)
+                                .addOption(OptionType.ROLE, "role", "Die Rolle die der Nutzer bekommt", true)),
                 Commands.slash("moveall", "Move alle die in deinem Channel sind wo anders hin!")
-                .addSubcommands(new SubcommandData("to", "Move alle die in deinem Channel sind wo anders hin!")
-                        .addOption(OptionType.CHANNEL, "channel", "Channel in den alle Ggemoved werden sollen!", true)),
+                        .addSubcommands(new SubcommandData("to", "Move alle die in deinem Channel sind wo anders hin!")
+                                .addOption(OptionType.CHANNEL, "channel", "Channel in den alle Ggemoved werden sollen!", true)),
                 Commands.slash("deletewarns", "Lösche alle warns eines Nutzers").addOption(OptionType.USER, "nutzer", "Nutzer von dem du die Warns löschen willst!"),
                 Commands.slash("music", "Allgemeiner Music Command")
-                .addSubcommands(new SubcommandData("play", "Spielt einen gewünschten Song/PlayList ab")
-                        .addOption(OptionType.STRING, "url", "Die URL oder der Name des Songs/PlayList", true))
-                .addSubcommands(new SubcommandData("skip", "Überspringt einen Song")
-                        .addOption(OptionType.INTEGER, "anzahl", "Die Anzahl an Songs die übersprungen werden sollen", false))
-                .addSubcommands(new SubcommandData("stop", "Stop den aktuellen Song"))
-                .addSubcommands(new SubcommandData("shuffel", "Shuffelt die aktuelle PlayList"))
-                .addSubcommands(new SubcommandData("np", "Zeigt den Aktuellen Song an"))
-                .addSubcommands(new SubcommandData("queue", "Zeigt die aktuelle Queue"))
-                .addSubcommands(new SubcommandData("volume", "Setzt das Volume auf das angegeben Volume")
-                        .addOption(OptionType.INTEGER, "volume", "Volume (ex: 80) in % aber ohne %", true))).queue();
+                        .addSubcommands(new SubcommandData("play", "Spielt einen gewünschten Song/PlayList ab")
+                                .addOption(OptionType.STRING, "url", "Die URL oder der Name des Songs/PlayList", true))
+                        .addSubcommands(new SubcommandData("skip", "Überspringt einen Song")
+                                .addOption(OptionType.INTEGER, "anzahl", "Die Anzahl an Songs die übersprungen werden sollen", false))
+                        .addSubcommands(new SubcommandData("stop", "Stop den aktuellen Song"))
+                        .addSubcommands(new SubcommandData("shuffel", "Shuffelt die aktuelle PlayList"))
+                        .addSubcommands(new SubcommandData("np", "Zeigt den Aktuellen Song an"))
+                        .addSubcommands(new SubcommandData("queue", "Zeigt die aktuelle Queue"))
+                        .addSubcommands(new SubcommandData("volume", "Setzt das Volume auf das angegeben Volume")
+                                .addOption(OptionType.INTEGER, "volume", "Volume (ex: 80) in % aber ohne %", true))).queue();
         assert guild != null;
         guild.updateCommands().queue();
         startGiveawayRunnable();
