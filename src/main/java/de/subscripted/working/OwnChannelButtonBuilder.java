@@ -14,14 +14,14 @@ import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import java.awt.*;
 
 public class OwnChannelButtonBuilder extends ListenerAdapter {
-    public void onMessageReceived(MessageReceivedEvent event){
+    public void onMessageReceived(MessageReceivedEvent event) {
         if (!event.getMessage().equals("!wonchannel"))
             return;
 
         if (!event.getMember().hasPermission(Permission.ADMINISTRATOR))
             return;
 
-            Button changename = Button.secondary("changename", " ").withEmoji(Emoji.fromFormatted("<:vax_pen:1140659710836621342>"));
+        Button changename = Button.secondary("changename", " ").withEmoji(Emoji.fromFormatted("<:vax_pen:1140659710836621342>"));
 
         EmbedBuilder embedBuilder = new EmbedBuilder()
                 .setTitle("Varilx Privat-Channel")
@@ -31,14 +31,15 @@ public class OwnChannelButtonBuilder extends ListenerAdapter {
                 .setFooter("Varilx Voice Feature | Update 2023 © ", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
 
         event.getChannel().sendMessageEmbeds(embedBuilder.build()).addActionRow(changename).queue();
-        }
-    public void onButtonInteraction(ButtonInteractionEvent event){
+    }
+
+    public void onButtonInteraction(ButtonInteractionEvent event) {
         if (!event.getButton().getId().equals("changename"))
             return;
 
         Member member = event.getMember();
 
-        if (member.getVoiceState().getChannel().getName().startsWith(member.getEffectiveName() + ""));
+        if (member.getVoiceState().getChannel().getName().startsWith(member.getEffectiveName() + "")) ;
     }
-    }
+}
 

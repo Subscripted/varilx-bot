@@ -15,7 +15,7 @@ public class About extends ListenerAdapter {
 
         EmbedBuilder embedBuilder = new EmbedBuilder()
                 .setTitle("Varilx.de Bot About")
-                .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                .setThumbnail(Main.getThumbnail())
                 .setDescription("Dies ist der offizielle Bot von Varilx.de\n"
                         + "\n"
                         + "Developed by Lorenz (Subscripted)\n"

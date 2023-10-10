@@ -72,7 +72,7 @@ public class XPSystem extends ListenerAdapter {
                         .setTitle("Varilx XP")
                         .setDescription("<a:Vaxparty:1137213809128382474> - Du bist  auf Level " + newLevel + " aufgestiegen!")
                         .setColor(Color.GREEN)
-                        .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                        .setThumbnail(Main.getThumbnail())
                         .setFooter("Varilx XP Feature | Update 2023 © ", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
                 user.openPrivateChannel().queue(privateChannel -> privateChannel.sendMessageEmbeds(embedBuilder.build()).queue());
 

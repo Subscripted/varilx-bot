@@ -37,7 +37,7 @@ public class StaffList {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setColor(Color.GREEN);
         builder.setTitle("Varilx Team Liste");
-        builder.setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png");
+        builder.setThumbnail(Main.getThumbnail());
         String[][] roles = {
                 {"888391247365046272", "<@&888391247365046272>"},
                 {"888504288198918185", "<@&888504288198918185>"},
@@ -46,6 +46,7 @@ public class StaffList {
                 {"888509168330358805", "<@&888509168330358805>"},
                 {"1076856927088300093", "<@&1076856927088300093>"},
                 {"1064863997062561803", "<@&1064863997062561803>"},
+                {"1157964477858320545", "<@&1157964477858320545>"},
                 {"1082387802215424130", "<@&1082387802215424130>"},
                 {"1131233998379700274", "<@&1131233998379700274>"},
                 {"935576902826078209", "<@&935576902826078209>"},
@@ -77,7 +78,7 @@ public class StaffList {
 
                      Admin: 888509168330358805
 
-                     JrAdmin: 1076856927088300093
+
 
                      Team-Verwaltung: 1064863997062561803
 

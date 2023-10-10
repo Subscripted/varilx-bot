@@ -25,7 +25,7 @@ public class ReactionRoles extends ListenerAdapter {
         EmbedBuilder embedBuilder = new EmbedBuilder()
                 .setTitle("<:Varilx:1128364477335748698>  Varilx Reaction Roles")
                 .setColor(Color.GREEN)
-                .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                .setThumbnail(Main.getThumbnail())
                 .setDescription("In diesem **Interface** kannst du **dir** Rollen aussuchen, die mit den Informationen verbunden sind. \n" +
                         "Anstatt das wir **everyone** pingen, kannst du dir selber aussuchen zu welchen Themen du einen Ping bekommen willst.\n"
                         + " \n"

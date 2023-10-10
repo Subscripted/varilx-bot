@@ -37,7 +37,7 @@ public class Feedback extends ListenerAdapter {
                 .setDescription("Du willst dein Feedback über den Server da lassen? \n" +
                         "Dann drück einfach auf den Button unter dieser Nachricht. \n" +
                         "Wir wollen nicht, das dieses Feature ausgenutzt wird, daher bitten wir dich ein ordentliches und konstruktives Feedback zu verfassen!")
-                .setThumbnail(Main.getEmbedBild())
+                .setThumbnail(Main.getThumbnail())
                 .setFooter("Varilx Feedback Feature | Update 2023 © ", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
 
         Button button = Button.secondary("feedbackbutton", "Feedback").withEmoji(Emoji.fromFormatted("<:varilxChatbox:1136013753301868555>"));
@@ -60,14 +60,14 @@ public class Feedback extends ListenerAdapter {
                     .setTitle("Varilx Feedback")
                     .setDescription(member.getAsMention() + " hat uns Feedback gegeben: " + feedback)
                     .addField("AntiSpam!", "Geschrieben von: " + dcusername, false)
-                    .setThumbnail(Main.getEmbedBild())
+                    .setThumbnail(Main.getThumbnail())
                     .setFooter("Varilx Feedback Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
 
             EmbedBuilder DM = new EmbedBuilder()
                     .setColor(Color.GREEN)
                     .setTitle("Varilx Feedback")
                     .setDescription("Danke für dein Feedback, " + dcusername + ". Wir werden uns dein Feedback zu herzen nehmen.")
-                    .setThumbnail(Main.getEmbedBild())
+                    .setThumbnail(Main.getThumbnail())
                     .setFooter("Varilx Feedback Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
 
 

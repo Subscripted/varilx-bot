@@ -52,9 +52,9 @@ public class Builder extends ListenerAdapter {
                         "\uD83C\uDDEC\uD83C\uDDE7 Englisch\n" +
                         "\uD83C\uDDE9\uD83C\uDDEA Deutsch")
                 .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                .setImage(Main.getEmbedBild())
+                .setImage(Main.getUpdateimage())
                 .setColor(Color.GREEN)
-                .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png");
+                .setThumbnail(Main.getThumbnail());
         event.getMessage().delete().queue();
 
         channel.sendMessageEmbeds(embedBuilder.build()).setActionRow(create, partner).queue();

@@ -66,7 +66,7 @@ public class Userinfos extends ListenerAdapter {
                 "<:vax_bot:1140659750724435979> Bot: **" + botStatusText + "**\n\n" +
                 "<:varilx_star:1139957135707484290> Badges:\n" + String.join("\n", badges))
                 .setFooter("Varilx.DE | Userinfos 2023 ©", Main.getJda().getSelfUser().getAvatarUrl())
-                .setThumbnail(Main.getEmbedBild());
+                .setThumbnail(Main.getThumbnail());
 
         event.replyEmbeds(embedBuilder.build()).queue();
     }

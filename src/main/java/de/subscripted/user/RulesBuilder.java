@@ -54,8 +54,8 @@ public class RulesBuilder extends ListenerAdapter {
                         + "> **https://regelwerk.varilx.de/** \n\n" +
                         "Ich hoffe du hast das **Discord Regelwerk/Richtlinien** gründlich durchgelesen, wenn du das hier liest klicke bitte auf den check Reaktions Button um die Regeln zu **Akzeptieren!**")
                 .setFooter("Varilx Regelwerk | Update 2023 ©", Main.getJda().getSelfUser().getAvatarUrl())
-                .setImage("https://cdn.discordapp.com/attachments/1055223755909111808/1139190110282334248/ValuniaNET-ddddThumbnail-Wiederhergestellt.png")
-                .setThumbnail(Main.getEmbedBild())
+                .setImage(Main.getUpdateimage())
+                .setThumbnail(Main.getThumbnail())
                 .setColor(Color.GREEN);
 
 

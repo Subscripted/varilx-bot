@@ -66,7 +66,7 @@ public class Bugreport extends ListenerAdapter {
                             "- <:varilx_forum:1139957497336172584> Beschreibung des Bugs : **" + bug + "**\n\n" +
                             "- <:varilx_id:1139957240963539054> AntiSpam : **" + username + "**")
                     .setFooter("Varilx Support Feature | Update 2023 © ", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                    .setThumbnail(Main.getEmbedBild());
+                    .setThumbnail(Main.getThumbnail());
 
             EmbedBuilder embedBuilderDM = new EmbedBuilder()
                     .setColor(Color.GREEN)
@@ -75,7 +75,7 @@ public class Bugreport extends ListenerAdapter {
                             "- <:varilx_forum:1139957497336172584> Beschreibung des Bugs : **" + bug + "**\n\n" +
                             "- <:varilx_star:1139957135707484290> Danke für die Meldung **" + username + "**")
                     .setFooter("Varilx Support Feature | Update 2023 © ", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                    .setThumbnail(Main.getEmbedBild());
+                    .setThumbnail(Main.getThumbnail());
 
 
             MessageChannel channel = event.getGuild().getTextChannelById("1140271093979037697");

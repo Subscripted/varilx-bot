@@ -9,7 +9,10 @@ import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
+import javax.net.ssl.HttpsURLConnection;
 import java.awt.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class OnJoin extends ListenerAdapter {
 
@@ -35,8 +38,8 @@ public class OnJoin extends ListenerAdapter {
                         "Unser Host Partner »\n" +
                         "https://discord.gg/tube-hosting ->" + emojiURL)
                 .setFooter("Varilx.DE Netzwerk | Wilkommenshalle", Main.getJda().getSelfUser().getEffectiveAvatarUrl())
-                .setThumbnail(Main.getEmbedBild())
-                .setImage("https://cdn-longterm.mee6.xyz/plugins/welcome/images/886262410489520168/616250b3031b7010a2815e64e86581a02d011f396d5ab951717109abd2002829.png");
+                .setThumbnail("https://cdn.discordapp.com/attachments/1055223755909111808/1160508092757319740/Unbedasasdasdasddsasdasdadsdadasadnannt.png?ex=6534ea62&is=65227562&hm=68a973ca3f32dc868c74248d5937616d87283e88372d67128e36e5e0a97588ed&")
+                .setImage(Main.getUpdateimage());
 
         textChannel.sendMessageEmbeds(embedBuilder.build()).queue();
         event.getGuild().addRoleToMember(member, role).queue();
@@ -44,6 +47,7 @@ public class OnJoin extends ListenerAdapter {
         VoiceChannel voiceChannel = event.getGuild().getVoiceChannelById("1139724927155576954");
         if (voiceChannel != null) {
             voiceChannel.getManager().setName("\uD83D\uDCCC・ | User: " + event.getGuild().getMemberCount()).queue();
+
         }
     }
 }

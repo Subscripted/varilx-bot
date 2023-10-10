@@ -21,6 +21,7 @@ import de.subscripted.user.*;
 import de.subscripted.working.EmbedBuilderBetaModalInteractions;
 import de.subscripted.working.EmbedBuilderButtons;
 import de.subscripted.working.SendEmbedCommand;
+import de.subscripted.working.TicketDropDown;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -43,7 +44,6 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +57,9 @@ public class Main {
     @Getter
     private static String token;
     @Getter
-    private static String embedBild = "https://cdn.discordapp.com/attachments/1055223755909111808/1156719294139351040/2023-09-0DASDSASD3_22.23.53-min.png?ex=65194a0a&is=6517f88a&hm=8409a924c982133d8b4580a5a74414d6dff0d0528c15009e8d178e7a2d56bc77&";
-
+    private static String thumbnail = "https://cdn.discordapp.com/attachments/1055223755909111808/1160508079419424840/Unbenanntdsadasd-2.png?ex=6534ea5f&is=6522755f&hm=00ea7dd8a3fd0c5dfcfccfa6952527b679094abf07d22143fee44b0b7221aa4a&";
+    @Getter
+    private static String updateimage = "https://cdn.discordapp.com/attachments/1055223755909111808/1160507955507101736/Varilx_Tube-hosting_version.png?ex=6534ea41&is=65227541&hm=e2dad9d371a1f8a26f84ab29871fc2a754b0135ccbc76c557d9f7c30dbaf371f&";
     public static XpSQLManager xpSqlManager;
 
 
@@ -82,6 +83,7 @@ public class Main {
     public static void main(String[] args) throws LoginException, InterruptedException, SQLException {
 
         loadFiles();
+
 
         xpSqlManager = new XpSQLManager();
         ticketSQLManager = new TicketSQLManager();
@@ -122,12 +124,8 @@ public class Main {
                         new Boost(),
                         new SetLevelCommand(),
                         new XPCommand(),
-                        new Stop(),
-                        new Play(),
-                        new NowPlaying(),
-                        new Skip(),
-                        new Repeat(),
                         new Vorschläge(),
+                        new TicketDropDown(),
                         new Chatfilter(),
                         new ReactionRoles(),
                         new TeamAdd(),
@@ -242,18 +240,8 @@ public class Main {
                 Commands.slash("moveall", "Move alle die in deinem Channel sind wo anders hin!")
                         .addSubcommands(new SubcommandData("to", "Move alle die in deinem Channel sind wo anders hin!")
                                 .addOption(OptionType.CHANNEL, "channel", "Channel in den alle Ggemoved werden sollen!", true)),
-                Commands.slash("deletewarns", "Lösche alle warns eines Nutzers").addOption(OptionType.USER, "nutzer", "Nutzer von dem du die Warns löschen willst!"),
-                Commands.slash("music", "Allgemeiner Music Command")
-                        .addSubcommands(new SubcommandData("play", "Spielt einen gewünschten Song/PlayList ab")
-                                .addOption(OptionType.STRING, "url", "Die URL oder der Name des Songs/PlayList", true))
-                        .addSubcommands(new SubcommandData("skip", "Überspringt einen Song")
-                                .addOption(OptionType.INTEGER, "anzahl", "Die Anzahl an Songs die übersprungen werden sollen", false))
-                        .addSubcommands(new SubcommandData("stop", "Stop den aktuellen Song"))
-                        .addSubcommands(new SubcommandData("shuffel", "Shuffelt die aktuelle PlayList"))
-                        .addSubcommands(new SubcommandData("np", "Zeigt den Aktuellen Song an"))
-                        .addSubcommands(new SubcommandData("queue", "Zeigt die aktuelle Queue"))
-                        .addSubcommands(new SubcommandData("volume", "Setzt das Volume auf das angegeben Volume")
-                                .addOption(OptionType.INTEGER, "volume", "Volume (ex: 80) in % aber ohne %", true))).queue();
+                Commands.slash("deletewarns", "Lösche alle warns eines Nutzers").addOption(OptionType.USER, "nutzer", "Nutzer von dem du die Warns löschen willst!"));
+
         assert guild != null;
         guild.updateCommands().queue();
         startGiveawayRunnable();

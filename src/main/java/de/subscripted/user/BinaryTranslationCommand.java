@@ -38,7 +38,7 @@ public class BinaryTranslationCommand extends ListenerAdapter {
 
     private String binaryToText(String binary) {
         StringBuilder text = new StringBuilder();
-        String[] binaryChunks = binary.split(" ");
+        String[] binaryChunks = binary.split("  ");
         for (String chunk : binaryChunks) {
             int decimal = Integer.parseInt(chunk, 2);
             text.append((char) decimal);
@@ -49,7 +49,7 @@ public class BinaryTranslationCommand extends ListenerAdapter {
     private String textToBinary(String text) {
         StringBuilder binary = new StringBuilder();
         for (char c : text.toCharArray()) {
-            binary.append(Integer.toBinaryString(c)).append(" ");
+            binary.append(Integer.toBinaryString(c)).append("  ");
         }
         return binary.toString().trim();
     }

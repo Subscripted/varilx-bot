@@ -41,7 +41,7 @@ public class Vorschläge extends ListenerAdapter {
                 .setDescription("Du hast eine Idee oder ein Verbesserungsvorschlag für den Server? \n" +
                         "Dann drück einfach auf den Button unter dieser Nachricht. \n" +
                         "bitte beachte dabei, dass dein Vorschlag mit sofortiger Wirkung in eine Umfrage umgewandelt wird, und jeder sie lesen kann!")
-                .setImage("https://cdn-longterm.mee6.xyz/plugins/welcome/images/886262410489520168/616250b3031b7010a2815e64e86581a02d011f396d5ab951717109abd2002829.png")
+                .setImage(Main.getUpdateimage())
                 .setFooter("Varilx Umfrage Feature | Update 2023 © ", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
 
         Button button = Button.success("vorschlag", "Vorschlag -> ⭐");
@@ -74,7 +74,7 @@ public class Vorschläge extends ListenerAdapter {
                     .setTitle("Varilx Vorschläge")
                     .addField("```Vorschlag / Idee: ```", " " + vorschlag, false)
                     .addField("AntiSpam!", "Geschrieben von: " + dcusername, false)
-                    .setThumbnail(Main.getEmbedBild())
+                    .setThumbnail(Main.getThumbnail())
                     .setFooter("Varilx Vorschlag Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
 
 
@@ -83,14 +83,14 @@ public class Vorschläge extends ListenerAdapter {
                     .setTitle("Varilx Vorschläge")
                     .addField("```Dein Vorschlag / Idee: ```", " " + vorschlag, false)
                     .setDescription("Danke für deinen Vorschlag / deine Idee, " + dcusername)
-                    .setThumbnail(Main.getEmbedBild())
+                    .setThumbnail(Main.getThumbnail())
                     .setFooter("Varilx Vorschlag Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
                 EmbedBuilder umfragemessage = new EmbedBuilder();
                 umfragemessage.setColor(Color.GREEN);
                 umfragemessage.setTitle("Varilx Vorschläge");
                 umfragemessage.addField("```Vorschlag / Idee: ```", " " + vorschlag, false);
                 umfragemessage.addField("Idee kommt von:", " " + dcusername, false);
-                umfragemessage.setThumbnail(Main.getEmbedBild());
+                umfragemessage.setThumbnail(Main.getThumbnail());
 
                 if (image != null && !image.isEmpty()) {
                     umfragemessage.setImage(image);

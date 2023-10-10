@@ -35,8 +35,6 @@ public class Chatfilter extends ListenerAdapter {
             "ballsack",
             "Dildo",
             "dildo",
-            "Dick",
-            "dick",
             "Fuck You",
             "fuck You",
             "FuckYou",

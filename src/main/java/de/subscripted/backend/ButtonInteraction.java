@@ -297,9 +297,14 @@ public class ButtonInteraction extends ListenerAdapter {
                         .setMaxLength(999)
                         .setRequired(true)
                         .build();
+                TextInput ign = TextInput.create("ign", "Dein Ingame Name", TextInputStyle.SHORT).setPlaceholder("z.b. ''Subscripted''")
+                        .setMinLength(5)
+                        .setMaxLength(999)
+                        .setRequired(true)
+                        .build();
 
                 Modal modal = Modal.create("ticket", "Ticket")
-                        .addActionRow(problem)
+                        .addActionRow(problem).addActionRow(ign)
                         .build();
 
                 event.replyModal(modal).queue();

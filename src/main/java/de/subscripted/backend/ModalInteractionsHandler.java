@@ -38,6 +38,7 @@ public class ModalInteractionsHandler extends ListenerAdapter {
         switch (event.getModalId()) {
             case "ticket":
                 String problem = event.getValue("problem").getAsString();
+                String ign = event.getValue("ign").getAsString();
                 String member = event.getUser().getName();
                 Guild guild = event.getGuild();
                 Category category = event.getGuild().getCategoryById("928337279376850975");
@@ -52,11 +53,12 @@ public class ModalInteractionsHandler extends ListenerAdapter {
                             EmbedBuilder embedBuilderuwu = new EmbedBuilder()
                                     .setColor(Color.GREEN)
                                     .setTitle("Varilx Tickets")
+                                    .addField("Ingame-Name", ign, true)
                                     .addField("Beschreibung des Problems", problem, false)
                                     .setDescription(" · Bitte gedulde dich ein bisschen, es wird sich bald jemand um dich kümmern.\n" +
                                             " · Sollten wir nicht erreichbar sein, melde dich bitte im Forum! \n" +
                                             "https://forum.varilx.de/forum/view/8-support/")
-                                    .setThumbnail("https://cdn.discordapp.com/attachments/915633823675449344/1134431444526190592/Unbenadasadsasnnt.png")
+                                    .setThumbnail(Main.getThumbnail())
                                     .setFooter("Varilx Support Feature | Update 2023 ©", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
                             channel.sendMessage(event.getMember().getAsMention() + " " + guild.getRoleById("1095297340715319356").getAsMention()).addEmbeds(embedBuilderuwu.build()).setActionRow(button, claim).queue();
                             ticketCountSQLManager.addCount(userId);
