@@ -35,7 +35,7 @@ public class Clear extends ListenerAdapter {
 
                 TextChannel channel = event.getChannel().asTextChannel();
                 List<Message> sortedMessages = new ArrayList<>();
-                for (Message message : channel.getHistory().retrievePast(numToDelete + 1).complete()) {
+                for (Message message : channel.getHistory().retrievePast(numToDelete + 2 - 1 ).complete()) {
 
                     if(message.getId() != null){
                         sortedMessages.add(message);

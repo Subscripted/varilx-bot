@@ -46,7 +46,7 @@ public class TicketDropDown extends ListenerAdapter {
 
 
     public void onStringSelectInteraction(StringSelectInteractionEvent event) {
-        if (!event.getInteraction().getId().equalsIgnoreCase("menu:class"))
+        if (!event.getInteraction().getId().equalsIgnoreCase("menu:classs"))
             return;
         String userId = event.getMember().getId();
         int ticketCount = TicketCountSQLManager.getCount(userId);

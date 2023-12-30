@@ -20,8 +20,6 @@ public class Promote extends ListenerAdapter {
 
             Member member = event.getMember();
             Member targetmember = event.getOption("nutzer").getAsMember();
-            String message = event.getOption("message").getAsString();
-            message = message.replace("\\n", System.lineSeparator());
             Role teamrole = event.getGuild().getRoleById("1003618027037786205");
             TextChannel tc = event.getGuild().getTextChannelById("1086316495405068308");
             assert member != null;
@@ -72,100 +70,102 @@ public class Promote extends ListenerAdapter {
                         .setFooter("Varilx Team Feature | Update 2023 © ", Main.getJda().getSelfUser().getEffectiveAvatarUrl());
                 event.replyEmbeds(embedBuilder.build()).setEphemeral(true).queue();
             }
+
+
             switch (targetmember.getRoles().get(0).getId()) {
                 case "1085914226310271126": // Junior Content
-                    targetmember.modifyNickname("Content | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("Content | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, JrContent).queue();
                     event.getGuild().removeRoleFromMember(targetmember, testphase).queue();
                     event.getGuild().addRoleToMember(targetmember, Content).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + Content.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                            + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + Content.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
                     break;
                 case "1085914333160165417":
-                    targetmember.modifyNickname("SrContent | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("SrContent | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, Content).queue();
                     event.getGuild().addRoleToMember(targetmember, SrContent).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + SrContent.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                            + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + SrContent.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
                     break;
                 case "1062409445470113883": // Junior Supporter
-                    targetmember.modifyNickname("Sup | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("Sup | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, JrSup).queue();
                     event.getGuild().removeRoleFromMember(targetmember, testphase).queue();
                     event.getGuild().addRoleToMember(targetmember, Sup).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + Sup.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                            + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + Sup.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
                     break;
                 case "906598926688321578":
-                    targetmember.modifyNickname("SrSup | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("SrSup | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, Sup).queue();
                     event.getGuild().addRoleToMember(targetmember, SrSup).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + SrSup.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                            + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + SrSup.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
                     break;
                 case "1081305944652255292":
-                    targetmember.modifyNickname("JrMod | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("JrMod | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, SrSup).queue();
                     event.getGuild().addRoleToMember(targetmember, JrMod).queue();
                     event.getGuild().addRoleToMember(targetmember, testphase).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + JrMod.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                    + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + JrMod.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
 
                     break;
                 case "904032740394041364":
-                    targetmember.modifyNickname("Mod | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("Mod | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, JrMod).queue();
                     event.getGuild().removeRoleFromMember(targetmember, testphase).queue();
                     event.getGuild().addRoleToMember(targetmember, Mod).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + Mod.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                        + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + Mod.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
                     break;
                 case "888503993117073420":
-                    targetmember.modifyNickname("SrMod | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("SrMod | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, Mod).queue();
                     event.getGuild().addRoleToMember(targetmember, SrMod).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + SrMod.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                            + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + SrMod.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
                     break;
                 case "1065942174539202590":
-                    targetmember.modifyNickname("Dev | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("Dev | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, JrDev).queue();
                     event.getGuild().removeRoleFromMember(targetmember, testphase).queue();
                     event.getGuild().addRoleToMember(targetmember, Dev).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + Dev.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                            + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + Dev.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
                     break;
                 case "1066702211217887232":
-                    targetmember.modifyNickname("SrDev | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("SrDev | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, Dev).queue();
                     event.getGuild().addRoleToMember(targetmember, SrDev).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + SrDev.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                            + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + SrDev.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
                     break;
                 case "1068989467261665282":
-                    targetmember.modifyNickname("Builder | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("Builder | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, JrBuilder).queue();
                     event.getGuild().addRoleToMember(targetmember, Builder).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + Builder.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                            + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + Builder.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
                     break;
                 case "1068989280225083412":
-                    targetmember.modifyNickname("SrBuilde | " + targetmember.getUser().getName()).queue();
+                    targetmember.modifyNickname("SrBuilde | " + targetmember.getEffectiveName()).queue();
                     event.getGuild().removeRoleFromMember(targetmember, Builder).queue();
                     event.getGuild().addRoleToMember(targetmember, SrBuilder).queue();
                     event.reply("Du hast " + targetmember.getAsMention() + " auf " + SrBuilder.getAsMention() + " befördert!").setEphemeral(true).queue();
                     tc.sendMessage(teamrole.getAsMention() + "\n"
-                            + message).queue();
+                            + "**Team - Uprank** \n\n" + targetmember.getAsMention() + "Wurde auf " + SrBuilder.getAsMention() + " befördert.\n\n **Mit freundlichen Grüßen,**\n" + Main.getJda().getSelfUser().getAsMention()).queue();
 
                     break;
 

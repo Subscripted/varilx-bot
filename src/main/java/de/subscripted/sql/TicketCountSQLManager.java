@@ -78,4 +78,21 @@ public class TicketCountSQLManager {
         }
         return 0;
     }
+
+    public static String getUserID() throws SQLException {
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement("SELECT UserID FROM Tickets WHERE UserID = ?")) {
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getString("UserID");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        }
+        return null;
+    }
+
+
 }

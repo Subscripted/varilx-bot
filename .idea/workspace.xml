@@ -4,53 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- idk what i changed xD">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Record.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/TicketDropDown.java" afterDir="false" />
+    <list default="true" id="805e9077-0ac9-4b49-a53a-127d2b15407c" name="Changes" comment="- Some changes">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/StaffList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/StaffList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Demote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Demote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/GiveawayManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Promote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/Promote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/TeamAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/admin/TeamAdd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ButtonInteraction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ModalInteractionsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/ModalInteractionsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/XPSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/backend/XPSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/support/Builder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/support/Builder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/About.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/About.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/BewerbungsBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/BewerbungsBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/BinaryTranslationCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/BinaryTranslationCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Bugreport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Bugreport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Chatfilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Chatfilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Feedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/TicketCountSQLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/sql/TicketCountSQLManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/OnJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/OnJoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/ReactionRoles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/ReactionRoles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/RulesBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/RulesBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Userinfos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Userinfos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Vorschläge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Vorschläge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/XPCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/XPCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnChannelButtonBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/OwnChannelButtonBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Serverinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/user/Serverinfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/subscripted/working/TicketDropDown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/subscripted/working/TicketDropDown.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT-shaded.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/StaffList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/StaffList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Clear.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Clear.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Demote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Demote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/GiveawayManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/GiveawayManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Promote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/Promote.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/admin/TeamAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/admin/TeamAdd.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/backend/ButtonInteraction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/backend/XPSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/backend/XPSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/support/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/support/Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/About.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/About.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/BewerbungsBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/BewerbungsBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Bugreport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Bugreport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Chatfilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Chatfilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Feedback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/sql/TicketCountSQLManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/sql/TicketCountSQLManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/OnJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/OnJoin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/ReactionRoles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/ReactionRoles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/RulesBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/RulesBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Userinfos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Userinfos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/Vorschläge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/Vorschläge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/user/XPCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/user/XPCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/subscripted/working/TicketDropDown.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/subscripted/working/TicketDropDown.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-VarilxBot-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -337,6 +318,54 @@
       <workItem from="1696847134991" duration="1903000" />
       <workItem from="1696864836761" duration="15000" />
       <workItem from="1696865006540" duration="3836000" />
+      <workItem from="1696939169569" duration="972000" />
+      <workItem from="1696967163411" duration="650000" />
+      <workItem from="1697015469549" duration="2306000" />
+      <workItem from="1697022875975" duration="1916000" />
+      <workItem from="1697063264456" duration="98000" />
+      <workItem from="1697280581189" duration="2194000" />
+      <workItem from="1697647744309" duration="1067000" />
+      <workItem from="1697651764078" duration="624000" />
+      <workItem from="1697654310401" duration="344000" />
+      <workItem from="1697742582279" duration="1377000" />
+      <workItem from="1697878373918" duration="12000" />
+      <workItem from="1698613147630" duration="328000" />
+      <workItem from="1698613496207" duration="2273000" />
+      <workItem from="1698621710370" duration="719000" />
+      <workItem from="1698656898732" duration="887000" />
+      <workItem from="1698666631317" duration="2248000" />
+      <workItem from="1698673994146" duration="48000" />
+      <workItem from="1698754902177" duration="729000" />
+      <workItem from="1698756048500" duration="3136000" />
+      <workItem from="1698760336363" duration="599000" />
+      <workItem from="1698765541662" duration="3049000" />
+      <workItem from="1698769543414" duration="2528000" />
+      <workItem from="1699809605506" duration="934000" />
+      <workItem from="1699888703618" duration="34000" />
+      <workItem from="1700065661826" duration="1785000" />
+      <workItem from="1700149810154" duration="9000" />
+      <workItem from="1700150713396" duration="19000" />
+      <workItem from="1701210705579" duration="148000" />
+      <workItem from="1701376044063" duration="33000" />
+      <workItem from="1701447562027" duration="283000" />
+      <workItem from="1701447857442" duration="17000" />
+      <workItem from="1702055127391" duration="254000" />
+      <workItem from="1702499181975" duration="2108000" />
+      <workItem from="1702562846717" duration="917000" />
+      <workItem from="1702564191134" duration="317000" />
+      <workItem from="1702565906797" duration="52000" />
+      <workItem from="1702589252477" duration="1423000" />
+      <workItem from="1702591720242" duration="950000" />
+      <workItem from="1702656903014" duration="1914000" />
+      <workItem from="1702678768096" duration="875000" />
+      <workItem from="1702721353286" duration="19000" />
+      <workItem from="1702721401684" duration="1852000" />
+      <workItem from="1702738830609" duration="493000" />
+      <workItem from="1702752847132" duration="1608000" />
+      <workItem from="1702839043650" duration="123000" />
+      <workItem from="1703025064239" duration="1514000" />
+      <workItem from="1703170811463" duration="121000" />
+      <workItem from="1703185711514" duration="651000" />
     </task>
     <task id="LOCAL-00001" summary="Added VarilxBotSource">
       <option name="closed" value="true" />
@@ -623,7 +652,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696500852580</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="- Some changes">
+      <option name="closed" value="true" />
+      <created>1696939233952</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1696939233952</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,14 +671,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- Added onJoinMemberCount- Channel" />
     <MESSAGE value="- Changed onJoinUserCount- Channel" />
     <MESSAGE value="- Changed the Speed of Changing Bot status from 5 sec to 10 sec, cause Performance issues!" />
     <MESSAGE value="- Added Serverinfo command and fixed some Issues / errors" />
@@ -666,6 +714,7 @@
     <MESSAGE value="- Fixed: Subcommands wont loading" />
     <MESSAGE value="- Added something what is not finished yet" />
     <MESSAGE value="- idk what i changed xD" />
-    <option name="LAST_COMMIT_MESSAGE" value="- idk what i changed xD" />
+    <MESSAGE value="- Some changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Some changes" />
   </component>
 </project>

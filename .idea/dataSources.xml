@@ -8,5 +8,19 @@
       <jdbc-url>jdbc:sqlite:C:\Users\HueMatrix\IdeaProjects\VarilxBot\varilxembed.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="tickets" uuid="acbd6579-9122-44d9-a4b9-3f152812a087">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Subscripted\IdeaProjects\varilx-bot\tickets.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="varilx_level" uuid="df0fe231-29fb-448b-92f5-c77c6db6fcd5">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Subscripted\IdeaProjects\varilx-bot\varilx_level.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

@@ -31,7 +31,7 @@ public class Serverinfo extends ListenerAdapter {
 
         String name = event.getGuild().getName();
         String id = event.getJDA().getSelfUser().getId();
-        String eigentümer = event.getGuild().getMemberById("897638983159382038").getAsMention();
+        String eigentümer = event.getGuild().getOwner().getAsMention();
         String memberCount = String.valueOf(event.getGuild().getMemberCount());
         String channel = String.valueOf(event.getGuild().getChannels().size());
         String kategorien = String.valueOf(event.getGuild().getCategories().size());

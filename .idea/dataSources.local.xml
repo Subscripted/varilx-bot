@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-232.9921.47">
+  <component name="dataSourceStorageLocal" created-in="IU-232.10227.8">
     <data-source name="varilxembed" uuid="61f02c06-20e4-4195-9813-824964e53fe3">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <schema-mapping />
+    </data-source>
+    <data-source name="tickets" uuid="acbd6579-9122-44d9-a4b9-3f152812a087">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <auth-provider>no-auth</auth-provider>
+      <schema-mapping />
+    </data-source>
+    <data-source name="varilx_level" uuid="df0fe231-29fb-448b-92f5-c77c6db6fcd5">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <auth-provider>no-auth</auth-provider>
       <schema-mapping />
     </data-source>
   </component>

@@ -19,16 +19,16 @@ public class OnJoin extends ListenerAdapter {
     @Override
     public void onGuildMemberJoin(GuildMemberJoinEvent event) {
 
-        TextChannel textChannel = event.getGuild().getTextChannelById("915680130528059463");
+        TextChannel textChannel = event.getGuild().getTextChannelById("1168317830547124305");
         assert textChannel != null;
-        Role role = event.getGuild().getRoleById("888528416146612276");
+        Role role = event.getGuild().getRoleById("1168317737962057878");
         Member member = event.getMember();
 
         String emojiURL = event.getGuild().getEmojiById("1101657813794693120").getAsMention();
 
         EmbedBuilder embedBuilder = new EmbedBuilder()
-                .setTitle("Varilx x Hosted by Tubehosting")
-                .setColor(Color.GREEN)
+                .setTitle("Elorise.de")
+                .setColor(Color.YELLOW)
                 .setDescription("Hey " + event.getMember().getAsMention() + " willkommen auf " + "\n" + "**Varilx.DE × Hosted by Tube-Hosting!**\n" +
                         "\n" +
                         "Ich Bitte dich das Regelwerk durchzulesen damit keine Unannehmlichkeiten entstehen. Wir Danke dir und viel Spaß!\n" +

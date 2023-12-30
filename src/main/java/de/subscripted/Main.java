@@ -9,7 +9,6 @@ import de.subscripted.backend.ButtonInteraction;
 import de.subscripted.backend.ModalInteractionsHandler;
 import de.subscripted.backend.XPSystem;
 import de.subscripted.games.EightBall;
-import de.subscripted.lavaplayer.*;
 import de.subscripted.serversafety.*;
 import de.subscripted.sql.TicketCountSQLManager;
 import de.subscripted.sql.TicketSQLManager;
@@ -199,7 +198,8 @@ public class Main {
         jda.getGatewayIntents().add(GatewayIntent.GUILD_MEMBERS);
 
 
-        jda.updateCommands().addCommands(
+        assert guild != null;
+        guild.updateCommands().addCommands(
                 Commands.slash("nick", "nick").addOption(OptionType.USER, "nutzer", "jaja", true).addOption(OptionType.STRING, "newname", "test", true),
                 Commands.slash("unclaim", "Unclaime ein Ticket"),
                 Commands.slash("hilfe", "Dieser Befehl gibt an, wie du hier Hilfe erhalten kannst."),
@@ -218,8 +218,8 @@ public class Main {
                 Commands.slash("userinfo", "Zeigt dir Infos über einen Nutzer an").addOption(OptionType.USER, "nutzer", "Nutzer", true),
                 Commands.slash("bugreport", "Reporte einen Bug!"),
                 Commands.slash("serverinfo", "Zeigt dir Infos über den Server an!"),
-                Commands.slash("promote", "Promote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du promoten willst!", true).addOption(OptionType.STRING, "message", "Deine Nachricht", true),
-                Commands.slash("demote", "Demote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du demoten willst!", true).addOption(OptionType.STRING, "message", "Deine Nachricht", true),
+                Commands.slash("promote", "Promote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du promoten willst!", true),
+                Commands.slash("demote", "Demote einen Teamler").addOption(OptionType.USER, "nutzer", "Nutzer den du demoten willst!", true),
                 Commands.slash("ping", "Ping"),
                 Commands.slash("binärtotext", "Deine Binär- Zahlen").addOption(OptionType.STRING, "code", "Von Binär in Text oder Text in Binär", true),
                 Commands.slash("embedbuilderbeta", "embeds"),

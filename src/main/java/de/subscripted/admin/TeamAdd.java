@@ -52,7 +52,7 @@ public class TeamAdd extends ListenerAdapter {
                 }
 
                 if (role == event.getGuild().getRoleById("1085914226310271126")) {
-                    targetMember.modifyNickname("JrContent | " + targetMember.getUser().getName()).queue();
+                    targetMember.modifyNickname("JrContent | " + targetMember.getEffectiveName()).queue();
                     event.getGuild().addRoleToMember(targetMember, testphase).queue();
                     event.getGuild().addRoleToMember(targetMember, role).queue();
                     event.getGuild().addRoleToMember(targetMember, teamrole).queue();
@@ -64,7 +64,7 @@ public class TeamAdd extends ListenerAdapter {
                             + Main.getJda().getSelfUser().getAsMention()).queue();
                     event.reply("Du hast " + targetMember.getAsMention() + " in das " + role.getAsMention() + " Team aufgenommen!").setEphemeral(true).queue();
                 } else if (role == event.getGuild().getRoleById("1062409445470113883")) {
-                    targetMember.modifyNickname("JrSup | " + targetMember.getUser().getName()).queue();
+                    targetMember.modifyNickname("JrSup | " + targetMember.getEffectiveName()).queue();
                     event.getGuild().addRoleToMember(targetMember, testphase).queue();
                     event.getGuild().addRoleToMember(targetMember, role).queue();
                     event.getGuild().addRoleToMember(targetMember, teamrole).queue();
@@ -77,7 +77,7 @@ public class TeamAdd extends ListenerAdapter {
                             + Main.getJda().getSelfUser().getAsMention()).queue();
                     event.reply("Du hast " + targetMember.getAsMention() + " in das " + role.getAsMention() + " Team aufgenommen!").setEphemeral(true).queue();
                 } else if (role == event.getGuild().getRoleById("1065942174539202590")) {
-                    targetMember.modifyNickname("JrDev | " + targetMember.getUser().getName()).queue();
+                    targetMember.modifyNickname("JrDev | " + targetMember.getEffectiveName()).queue();
                     event.getGuild().addRoleToMember(targetMember, testphase).queue();
                     event.getGuild().addRoleToMember(targetMember, role).queue();
                     event.getGuild().addRoleToMember(targetMember, teamrole).queue();
@@ -89,7 +89,7 @@ public class TeamAdd extends ListenerAdapter {
                             + Main.getJda().getSelfUser().getAsMention()).queue();
                     event.reply("Du hast " + targetMember.getAsMention() + " in das " + role.getAsMention() + " Team aufgenommen!").setEphemeral(true).queue();
                 } else if (role == event.getGuild().getRoleById("1067186701736349818")) {
-                    targetMember.modifyNickname("Guide | " + targetMember.getUser().getName()).queue();
+                    targetMember.modifyNickname("Guide | " + targetMember.getEffectiveName()).queue();
                     event.getGuild().addRoleToMember(targetMember, testphase).queue();
                     event.getGuild().addRoleToMember(targetMember, role).queue();
                     event.getGuild().addRoleToMember(targetMember, teamrole).queue();
@@ -101,7 +101,7 @@ public class TeamAdd extends ListenerAdapter {
                             + Main.getJda().getSelfUser().getAsMention()).queue();
                     event.reply("Du hast " + targetMember.getAsMention() + " in das " + role.getAsMention() + " Team aufgenommen!").setEphemeral(true).queue();
                 } else if (role == event.getGuild().getRoleById("1068989467261665282")) {
-                    targetMember.modifyNickname("JrBuilder | " + targetMember.getUser().getName()).queue();
+                    targetMember.modifyNickname("JrBuilder | " + targetMember.getEffectiveName()).queue();
                     event.getGuild().addRoleToMember(targetMember, testphase).queue();
                     event.getGuild().addRoleToMember(targetMember, role).queue();
                     event.getGuild().addRoleToMember(targetMember, teamrole).queue();

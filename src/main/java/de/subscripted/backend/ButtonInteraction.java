@@ -25,6 +25,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -270,7 +271,13 @@ public class ButtonInteraction extends ListenerAdapter {
 
             case "create":
 
-                int ticketCount = ticketCountSQLManager.getCount(userId);
+                String userId2;
+                try {
+                    userId2 = TicketCountSQLManager.getUserID();
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                int ticketCount = ticketCountSQLManager.getCount(userId2);
                 if (ticketCount == 3) {
                     EmbedBuilder embedBuilder = new EmbedBuilder()
                             .setColor(Color.RED)
@@ -309,6 +316,7 @@ public class ButtonInteraction extends ListenerAdapter {
 
                 event.replyModal(modal).queue();
                 break;
+
 
             case "ticket_closed":
                 String channelId = channel.getId();
@@ -363,10 +371,16 @@ public class ButtonInteraction extends ListenerAdapter {
                     }
                 }
                 executorService.schedule(() -> channel.delete().queue(), 5, TimeUnit.SECONDS);
-                int ticketCount2 = ticketCountSQLManager.getCount(userId);
+                int ticketCount2 = TicketCountSQLManager.getCount(userId);
 
-                if (ticketCount2 > 0) {
-                    ticketCountSQLManager.removeCount(userId);
+                if (ticketCount2 != 0) {
+                    String userId3 = null;
+                    try {
+                        userId3 = TicketCountSQLManager.getUserID();
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    TicketCountSQLManager.removeCount(userId3);
                 }
 
                 closeButtonCooldownMap.put(channelId, true);
